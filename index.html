@@ -1,651 +1,314 @@
-<?php get_header(); ?>
-
-<main class="min-h-screen">
-
-<?php if (is_page('tentang-kami')) : ?>
-    <!-- ==================== HALAMAN TENTANG KAMI ==================== -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-5">
-                <div class="relative p-4 bg-white rounded-3xl border border-gold-400 shadow-gold-md">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman" class="w-full h-96 object-cover rounded-2xl">
-                    <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
-                        <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
-                        <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:col-span-7 space-y-6">
-                <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Tentang Kami</span>
-                <h1 class="text-3xl sm:text-4xl font-bold text-obsidian leading-tight">
-                    Menggabungkan Keahlian Teknologi, Jurnalisme Digital, dan Seni Visual.
-                </h1>
-                <p class="text-gray-600 leading-relaxed">
-                    <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu yang mengutamakan presisi, estetika, dan dampak nyata.
-                </p>
-            </div>
-        </div>
-    </section>
-
-<?php elseif (is_page('layanan-jasa')) : ?>
-    <!-- ==================== HALAMAN LAYANAN & JASA ==================== -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Katalog Layanan</span>
-            <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Solusi Komprehensif untuk Brand Anda</h1>
-        </div>
-        <div class="space-y-10">
-            <div class="gold-card rounded-3xl p-8 lg:p-10 grid lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-4"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" class="w-full h-60 object-cover rounded-2xl"></div>
-                <div class="lg:col-span-8 space-y-3">
-                    <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase">01 • Web Engineering</span>
-                    <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional</h3>
-                    <p class="text-gray-600">Pembangunan Landing Page UMKM, Company Profile, Portal Berita/Media Online, serta Custom Theme WordPress.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<?php elseif (is_page('daftar-harga')) : ?>
-    <!-- ==================== HALAMAN DAFTAR HARGA ==================== -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Investasi Transparan</span>
-            <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Daftar Paket & Harga Layanan</h1>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Web Development</span>
-                    <h3 class="text-2xl font-bold text-obsidian mt-1">Landing Page / UMKM</h3>
-                    <p class="text-3xl font-luxury font-bold text-obsidian my-6">Rp 1.500.000</p>
-                </div>
-                <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Website" target="_blank" rel="noopener noreferrer" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold">Pesan Paket Website</a>
-            </div>
-            <div class="gold-card rounded-3xl p-8 flex flex-col justify-between border-2 border-gold-400">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Content & Social Media</span>
-                    <h3 class="text-2xl font-bold text-obsidian mt-1">Paket Konten & SEO</h3>
-                    <p class="text-3xl font-luxury font-bold text-obsidian my-6">Rp 1.250.000</p>
-                </div>
-                <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Konten" target="_blank" rel="noopener noreferrer" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold">Pesan Paket Konten</a>
-            </div>
-            <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Visual Production</span>
-                    <h3 class="text-2xl font-bold text-obsidian mt-1">Foto & Video Kreatif</h3>
-                    <p class="text-3xl font-luxury font-bold text-obsidian my-6">Rp 1.750.000</p>
-                </div>
-                <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Visual" target="_blank" rel="noopener noreferrer" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold">Pesan Paket Visual</a>
-            </div>
-        </div>
-    </section>
-
-<?php elseif (is_page('undangan-online')) : ?>
-    <!-- ==================== INTEGRASI HTML UNDANGANDIGITAL.ID ==================== -->
-    <div class="bg-slate-50 text-slate-800 antialiased selection:bg-gold-500 selection:text-white w-full">
-        <!-- Notifikasi / Toast Box -->
-        <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center space-x-3 border border-gold-500/30">
-            <i id="toast-icon" class="fa-solid fa-circle-check text-gold-500 text-xl"></i>
-            <div>
-                <h4 id="toast-title" class="font-semibold text-sm">Berhasil!</h4>
-                <p id="toast-desc" class="text-xs text-slate-300">Aksi berhasil dilakukan.</p>
-            </div>
-        </div>
-
-        <!-- Floating WhatsApp Button (Terhubung ke 6289503846562) -->
-        <a href="https://wa.me/6289503846562?text=Halo%20UndanganDigital.id,%20saya%20tertarik%20untuk%20membuat%20undangan%20digital." target="_blank" class="fixed bottom-6 left-6 z-40 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110 focus:outline-none animate-bounce" aria-label="WhatsApp Chat">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <!-- 1. Halaman Beranda (Hero Section) -->
-        <section id="beranda" class="relative overflow-hidden bg-gradient-to-b from-gold-50/50 via-white to-white py-20 lg:py-32">
-            <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-gold-100/50 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-rose-100/30 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div class="inline-flex items-center space-x-2 bg-gold-100/80 text-gold-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <span>Platform Undangan Digital #1 di Indonesia</span>
-                        </div>
-                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                            Wujudkan Undangan Pernikahan Impian Anda yang <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-roseGold-500">Mewah & Eksklusif</span>[cite: 4]
-                        </h1>
-                        <p class="text-slate-600 text-lg sm:text-xl font-normal max-w-2xl mx-auto lg:mx-0">
-                            Bagikan momen bahagia Anda dengan gaya modern. Dilengkapi musik latar romantis, RSVP interaktif, hitung mundur, dan peta lokasi presisi[cite: 4].
-                        </p>
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
-                            <a href="#order" class="w-full sm:w-auto bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl shadow-gold-500/25 transition transform hover:-translate-y-1 text-center">
-                                <i class="fa-solid fa-paper-plane mr-2"></i> Buat Undangan Sekarang
-                            </a>
-                            <a href="#portofolio" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-800 font-semibold px-8 py-4 rounded-2xl border border-slate-200 shadow-sm transition text-center">
-                                <i class="fa-solid fa-eye mr-2 text-gold-600"></i> Lihat Contoh Demo
-                            </a>
-                        </div>
-                        <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
-                            <div>
-                                <p class="font-serif text-2xl lg:text-3xl font-bold text-slate-900">2.500+</p>
-                                <p class="text-xs text-slate-500 font-medium">Acara Sukses</p>
-                            </div>
-                            <div>
-                                <p class="font-serif text-2xl lg:text-3xl font-bold text-slate-900">99.8%</p>
-                                <p class="text-xs text-slate-500 font-medium">Klien Puas</p>
-                            </div>
-                            <div>
-                                <p class="font-serif text-2xl lg:text-3xl font-bold text-slate-900">24 Jam</p>
-                                <p class="text-xs text-slate-500 font-medium">Pengerjaan Cepat</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative w-[280px] sm:w-[320px] h-[580px] sm:h-[640px] bg-slate-900 rounded-[45px] p-4 shadow-2xl ring-8 ring-gold-500/20 border-4 border-slate-800">
-                            <div class="absolute top-7 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-slate-950 rounded-full z-20"></div>
-                            <div class="w-full h-full bg-slate-50 rounded-[35px] overflow-hidden relative flex flex-col justify-between p-6 text-center shadow-inner">
-                                <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600')"></div>
-                                <div class="relative z-10 pt-8">
-                                    <span class="text-[10px] tracking-widest uppercase text-gold-600 font-bold">The Wedding Of[cite: 4]</span>
-                                    <h3 class="font-serif text-2xl font-bold text-slate-900 mt-1">Rizky & Amanda[cite: 4]</h3>
-                                    <p class="text-xs text-slate-500 mt-0.5">Minggu, 25 Desember 2026[cite: 4]</p>
-                                </div>
-                                <div class="relative z-10 my-auto bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-md border border-gold-200">
-                                    <div class="w-16 h-16 mx-auto rounded-full bg-gold-100 flex items-center justify-center text-gold-600 mb-2">
-                                        <i class="fa-solid fa-heart text-2xl animate-pulse"></i>
-                                    </div>
-                                    <p class="text-xs text-slate-600 font-medium italic">"Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir..."[cite: 4]</p>
-                                </div>
-                                <div class="relative z-10 pb-2">
-                                    <div class="bg-gradient-to-r from-gold-600 to-gold-500 text-white py-2.5 px-4 rounded-xl text-xs font-semibold shadow-md">
-                                        Buka Undangan[cite: 4]
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Fitur Keunggulan Section -->
-        <section id="keunggulan" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Keunggulan Kami[cite: 4]</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Mengapa Memilih UndanganDigital.id?[cite: 4]</h2>
-                    <p class="text-slate-600 mt-3">Kami memberikan kombinasi desain estetik tinggi dengan teknologi mutakhir demi kenyamanan tamu undangan Anda[cite: 4].</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-gold-500/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-600 group-hover:text-white transition"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Desain Responsif & Cepat[cite: 4]</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Tampil sempurna di semua perangkat smartphone, tablet, maupun komputer dengan kecepatan akses tinggi[cite: 4].</p>
-                    </div>
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-gold-500/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-600 group-hover:text-white transition"><i class="fa-solid fa-music"></i></div>
-                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Musik Latar Romantis[cite: 4]</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Dilengkapi pemutar musik otomatis dengan pilihan lagu instrumen romantis pilihan atau lagu request Anda[cite: 4].</p>
-                    </div>
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-gold-500/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-600 group-hover:text-white transition"><i class="fa-solid fa-envelope-open-text"></i></div>
-                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">RSVP & Buku Tamu Digital[cite: 4]</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Tamu dapat mengonfirmasi kehadiran (Hadir/Tidak) dan menuliskan ucapan selamat secara real-time[cite: 4].</p>
-                    </div>
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-gold-500/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-600 group-hover:text-white transition"><i class="fa-solid fa-map-location-dot"></i></div>
-                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Integrasi Google Maps[cite: 4]</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Memudahkan tamu undangan menuju lokasi acara secara akurat hanya dengan satu sentuhan navigasi[cite: 4].</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. Katalog / Pilihan Paket Harga -->
-        <section id="paket" class="py-20 bg-slate-100/70">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Pilihan Paket Harga[cite: 4]</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Investasi Terbaik untuk Hari Bahagia[cite: 4]</h2>
-                    <p class="text-slate-600 mt-3">Pilih paket undangan digital sesuai kebutuhan dan anggaran Anda. Transparan tanpa biaya tersembunyi[cite: 4].</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-                    <div class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between hover:shadow-xl transition">
-                        <div>
-                            <div class="text-center pb-6 border-b border-slate-100">
-                                <h3 class="font-serif text-2xl font-bold text-slate-900">Paket Basic[cite: 4]</h3>
-                                <p class="text-slate-500 text-sm mt-1">Cocok untuk acara sederhana[cite: 4]</p>
-                                <div class="mt-4"><span class="text-3xl font-extrabold text-slate-900">Rp 99.000[cite: 4]</span><span class="text-slate-500 text-sm"> / selamanya[cite: 4]</span></div>
-                            </div>
-                        </div>
-                        <button onclick="selectPackage('Paket Basic', 99000)" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-2xl transition text-center">Pilih Paket Basic[cite: 4]</button>
-                    </div>
-                    <div class="bg-gradient-to-b from-slate-900 to-slate-800 text-white rounded-3xl p-8 shadow-2xl border-2 border-gold-500 flex flex-col justify-between relative transform lg:-translate-y-4">
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gold-600 to-gold-400 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md">Paling Populer[cite: 4]</div>
-                        <div>
-                            <div class="text-center pb-6 border-b border-slate-700">
-                                <h3 class="font-serif text-2xl font-bold text-gold-400">Paket Premium[cite: 4]</h3>
-                                <p class="text-slate-300 text-sm mt-1">Pilihan terbaik untuk pernikahan[cite: 4]</p>
-                                <div class="mt-4"><span class="text-4xl font-extrabold text-white">Rp 199.000[cite: 4]</span><span class="text-slate-400 text-sm"> / selamanya[cite: 4]</span></div>
-                            </div>
-                        </div>
-                        <button onclick="selectPackage('Paket Premium', 199000)" class="w-full bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-semibold py-3.5 rounded-2xl shadow-lg transition text-center">Pilih Paket Premium[cite: 4]</button>
-                    </div>
-                    <div class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between hover:shadow-xl transition">
-                        <div>
-                            <div class="text-center pb-6 border-b border-slate-100">
-                                <h3 class="font-serif text-2xl font-bold text-slate-900">Paket Eksklusif[cite: 4]</h3>
-                                <p class="text-slate-500 text-sm mt-1">Layanan VIP tanpa batas[cite: 4]</p>
-                                <div class="mt-4"><span class="text-3xl font-extrabold text-slate-900">Rp 349.000[cite: 4]</span><span class="text-slate-500 text-sm"> / selamanya[cite: 4]</span></div>
-                            </div>
-                        </div>
-                        <button onclick="selectPackage('Paket Eksklusif', 349000)" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-2xl transition text-center">Pilih Paket Eksklusif[cite: 4]</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portofolio Section -->
-        <section id="portofolio" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Portofolio Pilihan[cite: 4]</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Contoh Tema Undangan[cite: 4]</h2>
-                    <p class="text-slate-600 mt-3">Jelajahi berbagai pilihan tema menawan yang siap disesuaikan dengan konsep acara spesial Anda[cite: 4].</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="portfolio-item pernikahan bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-sm p-6">
-                        <h3 class="font-serif text-xl font-bold text-slate-900">Royal Gold Luxury[cite: 4]</h3>
-                        <p class="text-slate-500 text-sm mt-1">Desain klasik dengan sentuhan ornamen emas elegan[cite: 4].</p>
-                        <button onclick="openPreview('Royal Gold Luxury', 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600')" class="mt-4 bg-gold-100 text-gold-700 px-4 py-2 rounded-xl text-xs font-semibold">Preview[cite: 4]</button>
-                    </div>
-                    <div class="portfolio-item pernikahan bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-sm p-6">
-                        <h3 class="font-serif text-xl font-bold text-slate-900">Rustic Floral Garden[cite: 4]</h3>
-                        <p class="text-slate-500 text-sm mt-1">Nuansa alam dengan hiasan bunga dan warna pastel[cite: 4].</p>
-                        <button onclick="openPreview('Rustic Floral Garden', 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600')" class="mt-4 bg-gold-100 text-gold-700 px-4 py-2 rounded-xl text-xs font-semibold">Preview[cite: 4]</button>
-                    </div>
-                    <div class="portfolio-item pernikahan bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-sm p-6">
-                        <h3 class="font-serif text-xl font-bold text-slate-900">Minimalist Monotone[cite: 4]</h3>
-                        <p class="text-slate-500 text-sm mt-1">Clean, rapi, dan estetis dengan gaya tipografi modern[cite: 4].</p>
-                        <button onclick="openPreview('Minimalist Monotone', 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600')" class="mt-4 bg-gold-100 text-gold-700 px-4 py-2 rounded-xl text-xs font-semibold">Preview[cite: 4]</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Order Form Section (Terintegrasi Sugeng Undangan Manager & WhatsApp 6289503846562) -->
-        <section id="order" class="py-20 bg-gradient-to-b from-slate-100/70 to-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Formulir Pesanan[cite: 4]</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Mulai Buat Undangan Anda[cite: 4]</h2>
-                    <p class="text-slate-600 mt-3">Lengkapi data di bawah ini untuk memproses undangan dan menyimpannya langsung ke database Sugeng Undangan Manager[cite: 4].</p>
-                </div>
-                <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200">
-                    <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Nama Pria / Utama[cite: 4]</label>
-                                <input type="text" id="main-name-1" required placeholder="Rizky Pratama" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Nama Wanita / Pendamping[cite: 4]</label>
-                                <input type="text" id="main-name-2" required placeholder="Amanda Putri" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Pilihan Paket[cite: 4]</label>
-                            <select id="package-select" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                                <option value="Paket Basic" data-price="99000">Paket Basic (Rp 99.000)[cite: 4]</option>
-                                <option value="Paket Premium" data-price="199000" selected>Paket Premium (Rp 199.000)[cite: 4]</option>
-                                <option value="Paket Eksklusif" data-price="349000">Paket Eksklusif (Rp 349.000)[cite: 4]</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Nomor WhatsApp Aktif[cite: 4]</label>
-                            <input type="tel" id="orderer-wa" required placeholder="081234567890" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                        </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold py-4 rounded-2xl shadow-lg transition">
-                            <i class="fa-solid fa-cart-shopping mr-2"></i> Proses Pesanan & Simpan ke Sugeng Manager[cite: 4]
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Preview Modal -->
-        <div id="preview-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-            <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative">
-                <div class="bg-slate-900 text-white p-4 flex justify-between items-center">
-                    <h3 id="modal-title" class="font-serif font-bold text-lg">Preview Tema[cite: 4]</h3>
-                    <button onclick="closePreview()" class="text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <div class="p-6 text-center space-y-4">
-                    <div class="relative h-80 rounded-2xl overflow-hidden shadow-inner">
-                        <img id="modal-img" src="" alt="Theme Preview" class="w-full h-full object-cover">
-                    </div>
-                    <button onclick="closePreview()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-xl">Tutup[cite: 4]</button>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            function showToast(title, desc, isError = false) {
-                const toast = document.getElementById('toast');
-                document.getElementById('toast-title').innerText = title;
-                document.getElementById('toast-desc').innerText = desc;
-                toast.classList.remove('translate-y-32', 'opacity-0');
-                setTimeout(() => { toast.classList.add('translate-y-32', 'opacity-0'); }, 4000);
-            }
-            function openPreview(title, imgSrc) {
-                document.getElementById('modal-title').innerText = title;
-                document.getElementById('modal-img').src = imgSrc;
-                document.getElementById('preview-modal').classList.remove('hidden');
-            }
-            function closePreview() {
-                document.getElementById('preview-modal').classList.add('hidden');
-            }
-            function selectPackage(packageName, price) {
-                document.getElementById('package-select').value = packageName;
-                document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
-                showToast('Paket Dipilih', `Anda memilih ${packageName}[cite: 4].`);
-            }
-            function handleOrderSubmit(e) {
-                e.preventDefault();
-                const name1 = document.getElementById('main-name-1').value;
-                const name2 = document.getElementById('main-name-2').value;
-                const packageVal = document.getElementById('package-select').value;
-                const wa = document.getElementById('orderer-wa').value;
-                showToast('Pesanan Berhasil!', `Data ${name1} & ${name2}[cite: 4] tercatat. Mengalihkan ke WhatsApp...`);
-                setTimeout(() => {
-                    const message = `Halo Admin Sugeng Undangan Manager, saya ingin konfirmasi pesanan undangan atas nama ${name1} & ${name2}[cite: 4] dengan paket ${packageVal}[cite: 4]. No WA: ${wa}`;
-                    window.open(`https://wa.me/6289503846562?text=${encodeURIComponent(message)}`, '_blank');
-                }, 1500);
-            }
-        </script>
-    </div>
-<?php elseif (is_page('studio-kreator')) : ?>
-    <!-- ==================== HALAMAN STUDIO KREATOR ==================== -->
-    <section class="py-16 bg-gold-50/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="px-4 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase tracking-widest">CMS Dinamis sugengklinsman.my.id</span>
-                <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-3">Studio Kreator: Tulis Artikel & Upload Media</h1>
-            </div>
-        </div>
-    </section>
-
-<?php elseif (is_page('privacy-policy')) : ?>
-    <!-- ==================== HALAMAN PRIVACY POLICY ==================== -->
-    <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-obsidian mb-4">Privacy Policy</h1>
-        <p class="text-sm text-gray-700">Kebijakan privasi <strong>sugengklinsman.my.id</strong> melindungi seluruh data Anda.</p>
-    </section>
-
-<?php elseif (is_page('disclaimer')) : ?>
-    <!-- ==================== HALAMAN DISCLAIMER ==================== -->
-    <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-obsidian mb-4">Disclaimer</h1>
-        <p class="text-sm text-gray-700">Informasi di <strong>sugengklinsman.my.id</strong> disajikan untuk tujuan umum.</p>
-    </section>
-
-<?php elseif (is_page('contact-us')) : ?>
-    <!-- ==================== HALAMAN CONTACT US ==================== -->
-    <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-obsidian mb-4">Contact Us</h1>
-        <p class="text-sm text-gray-700">Hubungi kami melalui WhatsApp di 0895-0384-6562.</p>
-    </section>
-
-<?php elseif (is_single()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
-    <article class="py-16 max-w-4xl mx-auto px-4">
-        <h1 class="text-3xl font-bold mb-4"><?php the_title(); ?></h1>
-        <div class="prose"><?php the_content(); ?></div>
-    </article>
-    <?php endwhile; ?>
-
-<?php else : ?>
-    <!-- ==================== BERANDA UTAMA (FRONT PAGE) ==================== -->
-    <?php if (is_front_page()) : ?>
-    <div class="relative overflow-hidden bg-gradient-to-b from-gold-50/70 via-white to-white pt-16 pb-24 border-b border-gold-subtle">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gold-400/50 shadow-gold-sm">
-                        <span class="w-2 h-2 rounded-full bg-gold-500 animate-ping"></span>
-                        <span class="text-xs font-semibold uppercase tracking-widest text-gold-700">Official Portal • sugengklinsman.my.id</span>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-obsidian leading-[1.15]">
-                        Solusi Digital Presisi dengan Sentuhan <span class="text-gold-gradient italic">Kemewahan & Kualitas.</span>
-                    </h1>
-                    <p class="text-gray-600 text-lg leading-relaxed max-w-2xl">
-                        Bersama <strong>Sugeng Klinsman</strong>, tingkatkan kredibilitas bisnis dan personal branding Anda melalui layanan terpadu.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#kalkulator-harga" class="bg-gold-gradient text-white px-7 py-3.5 rounded-full font-semibold shadow-gold-md">Coba Kalkulator Harga</a>
-                        <a href="<?php echo site_url('/undangan-online'); ?>" class="bg-white text-obsidian border border-gold-400 px-7 py-3.5 rounded-full font-semibold">Lihat Undangan Online</a>
-                    </div>
-                </div>
-                <div class="lg:col-span-5">
-                    <div class="bg-white p-6 rounded-3xl border border-gold-400/40 shadow-gold-lg">
-                        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=900&q=80" alt="Sugeng Klinsman Studio" class="w-full h-72 object-cover rounded-2xl mb-5">
-                        <h3 class="text-xl font-bold text-obsidian">All-in-One Creative Agency</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
-
-    <!-- KALKULATOR HARGA INTERAKTIF -->
-    <section id="kalkulator-harga" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Kalkulator Transparan</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Pilih Layanan & Add-Ons Sesuai Kebutuhan</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-12 gap-8 items-start">
-            <div class="lg:col-span-7 space-y-6">
-                <div class="gold-card rounded-3xl p-6 sm:p-8">
-                    <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-layer-group text-gold-600 mr-2"></i> 1. Pilih Paket Layanan Utama</h3>
-                    <div class="space-y-3">
-                        <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                            <div class="flex items-center gap-3">
-                                <input type="radio" name="base_service" value="1500000" data-name="Website Landing Page / UMKM" checked onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                <span class="font-semibold text-obsidian text-sm sm:text-base">Website Landing Page / UMKM</span>
-                            </div>
-                            <span class="font-luxury font-bold text-gold-700">Rp 1.500.000</span>
-                        </label>
-                        <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                            <div class="flex items-center gap-3">
-                                <input type="radio" name="base_service" value="3200000" data-name="Website Company Profile WordPress" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                <span class="font-semibold text-obsidian text-sm sm:text-base">Website Company Profile / Portal (WordPress)</span>
-                            </div>
-                            <span class="font-luxury font-bold text-gold-700">Rp 3.200.000</span>
-                        </label>
-                        <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                            <div class="flex items-center gap-3">
-                                <input type="radio" name="base_service" value="1250000" data-name="Paket Konten Artikel & SEO Bulanan" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                <span class="font-semibold text-obsidian text-sm sm:text-base">Paket Konten Artikel SEO & Sosmed (Bulanan)</span>
-                            </div>
-                            <span class="font-luxury font-bold text-gold-700">Rp 1.250.000</span>
-                        </label>
-                        <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                            <div class="flex items-center gap-3">
-                                <input type="radio" name="base_service" value="1750000" data-name="Paket Video & Photography Sesi" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                <span class="font-semibold text-obsidian text-sm sm:text-base">Paket Video & Photography (Sesi Liputan)</span>
-                            </div>
-                            <span class="font-luxury font-bold text-gold-700">Rp 1.750.000</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="gold-card rounded-3xl p-6 sm:p-8">
-                    <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-puzzle-piece text-gold-600 mr-2"></i> 2. Pilih Add-Ons Tambahan (Opsional)</h3>
-                    <div class="space-y-3">
-                        <label class="flex items-center justify-between p-3.5 rounded-xl border border-gray-200 hover:border-gold-400 cursor-pointer transition">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="350000" data-name="Tambahan 5 Artikel SEO" onchange="calculateTotal()" class="addon-checkbox accent-gold-600 w-4 h-4 rounded">
-                                <span class="text-sm font-medium text-gray-700">+ Tambahan 5 Artikel SEO Mendalam</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gold-700">+ Rp 350.000</span>
-                        </label>
-                        <label class="flex items-center justify-between p-3.5 rounded-xl border border-gray-200 hover:border-gold-400 cursor-pointer transition">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="500000" data-name="Ekstra 10 Desain Feed Instagram" onchange="calculateTotal()" class="addon-checkbox accent-gold-600 w-4 h-4 rounded">
-                                <span class="text-sm font-medium text-gray-700">+ Ekstra 10 Desain Feed & Story Instagram</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gold-700">+ Rp 500.000</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-5 lg:sticky lg:top-28">
-                <div class="bg-obsidian text-white rounded-3xl p-8 border-2 border-gold-400 shadow-xl space-y-6">
-                    <div>
-                        <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Estimasi Kalkulasi</span>
-                        <h3 class="text-2xl font-bold mt-1">Ringkasan Investasi</h3>
-                    </div>
-                    <div class="border-t border-gray-800 pt-4 space-y-3 text-sm text-gray-300">
-                        <div class="flex justify-between">
-                            <span id="summary-base-name">Website Landing Page / UMKM</span>
-                            <span id="summary-base-price" class="font-semibold text-white">Rp 1.500.000</span>
-                        </div>
-                        <div id="summary-addons-container" class="space-y-1.5 text-xs text-gold-300"></div>
-                    </div>
-                    <div class="border-t border-gray-800 pt-6">
-                        <span class="text-xs text-gray-400 block mb-1">Total Estimasi Biaya</span>
-                        <div id="total-price-display" class="text-3xl sm:text-4xl font-luxury font-bold text-gold-400">Rp 1.500.000</div>
-                    </div>
-                    <button onclick="checkoutWhatsApp()" class="w-full py-4 rounded-xl bg-gold-gradient text-white font-bold shadow-gold-md hover:opacity-95 transition flex items-center justify-center gap-2 text-base">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Pesan via WhatsApp Sekarang
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function calculateTotal() {
-            const baseRadio = document.querySelector('input[name="base_service"]:checked');
-            if (!baseRadio) return;
-            const basePrice = parseInt(baseRadio.value);
-            const baseName = baseRadio.getAttribute('data-name');
-
-            document.getElementById('summary-base-name').textContent = baseName;
-            document.getElementById('summary-base-price').textContent = formatRupiah(basePrice);
-
-            let addonsTotal = 0;
-            let addonsHtml = '';
-            const checkboxes = document.querySelectorAll('.addon-checkbox:checked');
-
-            checkboxes.forEach(cb => {
-                const price = parseInt(cb.value);
-                const name = cb.getAttribute('data-name');
-                addonsTotal += price;
-                addonsHtml += `<div class="flex justify-between"><span>+ ${name}</span><span class="text-white">+ ${formatRupiah(price)}</span></div>`;
-            });
-
-            document.getElementById('summary-addons-container').innerHTML = addonsHtml;
-            const grandTotal = basePrice + addonsTotal;
-            document.getElementById('total-price-display').textContent = formatRupiah(grandTotal);
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugeng Klinsman — Jasa Fotografi, Video & Artikel SEO Profesional</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --gold: #D4AF37;
+            --gold-light: #F9F6EE;
+            --gold-dark: #AA7C11;
+            --border-color: #E5E5E5;
+            --card-bg: #FAFAFA;
         }
 
-        function formatRupiah(number) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        function checkoutWhatsApp() {
-            const baseRadio = document.querySelector('input[name="base_service"]:checked');
-            const baseName = baseRadio.getAttribute('data-name');
-            const basePrice = parseInt(baseRadio.value);
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-            let text = `Halo Sugeng Klinsman, saya ingin memesan layanan dengan rincian kalkulator berikut:%0A%0A`;
-            text += `*Paket Utama:* ${baseName} (${formatRupiah(basePrice)})%0A`;
+        h1, h2, h3, .brand-title {
+            font-family: 'Playfair Display', serif;
+        }
 
-            const checkboxes = document.querySelectorAll('.addon-checkbox:checked');
-            if (checkboxes.length > 0) {
-                text += `%0A*Add-Ons Tambahan:*%0A`;
-                checkboxes.forEach(cb => {
-                    text += `- ${cb.getAttribute('data-name')} (${formatRupiah(parseInt(cb.value))})%0A`;
-                });
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        .cta-btn {
+            background-color: var(--gold);
+            color: #FFFFFF;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--gold-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 5% 6rem 5%;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--gold-light) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            max-width: 800px;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #FFFFFF;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 5%;
+            background-color: var(--bg-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--gold);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* About & Contact */
+        .contact {
+            padding: 5rem 5%;
+            background-color: var(--gold-light);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-main);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
             }
-
-            const grandTotal = basePrice + Array.from(checkboxes).reduce((sum, cb) => sum + parseInt(cb.value), 0);
-            text += `%0A*Total Estimasi Biaya:* *${formatRupiah(grandTotal)}*%0A%0AMohon informasi selanjutnya. Terima kasih!`;
-
-            window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
+            .hero h1 {
+                font-size: 2.2rem;
+            }
         }
+    </style>
+</head>
+<body>
 
-        document.addEventListener('DOMContentLoaded', calculateTotal);
-    </script>
+    <!-- Header / Navbar -->
+    <header>
+        <a href="#" class="logo">Sugeng<span>Klinsman</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/" target="_blank" class="cta-btn">Hubungi Kami</a>
+    </header>
 
-    <!-- ARTIKEL TERBARU DI FRONTPAGE -->
-    <div class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gold-subtle">
-        <div class="flex justify-between items-end mb-10">
-            <h2 class="text-3xl font-bold text-obsidian">Artikel & Wawasan Terbaru</h2>
-            <a href="<?php echo site_url('/studio-kreator'); ?>" class="text-sm font-semibold text-gold-700">+ Tulis Artikel Baru</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Solusi Kreatif Digital & <span>Visual Berkelas</span></h1>
+        <p>Meningkatkan nilai brand Anda melalui karya Fotografi profesional, Produksi Video sinematik, dan Artikel SEO yang mendatangkan traffic organik.</p>
+        <div class="hero-actions">
+            <a href="#services" class="cta-btn">Jelajahi Layanan</a>
+            <a href="#contact" class="btn-outline">Konsultasi Gratis</a>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <?php
-            $art_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 3));
-            if ($art_query->have_posts()) :
-                while ($art_query->have_posts()) : $art_query->the_post(); ?>
-                <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden bg-gold-50">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <img src="<?php the_post_thumbnail_url('medium_large'); ?>" class="w-full h-full object-cover">
-                            <?php else : ?>
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                            <?php endif; ?>
-                        </div>
-                        <div class="p-6">
-                            <span class="text-xs text-gold-600 font-bold uppercase"><?php echo get_the_date(); ?></span>
-                            <h3 class="text-lg font-bold text-obsidian mt-1 mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <p class="text-gray-600 text-sm"><?php echo wp_trim_words(get_the_excerpt(), 18); ?></p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <a href="<?php the_permalink(); ?>" class="text-xs font-bold uppercase tracking-wider text-gold-700">Baca Selengkapnya &rarr;</a>
-                    </div>
-                </article>
-            <?php endwhile; wp_reset_postdata(); endif; ?>
-        </div>
-    </div>
+    </section>
 
-    <!-- GALERI KARYA FOTO & VIDEO DI FRONTPAGE -->
-    <div class="py-16 bg-gold-50/40 border-t border-gold-subtle">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-obsidian mb-10">Galeri Karya Foto & Video</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <?php
-                $media_query = new WP_Query(array('post_type' => 'sk_media', 'posts_per_page' => 6));
-                if ($media_query->have_posts()) :
-                    while ($media_query->have_posts()) : $media_query->the_post();
-                        $m_type = get_post_meta(get_the_ID(), '_sk_media_type', true);
-                        $m_url  = get_post_meta(get_the_ID(), '_sk_media_url', true);
-                ?>
-                    <div class="gold-card rounded-2xl overflow-hidden">
-                        <div class="h-60 bg-obsidian">
-                            <?php if ($m_type === 'video' && $m_url) : ?>
-                                <video src="<?php echo esc_url($m_url); ?>" controls class="w-full h-full object-cover"></video>
-                            <?php elseif ($m_url) : ?>
-                                <img src="<?php echo esc_url($m_url); ?>" class="w-full h-full object-cover">
-                            <?php endif; ?>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-obsidian"><?php the_title(); ?></h4>
-                            <div class="text-xs text-gray-500 mt-1"><?php the_content(); ?></div>
-                        </div>
-                    </div>
-                <?php endwhile; wp_reset_postdata(); endif; ?>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Layanan Unggulan</h2>
+            <p>Dirancang presisi untuk kebutuhan personal branding maupun bisnis Anda</p>
+        </div>
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <i class="fa-solid fa-camera-retro"></i>
+                <h3>Jasa Fotografi</h3>
+                <p>Abadikan momen terbaik, produk komersial, event korporat, hingga portofolio dengan standar visual estetika tinggi beraksen elegan.</p>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-card">
+                <i class="fa-solid fa-video"></i>
+                <h3>Jasa Video</h3>
+                <p>Produksi video sinematik, video profil perusahaan, reels/TikTok komersial, dan dokumentasi event yang memikat audiens Anda.</p>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-card">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Jasa Artikel SEO</h3>
+                <p>Konten artikel berkualitas tinggi, teroptimasi kata kunci, ramah mesin pencari, dan efektif mendongkrak peringkat website Anda di Google.</p>
             </div>
         </div>
-    </div>
-<?php endif; ?>
+    </section>
 
-</main>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Siap Berkolaborasi?</h2>
+        <p>Diskusikan kebutuhan proyek digital dan kreatif Anda bersama kami sekarang.</p>
+        <a href="https://wa.me/" target="_blank" class="cta-btn"><i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp</a>
+    </section>
 
-<?php get_footer(); ?>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <span>Sugeng Klinsman</span>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
