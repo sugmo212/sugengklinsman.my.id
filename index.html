@@ -7,61 +7,10 @@
     <!-- Primary SEO Meta Tags -->
     <title>Sugeng Klinsman — Jasa Pembuatan Website, Artikel SEO & Fotografi Pontianak</title>
     <meta name="title" content="Sugeng Klinsman — Jasa Pembuatan Website, Artikel SEO & Fotografi Pontianak">
-    <meta name="description" content="Layanan profesional pembuatan website, jasa artikel SEO berkualitas, dan produksi foto/video kreatif di Pontianak, Kalimantan Barat. Solusi digital presisi untuk brand & UMKM Anda.">
-    <meta name="keywords" content="Jasa Pembuatan Website Pontianak, Jasa Artikel SEO Pontianak, Jasa Foto Video Pontianak, Web Developer Pontianak, Sugeng Klinsman">
+    <meta name="description" content="Layanan profesional pembuatan website, jasa artikel SEO berkualitas, dan produksi foto/video kreatif di Pontianak, Kalimantan Barat.">
+    <meta name="keywords" content="Jasa Pembuatan Website Pontianak, Jasa Artikel SEO Pontianak, Jasa Foto Video Pontianak, Sugeng Klinsman">
     <meta name="author" content="Sugeng Klinsman">
-    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sugengklinsman.my.id/">
-
-    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sugengklinsman.my.id/">
-    <meta property="og:title" content="Sugeng Klinsman — Jasa Pembuatan Website, Artikel SEO & Fotografi Pontianak">
-    <meta property="og:description" content="Layanan profesional pembuatan website, jasa artikel SEO, dan produksi visual berkelas di Pontianak, Kalimantan Barat.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=80">
-
-    <!-- Schema.org LocalBusiness Structured Data untuk GEO SEO Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Sugeng Klinsman - Jasa Digital Kreatif",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-      "@id": "https://sugengklinsman.my.id/#business",
-      "url": "https://sugengklinsman.my.id/",
-      "telephone": "+6289503846562",
-      "priceRange": "Rp99.000 - Rp5.000.000",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pontianak",
-        "addressRegion": "Kalimantan Barat",
-        "addressCountry": "ID"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -0.0263,
-        "longitude": 109.3425
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "08:00",
-        "closes": "21:00"
-      },
-      "sameAs": [
-        "https://sugengklinsman.my.id"
-      ],
-      "description": "Jasa pembuatan website, penulis artikel SEO profesional, dan layanan fotografi/videografi terpercaya di Pontianak."
-    }
-    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -85,9 +34,7 @@
                             600: '#AA7C11',
                             700: '#8A630E',
                         },
-                        roseGold: {
-                            500: '#B76E79'
-                        }
+                        roseGold: { 500: '#B76E79' }
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
@@ -104,24 +51,10 @@
         }
     </script>
     <style>
-        .bg-gold-gradient {
-            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
-        }
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
-        }
-        .gold-card:hover {
-            border-color: #D4AF37;
-            box-shadow: 0 10px 30px -4px rgba(212, 175, 55, 0.15);
-            transform: translateY(-3px);
-        }
+        .bg-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); }
+        .text-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-card { background: #FFFFFF; border: 1px solid rgba(212, 175, 55, 0.3); transition: all 0.3s ease; }
+        .gold-card:hover { border-color: #D4AF37; box-shadow: 0 10px 30px -4px rgba(212, 175, 55, 0.15); transform: translateY(-3px); }
     </style>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-gold-400 selection:text-white">
@@ -146,13 +79,13 @@
             <a href="#beranda" onclick="switchPage('beranda')" class="font-luxury font-bold text-2xl text-obsidian tracking-wide">
                 Sugeng<span class="text-gold-600">Klinsman</span>
             </a>
-            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+            <nav class="hidden md:flex items-center space-x-6 font-medium text-sm">
                 <button onclick="switchPage('beranda')" class="nav-link text-gold-600 font-semibold transition hover:text-gold-600">Beranda</button>
                 <button onclick="switchPage('tentang')" class="nav-link text-slate-600 transition hover:text-gold-600">Tentang Kami</button>
                 <button onclick="switchPage('layanan')" class="nav-link text-slate-600 transition hover:text-gold-600">Layanan</button>
                 <button onclick="switchPage('harga')" class="nav-link text-slate-600 transition hover:text-gold-600">Daftar Harga</button>
                 <button onclick="switchPage('undangan')" class="nav-link text-slate-600 transition hover:text-gold-600">Undangan Online</button>
-                <button onclick="switchPage('kontak')" class="nav-link text-slate-600 transition hover:text-gold-600">Kontak</button>
+                <button onclick="switchPage('studio')" class="nav-link text-gold-700 font-bold transition hover:text-gold-600 flex items-center gap-1.5"><i class="fa-solid fa-pen-nib"></i> Studio Kreator</button>
             </nav>
             <div class="flex items-center space-x-4">
                 <a href="https://wa.me/6289503846562?text=Halo%20Sugeng,%20saya%20ingin%20konsultasi%20proyek." target="_blank" class="hidden sm:inline-flex bg-gold-gradient text-white px-5 py-2.5 rounded-full font-semibold text-xs shadow-gold-sm transition hover:opacity-95">
@@ -170,7 +103,7 @@
             <button onclick="switchPage('layanan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Layanan</button>
             <button onclick="switchPage('harga'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Daftar Harga</button>
             <button onclick="switchPage('undangan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Undangan Online</button>
-            <button onclick="switchPage('kontak'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Kontak</button>
+            <button onclick="switchPage('studio'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-gold-700 font-bold">Studio Kreator</button>
         </div>
     </header>
 
@@ -194,7 +127,7 @@
                             </p>
                             <div class="flex flex-wrap gap-4 pt-2">
                                 <a href="#kalkulator-harga-section" class="bg-gold-gradient text-white px-7 py-3.5 rounded-full font-semibold shadow-gold-md hover:opacity-95 transition">Coba Kalkulator Harga</a>
-                                <button onclick="switchPage('undangan')" class="bg-white text-obsidian border border-gold-400 px-7 py-3.5 rounded-full font-semibold hover:bg-gold-50 transition">Lihat Undangan Online</button>
+                                <button onclick="switchPage('studio')" class="bg-white text-gold-700 border border-gold-400 px-7 py-3.5 rounded-full font-semibold hover:bg-gold-50 transition">Buka Studio Kreator</button>
                             </div>
                         </div>
                         <div class="lg:col-span-5">
@@ -208,91 +141,116 @@
                 </div>
             </div>
 
-            <!-- KALKULATOR HARGA INTERAKTIF -->
-            <section id="kalkulator-harga-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Kalkulator Transparan</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Pilih Layanan & Add-Ons Sesuai Kebutuhan</h2>
+            <!-- TAMPILAN ARTIKEL TERBARU DARI STUDIO KREATOR -->
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Wawasan & Publikasi</span>
+                        <h2 class="text-3xl font-bold text-obsidian mt-1">Artikel Terbaru</h2>
+                    </div>
+                    <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Tulis Artikel Baru</button>
+                </div>
+                <div id="frontpage-articles-grid" class="grid md:grid-cols-3 gap-8">
+                    <!-- Artikel statis default -->
+                    <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
+                        <div>
+                            <span class="text-xs text-gold-600 font-bold uppercase">24 Oktober 2026</span>
+                            <h3 class="text-lg font-bold text-obsidian mt-2 mb-2">Strategi SEO Lokal untuk UMKM di Pontianak</h3>
+                            <p class="text-gray-600 text-sm">Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Sugeng Klinsman</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- TAMPILAN GALERI FOTO & VIDEO BERDASARKAN TEMA (MAKSIMAL 5 PER TEMA) -->
+            <section class="py-16 bg-gold-50/40 border-t border-gold-200/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-end mb-10">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Portofolio Karya</span>
+                            <h2 class="text-3xl font-bold text-obsidian mt-1">Galeri Tema Foto & Video</h2>
+                        </div>
+                        <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Upload Media Baru</button>
+                    </div>
+                    <div id="frontpage-media-container" class="space-y-12">
+                        <!-- Konten galeri berdasarkan tema akan dirender otomatis di sini -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN STUDIO KREATOR (TULIS ARTIKEL & UPLOAD MEDIA) ==================== -->
+        <div id="page-studio" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="px-4 py-1.5 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase tracking-widest">Dashboard CMS sugengklinsman.my.id</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-3">Studio Kreator & Manajemen Konten</h1>
+                    <p class="text-gray-600 mt-2 text-sm">Kelola artikel SEO dan upload foto/video dengan batasan maksimal 5 file per tema.</p>
                 </div>
 
-                <div class="grid lg:grid-cols-12 gap-8 items-start">
-                    <div class="lg:col-span-7 space-y-6">
-                        <div class="gold-card rounded-3xl p-6 sm:p-8">
-                            <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-layer-group text-gold-600 mr-2"></i> 1. Pilih Paket Layanan Utama</h3>
-                            <div class="space-y-3">
-                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                                    <div class="flex items-center gap-3">
-                                        <input type="radio" name="base_service" value="1500000" data-name="Website Landing Page / UMKM" checked onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Website Landing Page / UMKM</span>
-                                    </div>
-                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 1.500.000</span>
-                                </label>
-                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                                    <div class="flex items-center gap-3">
-                                        <input type="radio" name="base_service" value="3200000" data-name="Website Company Profile WordPress" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Website Company Profile / Portal (WordPress)</span>
-                                    </div>
-                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 3.200.000</span>
-                                </label>
-                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                                    <div class="flex items-center gap-3">
-                                        <input type="radio" name="base_service" value="1250000" data-name="Paket Konten Artikel & SEO Bulanan" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Paket Konten Artikel SEO & Sosmed (Bulanan)</span>
-                                    </div>
-                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 1.250.000</span>
-                                </label>
-                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
-                                    <div class="flex items-center gap-3">
-                                        <input type="radio" name="base_service" value="1750000" data-name="Paket Video & Photography Sesi" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
-                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Paket Video & Photography (Sesi Liputan)</span>
-                                    </div>
-                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 1.750.000</span>
-                                </label>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Form 1: Tulis Artikel -->
+                    <div class="gold-card rounded-3xl p-8 shadow-sm">
+                        <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel Baru
+                        </h3>
+                        <form onsubmit="handleArticleSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Judul Artikel</label>
+                                <input type="text" id="art-title" required placeholder="Contoh: Tips Jitu Optimasi Website" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
-                        </div>
-
-                        <div class="gold-card rounded-3xl p-6 sm:p-8">
-                            <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-puzzle-piece text-gold-600 mr-2"></i> 2. Pilih Add-Ons Tambahan (Opsional)</h3>
-                            <div class="space-y-3">
-                                <label class="flex items-center justify-between p-3.5 rounded-xl border border-gray-200 hover:border-gold-400 cursor-pointer transition">
-                                    <div class="flex items-center gap-3">
-                                        <input type="checkbox" value="350000" data-name="Tambahan 5 Artikel SEO" onchange="calculateTotal()" class="addon-checkbox accent-gold-600 w-4 h-4 rounded">
-                                        <span class="text-sm font-medium text-gray-700">+ Tambahan 5 Artikel SEO Mendalam</span>
-                                    </div>
-                                    <span class="text-sm font-semibold text-gold-700">+ Rp 350.000</span>
-                                </label>
-                                <label class="flex items-center justify-between p-3.5 rounded-xl border border-gray-200 hover:border-gold-400 cursor-pointer transition">
-                                    <div class="flex items-center gap-3">
-                                        <input type="checkbox" value="500000" data-name="Ekstra 10 Desain Feed Instagram" onchange="calculateTotal()" class="addon-checkbox accent-gold-600 w-4 h-4 rounded">
-                                        <span class="text-sm font-medium text-gray-700">+ Ekstra 10 Desain Feed & Story Instagram</span>
-                                    </div>
-                                    <span class="text-sm font-semibold text-gold-700">+ Rp 500.000</span>
-                                </label>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Kategori / Topik</label>
+                                <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
-                        </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Isi / Ringkasan Artikel</label>
+                                <textarea id="art-content" rows="4" required placeholder="Tulis ringkasan atau isi artikel di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
+                                Publikasikan Artikel
+                            </button>
+                        </form>
                     </div>
 
-                    <div class="lg:col-span-5 lg:sticky lg:top-28">
-                        <div class="bg-obsidian text-white rounded-3xl p-8 border-2 border-gold-400 shadow-xl space-y-6">
+                    <!-- Form 2: Upload Foto atau Video dengan Tema & Batasan 5 -->
+                    <div class="gold-card rounded-3xl p-8 shadow-sm">
+                        <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema
+                        </h3>
+                        <form onsubmit="handleMediaSubmit(event)" class="space-y-4">
                             <div>
-                                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Estimasi Kalkulasi</span>
-                                <h3 class="text-2xl font-bold mt-1">Ringkasan Investasi</h3>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Judul Karya / Media</label>
+                                <input type="text" id="media-title" required placeholder="Contoh: Touring XSR di Kubu Raya" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
-                            <div class="border-t border-gray-800 pt-4 space-y-3 text-sm text-gray-300">
-                                <div class="flex justify-between">
-                                    <span id="summary-base-name">Website Landing Page / UMKM</span>
-                                    <span id="summary-base-price" class="font-semibold text-white">Rp 1.500.000</span>
-                                </div>
-                                <div id="summary-addons-container" class="space-y-1.5 text-xs text-gold-300"></div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Pilih Tema / Album</label>
+                                <select id="media-theme" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                                    <option value="Touring XSR & Motor">Touring XSR & Motor</option>
+                                    <option value="Portofolio Web Development">Portofolio Web Development</option>
+                                    <option value="Dokumentasi Wedding & Event">Dokumentasi Wedding & Event</option>
+                                    <option value="Kopi & Lifestyle Pontianak">Kopi & Lifestyle Pontianak</option>
+                                </select>
+                                <p class="text-xs text-gray-500 mt-1">*Setiap tema dibatasi maksimal 5 foto/video.</p>
                             </div>
-                            <div class="border-t border-gray-800 pt-6">
-                                <span class="text-xs text-gray-400 block mb-1">Total Estimasi Biaya</span>
-                                <div id="total-price-display" class="text-3xl sm:text-4xl font-luxury font-bold text-gold-400">Rp 1.500.000</div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Tipe Media</label>
+                                <select id="media-type" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                                    <option value="image">Foto (Image URL)</option>
+                                    <option value="video">Video (Video URL)</option>
+                                </select>
                             </div>
-                            <button onclick="checkoutWhatsApp()" class="w-full py-4 rounded-xl bg-gold-gradient text-white font-bold shadow-gold-md hover:opacity-95 transition flex items-center justify-center gap-2 text-base">
-                                <i class="fa-brands fa-whatsapp text-xl"></i> Pesan via WhatsApp Sekarang
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">URL File Media (Unsplash / Cloudinary / MP4 URL)</label>
+                                <input type="url" id="media-url" required placeholder="https://images.unsplash.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                            </div>
+                            <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
+                                Upload ke Tema Terkait
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -307,7 +265,7 @@
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman Pontianak" class="w-full h-96 object-cover rounded-2xl">
                             <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
                                 <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
-                                <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator Pontianak</p>
+                                <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
                             </div>
                         </div>
                     </div>
@@ -317,14 +275,14 @@
                             Menggabungkan Keahlian Teknologi, Jurnalisme Digital, dan Seni Visual di Pontianak.
                         </h1>
                         <p class="text-gray-600 leading-relaxed">
-                            <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu di Pontianak yang mengutamakan presisi, estetika, dan dampak nyata bagi perkembangan brand lokal Anda.
+                            <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu di Pontianak yang mengutamakan presisi, estetika, dan dampak nyata.
                         </p>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- ==================== HALAMAN LAYANAN & JASA ==================== -->
+        <!-- ==================== HALAMAN LAYANAN ==================== -->
         <div id="page-layanan" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -336,7 +294,7 @@
                         <div class="lg:col-span-4"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" class="w-full h-60 object-cover rounded-2xl"></div>
                         <div class="lg:col-span-8 space-y-3">
                             <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase">01 • Web Engineering</span>
-                            <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional di Pontianak</h3>
+                            <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional</h3>
                             <p class="text-gray-600">Pembangunan Landing Page UMKM, Company Profile, Portal Berita/Media Online, serta Custom Theme WordPress.</p>
                         </div>
                     </div>
@@ -344,106 +302,51 @@
             </section>
         </div>
 
-        <!-- ==================== HALAMAN DAFTAR HARGA & FASILITAS LENGKAP ==================== -->
+        <!-- ==================== HALAMAN DAFTAR HARGA ==================== -->
         <div id="page-harga" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Investasi Transparan</span>
                     <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Daftar Paket & Rincian Fasilitas Layanan</h1>
-                    <p class="text-gray-600 mt-2 text-sm">Pilih solusi terbaik untuk meningkatkan performa digital dan branding Anda di Pontianak.</p>
                 </div>
 
                 <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-                    <!-- Paket 1: Landing Page / UMKM -->
                     <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Web Development</span>
                             <h3 class="text-2xl font-bold text-obsidian mt-1">Landing Page / UMKM</h3>
                             <p class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700 my-6">Mulai Rp 1.500.000</p>
-                            
                             <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Website 1 Halaman (Landing Page) Profesional & Responsif</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Integrasi tombol Call-to-Action (CTA) langsung ke WhatsApp</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Struktur SEO On-Page dasar untuk optimasi Google</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Domain gratis sesuai paket Hosting yang dipilih, serta keamanan SSL (HTTPS)</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Panduan singkat cara kelola atau update konten website</span>
-                                </li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Website Landing Page Profesional & Responsif</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Domain gratis sesuai paket & SSL (HTTPS) aman</span></li>
                             </ul>
                         </div>
-                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Website%20Landing%20Page" target="_blank" rel="noopener noreferrer" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm hover:opacity-95 transition">Pesan Paket Website</a>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Website" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Website</a>
                     </div>
-
-                    <!-- Paket 2: Paket Konten & SEO -->
                     <div class="gold-card rounded-3xl p-8 flex flex-col justify-between border-2 border-gold-400 relative shadow-gold-md">
-                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gold-gradient text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow">Paling Diminati</div>
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gold-gradient text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full">Paling Diminati</div>
                         <div>
                             <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Content & Social Media</span>
                             <h3 class="text-2xl font-bold text-obsidian mt-1">Paket Konten & SEO</h3>
                             <p class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700 my-6">Mulai Rp 1.250.000</p>
-                            
                             <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Pembuatan artikel SEO berkualitas tinggi & mendalam</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Riset kata kunci (Keyword Research) tertarget audiens</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Optimasi Meta Title & Description untuk daya tarik klik Google</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Penyusunan strategi konten pendukung media sosial brand</span>
-                                </li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Pembuatan artikel SEO berkualitas tinggi</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Riset kata kunci (Keyword Research) tertarget</span></li>
                             </ul>
                         </div>
-                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Konten%20dan%20SEO" target="_blank" rel="noopener noreferrer" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm hover:opacity-95 transition">Pesan Paket Konten</a>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Konten" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Konten</a>
                     </div>
-
-                    <!-- Paket 3: Foto & Video Kreatif -->
                     <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Visual Production</span>
                             <h3 class="text-2xl font-bold text-obsidian mt-1">Foto & Video Kreatif</h3>
                             <p class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700 my-6">Mulai Rp 1.750.000</p>
-                            
                             <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Sesi liputan foto & video profesional (Komersial / Event)</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Editing & Color Grading estetik khas visual berkelas</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Format video siap upload untuk Reels, TikTok, & Website</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
-                                    <span>Penyerahan master file resolusi tinggi untuk promosi</span>
-                                </li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Sesi liputan foto & video profesional</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Editing & Color Grading estetik</span></li>
                             </ul>
                         </div>
-                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Paket%20Foto%20dan%20Video" target="_blank" rel="noopener noreferrer" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm hover:opacity-95 transition">Pesan Paket Visual</a>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Visual" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Visual</a>
                     </div>
                 </div>
             </section>
@@ -456,77 +359,6 @@
                     <div class="text-center max-w-3xl mx-auto mb-12">
                         <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Platform Undangan Digital #1</span>
                         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Wujudkan Undangan Pernikahan Impian Anda</h2>
-                        <p class="text-slate-600 mt-3">Mewah, eksklusif, dilengkapi musik latar romantis, RSVP interaktif, dan peta lokasi presisi.</p>
-                    </div>
-
-                    <!-- Pilihan Paket Undangan -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                        <div class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between">
-                            <div>
-                                <div class="text-center pb-6 border-b border-slate-100">
-                                    <h3 class="font-serif text-2xl font-bold text-slate-900">Paket Basic</h3>
-                                    <p class="text-slate-500 text-sm mt-1">Cocok untuk acara sederhana</p>
-                                    <div class="mt-4"><span class="text-3xl font-extrabold text-slate-900">Mulai Rp 99.000</span></div>
-                                </div>
-                            </div>
-                            <button onclick="selectPackage('Paket Basic', 99000)" class="mt-6 w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-2xl transition text-center">Pilih Paket Basic</button>
-                        </div>
-                        <div class="bg-gradient-to-b from-slate-900 to-slate-800 text-white rounded-3xl p-8 shadow-2xl border-2 border-gold-400 flex flex-col justify-between relative">
-                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gold-600 to-gold-400 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md">Paling Populer</div>
-                            <div>
-                                <div class="text-center pb-6 border-b border-slate-700">
-                                    <h3 class="font-serif text-2xl font-bold text-gold-400">Paket Premium</h3>
-                                    <p class="text-slate-300 text-sm mt-1">Pilihan terbaik untuk pernikahan</p>
-                                    <div class="mt-4"><span class="text-4xl font-extrabold text-white">Mulai Rp 199.000</span></div>
-                                </div>
-                            </div>
-                            <button onclick="selectPackage('Paket Premium', 199000)" class="mt-6 w-full bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 text-white font-semibold py-3.5 rounded-2xl shadow-lg transition text-center">Pilih Paket Premium</button>
-                        </div>
-                        <div class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between">
-                            <div>
-                                <div class="text-center pb-6 border-b border-slate-100">
-                                    <h3 class="font-serif text-2xl font-bold text-slate-900">Paket Eksklusif</h3>
-                                    <p class="text-slate-500 text-sm mt-1">Layanan VIP tanpa batas</p>
-                                    <div class="mt-4"><span class="text-3xl font-extrabold text-slate-900">Mulai Rp 349.000</span></div>
-                                </div>
-                            </div>
-                            <button onclick="selectPackage('Paket Eksklusif', 349000)" class="mt-6 w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-2xl transition text-center">Pilih Paket Eksklusif</button>
-                        </div>
-                    </div>
-
-                    <!-- Formulir Pesanan Undangan -->
-                    <div id="order-undangan-form" class="max-w-3xl mx-auto bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200">
-                        <div class="text-center mb-8">
-                            <h3 class="font-serif text-2xl font-bold text-slate-900">Formulir Pesanan Undangan Digital</h3>
-                            <p class="text-slate-600 text-sm mt-1">Isi data di bawah untuk terhubung langsung ke WhatsApp Sugeng Klinsman.</p>
-                        </div>
-                        <form onsubmit="handleOrderSubmit(event)" class="space-y-6">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-2">Nama Pria / Utama</label>
-                                    <input type="text" id="main-name-1" required placeholder="Rizky Pratama" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-2">Nama Wanita / Pendamping</label>
-                                    <input type="text" id="main-name-2" required placeholder="Amanda Putri" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Pilihan Paket</label>
-                                <select id="package-select" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                                    <option value="Paket Basic" data-price="99000">Paket Basic (Mulai Rp 99.000)</option>
-                                    <option value="Paket Premium" data-price="199000" selected>Paket Premium (Mulai Rp 199.000)</option>
-                                    <option value="Paket Eksklusif" data-price="349000">Paket Eksklusif (Mulai Rp 349.000)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Nomor WhatsApp Aktif</label>
-                                <input type="tel" id="orderer-wa" required placeholder="081234567890" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                            </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold py-4 rounded-2xl shadow-lg transition hover:opacity-95">
-                                <i class="fa-solid fa-cart-shopping mr-2"></i> Kirim Pesanan via WhatsApp
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -536,7 +368,7 @@
         <div id="page-kontak" class="page-section hidden">
             <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
                 <h1 class="text-3xl font-bold text-obsidian">Hubungi Kami</h1>
-                <p class="text-gray-700">Hubungi langsung via WhatsApp di <a href="https://wa.me/6289503846562" class="text-gold-600 font-bold">0895-0384-6562</a> atau email ke admin@sugengklinsman.my.id.</p>
+                <p class="text-gray-700">Hubungi langsung via WhatsApp di <a href="https://wa.me/6289503846562" class="text-gold-600 font-bold">0895-0384-6562</a>.</p>
             </section>
         </div>
 
@@ -547,7 +379,7 @@
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
     </footer>
 
-    <!-- JavaScript Navigasi & Kalkulator -->
+    <!-- JavaScript CMS Lokal & Render Dinamis -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -571,78 +403,121 @@
             setTimeout(() => { toast.classList.add('translate-y-32', 'opacity-0'); }, 4000);
         }
 
-        function calculateTotal() {
-            const baseRadio = document.querySelector('input[name="base_service"]:checked');
-            if (!baseRadio) return;
-            const basePrice = parseInt(baseRadio.value);
-            const baseName = baseRadio.getAttribute('data-name');
-
-            document.getElementById('summary-base-name').textContent = baseName;
-            document.getElementById('summary-base-price').textContent = formatRupiah(basePrice);
-
-            let addonsTotal = 0;
-            let addonsHtml = '';
-            const checkboxes = document.querySelectorAll('.addon-checkbox:checked');
-
-            checkboxes.forEach(cb => {
-                const price = parseInt(cb.value);
-                const name = cb.getAttribute('data-name');
-                addonsTotal += price;
-                addonsHtml += `<div class="flex justify-between"><span>+ ${name}</span><span class="text-white">+ ${formatRupiah(price)}</span></div>`;
-            });
-
-            document.getElementById('summary-addons-container').innerHTML = addonsHtml;
-            const grandTotal = basePrice + addonsTotal;
-            document.getElementById('total-price-display').textContent = formatRupiah(grandTotal);
+        // --- MANAJEMEN ARTIKEL & MEDIA DENGAN LOCALSTORAGE ---
+        function getArticles() {
+            const data = localStorage.getItem('sk_articles');
+            return data ? JSON.parse(data) : [
+                { title: 'Strategi SEO Lokal untuk UMKM di Pontianak', category: 'SEO & Web Dev', content: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.', date: '24 Oktober 2026' }
+            ];
         }
 
-        function formatRupiah(number) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+        function getMedia() {
+            const data = localStorage.getItem('sk_media');
+            return data ? JSON.parse(data) : [
+                { title: 'Touring XSR Santai di Waterfront', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80' },
+                { title: 'Custom Bike Showcase', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80' }
+            ];
         }
 
-        function checkoutWhatsApp() {
-            const baseRadio = document.querySelector('input[name="base_service"]:checked');
-            const baseName = baseRadio.getAttribute('data-name');
-            const basePrice = parseInt(baseRadio.value);
+        function handleArticleSubmit(e) {
+            e.preventDefault();
+            const title = document.getElementById('art-title').value;
+            const category = document.getElementById('art-category').value;
+            const content = document.getElementById('art-content').value;
+            const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
 
-            let text = `Halo Sugeng Klinsman, saya ingin memesan layanan dengan rincian kalkulator berikut:%0A%0A`;
-            text += `*Paket Utama:* ${baseName} (${formatRupiah(basePrice)})%0A`;
+            const articles = getArticles();
+            articles.unshift({ title, category, content, date });
+            localStorage.setItem('sk_articles', JSON.stringify(articles));
 
-            const checkboxes = document.querySelectorAll('.addon-checkbox:checked');
-            if (checkboxes.length > 0) {
-                text += `%0A*Add-Ons Tambahan:*%0A`;
-                checkboxes.forEach(cb => {
-                    text += `- ${cb.getAttribute('data-name')} (${formatRupiah(parseInt(cb.value))})%0A`;
-                });
+            showToast('Berhasil!', 'Artikel baru berhasil dipublikasikan.');
+            e.target.reset();
+            renderFrontpageContent();
+            switchPage('beranda');
+        }
+
+        function handleMediaSubmit(e) {
+            e.preventDefault();
+            const title = document.getElementById('media-title').value;
+            const theme = document.getElementById('media-theme').value;
+            const type = document.getElementById('media-type').value;
+            const url = document.getElementById('media-url').value;
+
+            const mediaList = getMedia();
+            
+            // Validasi batasan maksimal 5 per tema
+            const countInTheme = mediaList.filter(m => m.theme === theme).length;
+            if (countInTheme >= 5) {
+                showToast('Batas Maksimal Tercapai', `Tema "${theme}" sudah memiliki 5 foto/video (Batas maksimal).`, true);
+                return;
             }
 
-            const grandTotal = basePrice + Array.from(checkboxes).reduce((sum, cb) => sum + parseInt(cb.value), 0);
-            text += `%0A*Total Estimasi Biaya:* *${formatRupiah(grandTotal)}*%0A%0AMohon informasi selanjutnya. Terima kasih!`;
+            mediaList.unshift({ title, theme, type, url });
+            localStorage.setItem('sk_media', JSON.stringify(mediaList));
 
-            window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
+            showToast('Berhasil!', `Media berhasil diupload ke tema ${theme}.`);
+            e.target.reset();
+            renderFrontpageContent();
+            switchPage('beranda');
         }
 
-        function selectPackage(packageName, price) {
-            document.getElementById('package-select').value = packageName;
-            showToast('Paket Dipilih', `Anda memilih ${packageName}.`);
-            const formEl = document.getElementById('order-undangan-form');
-            if(formEl) formEl.scrollIntoView({ behavior: 'smooth' });
+        function renderFrontpageContent() {
+            // Render Artikel
+            const articles = getArticles();
+            const artContainer = document.getElementById('frontpage-articles-grid');
+            if (artContainer) {
+                artContainer.innerHTML = articles.map(art => `
+                    <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
+                        <div>
+                            <span class="text-xs text-gold-600 font-bold uppercase">${art.date} • ${art.category}</span>
+                            <h3 class="text-lg font-bold text-obsidian mt-2 mb-2">${art.title}</h3>
+                            <p class="text-gray-600 text-sm">${art.content}</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Sugeng Klinsman</span>
+                        </div>
+                    </article>
+                `).join('');
+            }
+
+            // Render Media dikelompokkan Berdasarkan Tema
+            const mediaList = getMedia();
+            const mediaContainer = document.getElementById('frontpage-media-container');
+            if (mediaContainer) {
+                // Ambil daftar tema unik
+                const themes = [...new Set(mediaList.map(m => m.theme))];
+                
+                mediaContainer.innerHTML = themes.map(theme => {
+                    const itemsInTheme = mediaList.filter(m => m.theme === theme);
+                    return `
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-gold-200 pb-2">
+                                <h3 class="font-serif text-2xl font-bold text-obsidian">${theme}</h3>
+                                <span class="text-xs font-semibold px-3 py-1 bg-gold-100 text-gold-800 rounded-full">${itemsInTheme.length} / 5 File</span>
+                            </div>
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                ${itemsInTheme.map(item => `
+                                    <div class="gold-card rounded-2xl overflow-hidden shadow-sm">
+                                        <div class="h-56 bg-obsidian relative">
+                                            ${item.type === 'video' 
+                                                ? `<video src="${item.url}" controls class="w-full h-full object-cover"></video>` 
+                                                : `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover">`
+                                            }
+                                        </div>
+                                        <div class="p-5">
+                                            <h4 class="font-bold text-obsidian">${item.title}</h4>
+                                            <span class="text-xs text-gold-700 font-semibold mt-1 inline-block">Tema: ${item.theme}</span>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
         }
 
-        function handleOrderSubmit(e) {
-            e.preventDefault();
-            const name1 = document.getElementById('main-name-1').value;
-            const name2 = document.getElementById('main-name-2').value;
-            const packageVal = document.getElementById('package-select').value;
-            const wa = document.getElementById('orderer-wa').value;
-            showToast('Pesanan Berhasil!', `Data ${name1} & ${name2} tercatat. Mengalihkan ke WhatsApp...`);
-            setTimeout(() => {
-                const message = `Halo Admin Sugeng Klinsman, saya ingin konfirmasi pesanan undangan atas nama ${name1} & ${name2} dengan paket ${packageVal}. No WA: ${wa}`;
-                window.open(`https://wa.me/6289503846562?text=${encodeURIComponent(message)}`, '_blank');
-            }, 1200);
-        }
-
-        document.addEventListener('DOMContentLoaded', calculateTotal);
+        document.addEventListener('DOMContentLoaded', renderFrontpageContent);
     </script>
 </body>
 </html>
