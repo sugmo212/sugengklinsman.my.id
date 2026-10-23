@@ -7,10 +7,51 @@
     <!-- Primary SEO Meta Tags -->
     <title>Sugeng Klinsman — Jasa Pembuatan Website, Artikel SEO & Fotografi Pontianak</title>
     <meta name="title" content="Sugeng Klinsman — Jasa Pembuatan Website, Artikel SEO & Fotografi Pontianak">
-    <meta name="description" content="Layanan profesional pembuatan website, jasa artikel SEO berkualitas, dan produksi foto/video kreatif di Pontianak, Kalimantan Barat.">
-    <meta name="keywords" content="Jasa Pembuatan Website Pontianak, Jasa Artikel SEO Pontianak, Jasa Foto Video Pontianak, Sugeng Klinsman">
+    <meta name="description" content="Layanan profesional pembuatan website, jasa artikel SEO berkualitas, dan produksi foto/video kreatif di Pontianak, Kalimantan Barat. Solusi digital presisi untuk brand & UMKM Anda.">
+    <meta name="keywords" content="Jasa Pembuatan Website Pontianak, Jasa Artikel SEO Pontianak, Jasa Foto Video Pontianak, Web Developer Pontianak, Sugeng Klinsman">
     <meta name="author" content="Sugeng Klinsman">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sugengklinsman.my.id/">
+
+    <!-- Open Graph / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sugengklinsman.my.id/">
+    <meta property="og:title" content="Sugeng Klinsman — Jasa Pembuatan Website, Artikel SEO & Fotografi Pontianak">
+    <meta property="og:description" content="Layanan profesional pembuatan website, jasa artikel SEO, dan produksi visual berkelas di Pontianak, Kalimantan Barat.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Schema.org LocalBusiness Structured Data untuk GEO SEO Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Sugeng Klinsman - Jasa Digital Kreatif",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "@id": "https://sugengklinsman.my.id/#business",
+      "url": "https://sugengklinsman.my.id/",
+      "telephone": "+6289503846562",
+      "priceRange": "Rp99.000 - Rp5.000.000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pontianak",
+        "addressRegion": "Kalimantan Barat",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -0.0263,
+        "longitude": 109.3425
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "21:00"
+      },
+      "sameAs": ["https://sugengklinsman.my.id"],
+      "description": "Jasa pembuatan website, penulis artikel SEO profesional, dan layanan fotografi/videografi terpercaya di Pontianak."
+    }
+    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -141,8 +182,97 @@
                 </div>
             </div>
 
+            <!-- KALKULATOR HARGA INTERAKTIF DI HALAMAN DEPAN -->
+            <section id="kalkulator-harga-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Kalkulator Transparan</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Pilih Layanan & Add-Ons Sesuai Kebutuhan</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="gold-card rounded-3xl p-6 sm:p-8">
+                            <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-layer-group text-gold-600 mr-2"></i> 1. Pilih Paket Layanan Utama</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="base_service" value="1500000" data-name="Website Landing Page / UMKM" checked onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
+                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Website Landing Page / UMKM</span>
+                                    </div>
+                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 1.500.000</span>
+                                </label>
+                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="base_service" value="3200000" data-name="Website Company Profile WordPress" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
+                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Website Company Profile / Portal (WordPress)</span>
+                                    </div>
+                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 3.200.000</span>
+                                </label>
+                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="base_service" value="1250000" data-name="Paket Konten Artikel & SEO Bulanan" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
+                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Paket Konten Artikel SEO & Sosmed (Bulanan)</span>
+                                    </div>
+                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 1.250.000</span>
+                                </label>
+                                <label class="flex items-center justify-between p-4 rounded-2xl border border-gold-200 hover:border-gold-400 cursor-pointer transition bg-gold-50/30">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="base_service" value="1750000" data-name="Paket Video & Photography Sesi" onchange="calculateTotal()" class="accent-gold-600 w-4 h-4">
+                                        <span class="font-semibold text-obsidian text-sm sm:text-base">Paket Video & Photography (Sesi Liputan)</span>
+                                    </div>
+                                    <span class="font-luxury font-bold text-gold-700">Mulai Rp 1.750.000</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="gold-card rounded-3xl p-6 sm:p-8">
+                            <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-puzzle-piece text-gold-600 mr-2"></i> 2. Pilih Add-Ons Tambahan (Opsional)</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center justify-between p-3.5 rounded-xl border border-gray-200 hover:border-gold-400 cursor-pointer transition">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" value="350000" data-name="Tambahan 5 Artikel SEO" onchange="calculateTotal()" class="addon-checkbox accent-gold-600 w-4 h-4 rounded">
+                                        <span class="text-sm font-medium text-gray-700">+ Tambahan 5 Artikel SEO Mendalam</span>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gold-700">+ Rp 350.000</span>
+                                </label>
+                                <label class="flex items-center justify-between p-3.5 rounded-xl border border-gray-200 hover:border-gold-400 cursor-pointer transition">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" value="500000" data-name="Ekstra 10 Desain Feed Instagram" onchange="calculateTotal()" class="addon-checkbox accent-gold-600 w-4 h-4 rounded">
+                                        <span class="text-sm font-medium text-gray-700">+ Ekstra 10 Desain Feed & Story Instagram</span>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gold-700">+ Rp 500.000</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 lg:sticky lg:top-28">
+                        <div class="bg-obsidian text-white rounded-3xl p-8 border-2 border-gold-400 shadow-xl space-y-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Estimasi Kalkulasi</span>
+                                <h3 class="text-2xl font-bold mt-1">Ringkasan Investasi</h3>
+                            </div>
+                            <div class="border-t border-gray-800 pt-4 space-y-3 text-sm text-gray-300">
+                                <div class="flex justify-between">
+                                    <span id="summary-base-name">Website Landing Page / UMKM</span>
+                                    <span id="summary-base-price" class="font-semibold text-white">Rp 1.500.000</span>
+                                </div>
+                                <div id="summary-addons-container" class="space-y-1.5 text-xs text-gold-300"></div>
+                            </div>
+                            <div class="border-t border-gray-800 pt-6">
+                                <span class="text-xs text-gray-400 block mb-1">Total Estimasi Biaya</span>
+                                <div id="total-price-display" class="text-3xl sm:text-4xl font-luxury font-bold text-gold-400">Rp 1.500.000</div>
+                            </div>
+                            <button onclick="checkoutWhatsApp()" class="w-full py-4 rounded-xl bg-gold-gradient text-white font-bold shadow-gold-md hover:opacity-95 transition flex items-center justify-center gap-2 text-base">
+                                <i class="fa-brands fa-whatsapp text-xl"></i> Pesan via WhatsApp Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- TAMPILAN ARTIKEL TERBARU DARI STUDIO KREATOR -->
-            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gold-200/50">
                 <div class="flex justify-between items-end mb-10">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Wawasan & Publikasi</span>
@@ -151,10 +281,9 @@
                     <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Tulis Artikel Baru</button>
                 </div>
                 <div id="frontpage-articles-grid" class="grid md:grid-cols-3 gap-8">
-                    <!-- Artikel statis default -->
                     <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
                         <div>
-                            <span class="text-xs text-gold-600 font-bold uppercase">24 Oktober 2026</span>
+                            <span class="text-xs text-gold-600 font-bold uppercase">24 Oktober 2026 • SEO & Web Dev</span>
                             <h3 class="text-lg font-bold text-obsidian mt-2 mb-2">Strategi SEO Lokal untuk UMKM di Pontianak</h3>
                             <p class="text-gray-600 text-sm">Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.</p>
                         </div>
@@ -176,13 +305,13 @@
                         <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Upload Media Baru</button>
                     </div>
                     <div id="frontpage-media-container" class="space-y-12">
-                        <!-- Konten galeri berdasarkan tema akan dirender otomatis di sini -->
+                        <!-- Konten galeri berdasarkan tema dirender dinamis -->
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- ==================== HALAMAN STUDIO KREATOR (TULIS ARTIKEL & UPLOAD MEDIA) ==================== -->
+        <!-- ==================== HALAMAN STUDIO KREATOR ==================== -->
         <div id="page-studio" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
                 <div class="text-center max-w-3xl mx-auto">
@@ -192,7 +321,6 @@
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Form 1: Tulis Artikel -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm">
                         <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel Baru
@@ -216,7 +344,6 @@
                         </form>
                     </div>
 
-                    <!-- Form 2: Upload Foto atau Video dengan Tema & Batasan 5 -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm">
                         <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema
@@ -302,7 +429,7 @@
             </section>
         </div>
 
-        <!-- ==================== HALAMAN DAFTAR HARGA ==================== -->
+        <!-- ==================== HALAMAN DAFTAR HARGA LENGKAP ==================== -->
         <div id="page-harga" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -379,7 +506,7 @@
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
     </footer>
 
-    <!-- JavaScript CMS Lokal & Render Dinamis -->
+    <!-- JavaScript Navigasi, Kalkulator, & CMS -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -403,7 +530,59 @@
             setTimeout(() => { toast.classList.add('translate-y-32', 'opacity-0'); }, 4000);
         }
 
-        // --- MANAJEMEN ARTIKEL & MEDIA DENGAN LOCALSTORAGE ---
+        // --- KALKULATOR HARGA SCRIPT ---
+        function calculateTotal() {
+            const baseRadio = document.querySelector('input[name="base_service"]:checked');
+            if (!baseRadio) return;
+            const basePrice = parseInt(baseRadio.value);
+            const baseName = baseRadio.getAttribute('data-name');
+
+            document.getElementById('summary-base-name').textContent = baseName;
+            document.getElementById('summary-base-price').textContent = formatRupiah(basePrice);
+
+            let addonsTotal = 0;
+            let addonsHtml = '';
+            const checkboxes = document.querySelectorAll('.addon-checkbox:checked');
+
+            checkboxes.forEach(cb => {
+                const price = parseInt(cb.value);
+                const name = cb.getAttribute('data-name');
+                addonsTotal += price;
+                addonsHtml += `<div class="flex justify-between"><span>+ ${name}</span><span class="text-white">+ ${formatRupiah(price)}</span></div>`;
+            });
+
+            document.getElementById('summary-addons-container').innerHTML = addonsHtml;
+            const grandTotal = basePrice + addonsTotal;
+            document.getElementById('total-price-display').textContent = formatRupiah(grandTotal);
+        }
+
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+        }
+
+        function checkoutWhatsApp() {
+            const baseRadio = document.querySelector('input[name="base_service"]:checked');
+            const baseName = baseRadio.getAttribute('data-name');
+            const basePrice = parseInt(baseRadio.value);
+
+            let text = `Halo Sugeng Klinsman, saya ingin memesan layanan dengan rincian kalkulator berikut:%0A%0A`;
+            text += `*Paket Utama:* ${baseName} (${formatRupiah(basePrice)})%0A`;
+
+            const checkboxes = document.querySelectorAll('.addon-checkbox:checked');
+            if (checkboxes.length > 0) {
+                text += `%0A*Add-Ons Tambahan:*%0A`;
+                checkboxes.forEach(cb => {
+                    text += `- ${cb.getAttribute('data-name')} (${formatRupiah(parseInt(cb.value))})%0A`;
+                });
+            }
+
+            const grandTotal = basePrice + Array.from(checkboxes).reduce((sum, cb) => sum + parseInt(cb.value), 0);
+            text += `%0A*Total Estimasi Biaya:* *${formatRupiah(grandTotal)}*%0A%0AMohon informasi selanjutnya. Terima kasih!`;
+
+            window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
+        }
+
+        // --- CMS LOCALSTORAGE (ARTIKEL & MEDIA MAKS 5 PER TEMA) ---
         function getArticles() {
             const data = localStorage.getItem('sk_articles');
             return data ? JSON.parse(data) : [
@@ -444,8 +623,6 @@
             const url = document.getElementById('media-url').value;
 
             const mediaList = getMedia();
-            
-            // Validasi batasan maksimal 5 per tema
             const countInTheme = mediaList.filter(m => m.theme === theme).length;
             if (countInTheme >= 5) {
                 showToast('Batas Maksimal Tercapai', `Tema "${theme}" sudah memiliki 5 foto/video (Batas maksimal).`, true);
@@ -462,7 +639,6 @@
         }
 
         function renderFrontpageContent() {
-            // Render Artikel
             const articles = getArticles();
             const artContainer = document.getElementById('frontpage-articles-grid');
             if (artContainer) {
@@ -480,13 +656,10 @@
                 `).join('');
             }
 
-            // Render Media dikelompokkan Berdasarkan Tema
             const mediaList = getMedia();
             const mediaContainer = document.getElementById('frontpage-media-container');
             if (mediaContainer) {
-                // Ambil daftar tema unik
                 const themes = [...new Set(mediaList.map(m => m.theme))];
-                
                 mediaContainer.innerHTML = themes.map(theme => {
                     const itemsInTheme = mediaList.filter(m => m.theme === theme);
                     return `
@@ -517,7 +690,10 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', renderFrontpageContent);
+        document.addEventListener('DOMContentLoaded', () => {
+            calculateTotal();
+            renderFrontpageContent();
+        });
     </script>
 </body>
 </html>
