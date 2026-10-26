@@ -118,12 +118,13 @@
             <div id="modal-article-meta" class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2"></div>
             <h2 id="modal-article-title" class="text-2xl sm:text-3xl font-bold font-serif text-obsidian mb-3"></h2>
             <div id="modal-article-seo-info" class="bg-gold-50 p-3 rounded-xl border border-gold-200 text-xs text-gray-600 mb-4 space-y-1">
+                <div><strong>Kontributor / Leads:</strong> <span id="modal-author"></span> (<span id="modal-wa"></span>)</div>
                 <div><strong>Kata Kunci:</strong> <span id="modal-keywords"></span></div>
                 <div><strong>Tags:</strong> <span id="modal-tags"></span></div>
             </div>
             <div id="modal-article-content" class="text-gray-700 text-base leading-relaxed space-y-4 border-t border-gray-100 pt-4"></div>
             <div class="mt-8 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
-                <span>Ditulis oleh: <strong>Sugeng Klinsman</strong></span>
+                <span>Portal Resmi Sugeng Klinsman</span>
                 <button onclick="closeArticleModal()" class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-obsidian rounded-xl font-semibold">Tutup</button>
             </div>
         </div>
@@ -188,7 +189,7 @@
                             </p>
                             <div class="flex flex-wrap gap-4 pt-2">
                                 <a href="#kalkulator-harga-section" class="bg-gold-gradient text-white px-7 py-3.5 rounded-full font-semibold shadow-gold-md hover:opacity-95 transition">Coba Kalkulator Harga</a>
-                                <button onclick="switchPage('studio')" class="bg-white text-gold-700 border border-gold-400 px-7 py-3.5 rounded-full font-semibold hover:bg-gold-50 transition">Buka Studio Kreator</button>
+                                <button onclick="switchPage('studio')" class="bg-white text-gold-700 border border-gold-400 px-7 py-3.5 rounded-full font-semibold hover:bg-gold-50 transition">Kirim Kontributor / Studio</button>
                             </div>
                         </div>
                         <div class="lg:col-span-5">
@@ -291,173 +292,21 @@
                 </div>
             </section>
 
-            <!-- ==================== ARTIKEL TERBARU ==================== -->
+            <!-- ==================== ARTIKEL TERBARU PUBLIK ==================== -->
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gold-200/50">
                 <div class="flex justify-between items-end mb-10">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Wawasan & Publikasi</span>
                         <h2 class="text-3xl font-bold text-obsidian mt-1">Artikel Terbaru</h2>
                     </div>
-                    <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Tulis Artikel Baru</button>
+                    <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Kirim Artikel / Kontributor</button>
                 </div>
                 <div id="frontpage-articles-grid" class="grid md:grid-cols-3 gap-8">
-                    <!-- Artikel dirender otomatis -->
+                    <!-- Artikel dipublikasikan dirender otomatis -->
                 </div>
             </section>
 
-            <!-- ==================== ULASAN KLIEN HORIZONTAL SCROLL ==================== -->
-            <section class="py-20 bg-gold-50/50 border-t border-gold-200/50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-                    <div class="text-center max-w-3xl mx-auto">
-                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Testimoni & Kepercayaan Klien</span>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Ulasan Autentik Pengguna Layanan</h2>
-                        <p class="text-gray-600 mt-2 text-sm">Geser ke samping untuk melihat berbagai ulasan mendalam dari klien untuk masing-masing layanan kami.</p>
-                    </div>
-
-                    <!-- LAYANAN 1: WEB DEVELOPMENT -->
-                    <div class="space-y-4">
-                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
-                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
-                                <i class="fa-solid fa-code text-gold-600"></i> Ulasan Jasa Web Development
-                            </h3>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
-                        </div>
-                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Pengerjaan website landing page UMKM saya di Pontianak diselesaikan dengan sangat presisi dan cepat oleh Sugeng Klinsman. Tampilannya sangat elegan dengan dominasi warna putih dan emas yang mencerminkan kesan mewah. Selain itu, kecepatan aksesnya luar biasa karena langsung terhubung ke Cloudflare Pages tanpa kendala. Dukungan teknis dan respons yang diberikan sangat ramah serta profesional sekali. Bisnis kuliner saya kini terlihat jauh lebih bonafid di mata pelanggan baru secara online."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Ahmad Zulfikar</h4><span class="text-xs text-gray-500">Owner Kuliner Pontianak</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sebagai pelaku usaha rintisan di Kubu Raya, saya sangat terbantu dengan layanan pembuatan web development dari Sugeng. Struktur kodenya bersih, sangat ramah SEO, dan langsung terintegrasi dengan tombol pemesanan WhatsApp yang interaktif. Investasi harganya sangat transparan tanpa ada biaya tersembunyi sama sekali. Fitur keamanan SSL dan kecepatan servernya membuat para pengunjung merasa aman dan nyaman saat menjelajahi katalog produk kami. Sangat direkomendasikan bagi siapa saja yang ingin Go Digital!"</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Dewi Lestari</h4><span class="text-xs text-gray-500">Pengusaha Fashion Lokal</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Company profile perusahaan kami berhasil dirombak total menjadi jauh lebih modern dan responsif berkat keahlian web developer Sugeng Klinsman. Navigasi halamannya sangat halus, tata letak layoutnya sangat rapi di perangkat smartphone maupun laptop, dan estetikanya benar-benar berkelas. Proses migrasi domain dan pengaturan nameserver Cloudflare dibimbing langsung dengan sabar hingga tuntas. Kami sangat mengapresiasi dedikasi dan kualitas kerja tingkat tinggi yang diberikan."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Rian Hidayat</h4><span class="text-xs text-gray-500">Direktur CV. Borneo Solusi</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Awalnya saya bingung memilih jasa pembuatan website yang mengerti kebutuhan lokal di Kalimantan Barat. Untunglah saya menemukan situs sugengklinsman.my.id yang menawarkan layanan transparan dan terpercaya. Hasil jadinya melebihi ekspektasi saya; desain putih emasnya sangat elegan dan mencerminkan citra profesional. Fitur kalkulator harganya juga sangat transparan sehingga memudahkan saya menghitung estimasi anggaran proyek sebelum memesan."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Siti Aminah</h4><span class="text-xs text-gray-500">Praktisi Pendidikan & Kursus</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Pelayanan luar biasa dari awal konsultasi hingga website resmi online di internet. Sugeng benar-benar mendengarkan setiap detail kebutuhan fitur yang saya inginkan untuk portal komunitas kami. Tidak ada kendala server lambat karena langsung di-deploy ke infrastruktur Cloudflare berkecepatan tinggi. Bagi rekan-rekan di Pontianak dan sekitarnya yang memerlukan web developer handal dan berpengalaman, mempercayakan proyek kepada Sugeng Klinsman adalah keputusan paling tepat."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Budi Santoso</h4><span class="text-xs text-gray-500">Koordinator Komunitas Kreatif</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- LAYANAN 2: KONTEN & SEO -->
-                    <div class="space-y-4 pt-6">
-                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
-                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
-                                <i class="fa-solid fa-pen-nib text-gold-600"></i> Ulasan Paket Konten & Artikel SEO
-                            </h3>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
-                        </div>
-                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Artikel SEO buatan Sugeng Klinsman benar-benar terbukti mendongkrak trafik organik website toko online saya. Riset kata kunci yang digunakan sangat akurat dan relevan dengan apa yang sedang dicari oleh calon pembeli di mesin pencari Google. Gaya bahasanya mengalir alami, informatif, dan sangat memikat pembaca untuk melakukan transaksi pembelian. Dalam waktu beberapa minggu saja, beberapa keyword produk kami sudah merangkak naik ke halaman pertama Google."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Hesti Rahmawati</h4><span class="text-xs text-gray-500">Pemilik Toko Online Herbal</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sebagai seorang penulis dan jurnalis digital, standar penulisan artikel SEO yang dikerjakan oleh Sugeng sangat memuaskan dan berstandar tinggi. Pengaturan meta title dan meta description dioptimalkan secara cermat untuk mendongkrak rasio klik dari pengguna internet. Konsistensi dalam menyusun jadwal publikasi konten bulanan membuat brand kedai kopi kami semakin dikenal luas oleh masyarakat penikmat kopi di Pontianak."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Fajar Pratama</h4><span class="text-xs text-gray-500">Content Manager Cafe Lokal</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Paket konten bulanan dari layanan ini sangat membantu operasional media digital kami. Artikel yang dihasilkan tidak pernah mengecewakan, minim kesalahan ejaan, serta sangat mendalam pembahasannya. Pemahaman mendalam mengenai teknik SEO on-page membuat web portal kami memiliki visibilitas yang jauh lebih stabil di mesin pencari. Kolaborasi kerja sama yang sangat menyenangkan dan profesional."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Yusuf Maulana</h4><span class="text-xs text-gray-500">Editor Portal Berita Daerah</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Strategi keyword lokal yang diterapkan Sugeng pada artikel bisnis properti saya terbukti sangat efektif menjangkau calon klien potensial di wilayah Kalimantan Barat. Penjelasannya sangat terstruktur dengan heading yang rapi sehingga sangat disukai oleh algoritma Google. Komunikasi sangat lancar dan pengerjaan selalu tepat waktu sesuai kesepakatan jadwal yang telah disepakati bersama."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Melinda Kusuma</h4><span class="text-xs text-gray-500">Marketing Eksekutif Properti</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Layanan paket konten artikel SEO terbaik yang pernah saya gunakan untuk bisnis layanan jasa saya. Artikel yang dibuat benar-benar memberikan solusi informatif bagi pembaca tanpa terkesan hard-selling yang berlebihan. Peningkatan pengunjung organik web saya naik drastis sejak menggunakan jasa dari Sugeng Klinsman. Sangat direkomendasikan bagi para pemilik UMKM yang ingin meningkatkan penjualan lewat jalur pencarian Google organik."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Dedi Iskandar</h4><span class="text-xs text-gray-500">Penyedia Layanan Jasa Profesional</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- LAYANAN 3: FOTO & VIDEO KREATIF -->
-                    <div class="space-y-4 pt-6">
-                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
-                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
-                                <i class="fa-solid fa-camera-retro text-gold-600"></i> Ulasan Jasa Foto & Video Kreatif
-                            </h3>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
-                        </div>
-                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Hasil jepretan foto produk dan video komersial untuk brand UMKM saya dikerjakan dengan sentuhan seni visual yang sangat berkelas. Sugeng sangat mengerti cara menonjolkan detail produk agar terlihat mewah dan memikat di media sosial seperti Instagram dan TikTok. Proses penyuntingan warna (color grading) terasa sangat sinematik dan selaras dengan identitas brand kami. Sungguh investasi visual yang sangat sepadan dengan hasilnya."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Rahmat Hidayat</h4><span class="text-xs text-gray-500">Founder Brand Aksesoris Lokal</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Dokumentasi liputan event komunitas otomotif XBI Brotherhood Chapter Pontianak yang diabadikan oleh Sugeng sungguh memukau seluruh anggota. Sudut pengambilan gambar (angle) sangat dinamis, tajam, dan berhasil menangkap momen-momen seru selama touring berlangsung. Format video yang diserahkan sudah siap upload dengan kualitas resolusi tinggi yang sangat jernih di berbagai perangkat layar smartphone."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Reza Pahlevi</h4><span class="text-xs text-gray-500">Penggiat Komunitas Motor XBI</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sangat puas dengan hasil video profil perusahaan yang dikerjakan secara profesional. Peralatan yang digunakan modern dan penanganan di lapangan sangat terstruktur rapi. Tim bekerja dengan penuh ketelitian sehingga menghasilkan video sinematik berdurasi pas yang sangat efektif menarik minat calon klien korporat kami. Terima kasih banyak atas karya visual yang sangat membanggakan ini."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Nadia Paramita</h4><span class="text-xs text-gray-500">Corporate Secretary Perusahaan</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sesi pemotretan produk kuliner di cafe kami berjalan sangat santai namun menghasilkan foto-foto yang sangat menggugah selera. Sugeng memiliki ketajaman mata artistik dalam menata cahaya dan latar belakang objek foto. Hasil editannya pun cepat diserahkan tanpa mengurangi kualitas resolusi sedikit pun. Sangat direkomendasikan bagi para pemilik kafe dan resto di Pontianak yang ingin menaikkan level promosi visualnya."</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Arya Wiguna</h4><span class="text-xs text-gray-500">Manager Operasional Cafe</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">"Jasa foto dan video kreatif terbaik di Pontianak! Kualitas estetika warna yang dihasilkan benar-benar memberikan karakter kuat pada portofolio karya saya. Komunikasi sangat interaktif, ramah, dan sangat fleksibel dalam mengakomodasi konsep visual yang saya inginkan. Seluruh master file diserahkan secara lengkap tanpa ada batasan yang menyulitkan klien. Sukses selalu untuk Sugeng Klinsman!"</p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div><h4 class="font-bold text-sm text-obsidian">Intan Permata</h4><span class="text-xs text-gray-500">Content Creator & Influencer</span></div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TAMPILAN GALERI FOTO & VIDEO BERDASARKAN TEMA -->
+            <!-- ==================== GALERI FOTO & VIDEO PUBLIK ==================== -->
             <section class="py-16 bg-gold-50/40 border-t border-gold-200/50">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between items-end mb-10">
@@ -465,85 +314,149 @@
                             <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Portofolio Karya</span>
                             <h2 class="text-3xl font-bold text-obsidian mt-1">Galeri Tema Foto & Video</h2>
                         </div>
-                        <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Upload Media Baru</button>
+                        <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Kirim Media / Kontributor</button>
                     </div>
                     <div id="frontpage-media-container" class="space-y-12">
-                        <!-- Konten galeri dirender dinamis -->
+                        <!-- Galeri dipublikasikan dirender otomatis -->
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- ==================== HALAMAN STUDIO KREATOR (DENGAN EDIT & HAPUS ARTIKEL & MEDIA) ==================== -->
+        <!-- ==================== HALAMAN STUDIO KREATOR & LEAD GENERATION (DENGAN ADMIN LOGIN) ==================== -->
         <div id="page-studio" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="px-4 py-1.5 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase tracking-widest">Dashboard CMS sugengklinsman.my.id</span>
-                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-3">Studio Kreator & Manajemen Konten</h1>
-                    <p class="text-gray-600 mt-2 text-sm">Publikasikan, edit, atau hapus artikel SEO dan galeri media Anda dengan mudah.</p>
+                    <span class="px-4 py-1.5 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase tracking-widest">Portal Kontributor & Dashboard Admin</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-3">Studio Kirim Artikel & Media</h1>
+                    <p class="text-gray-600 mt-2 text-sm">Setiap pengiriman konten memerlukan persetujuan (Approval) dari Admin sebelum tampil di beranda.</p>
                 </div>
 
-                <!-- Form Tambah / Edit Artikel -->
-                <div class="gold-card rounded-3xl p-8 shadow-sm">
-                    <h3 id="form-article-title" class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel SEO Baru
-                    </h3>
-                    <form onsubmit="handleArticleSubmit(event)" class="space-y-4">
-                        <input type="hidden" id="edit-article-index" value="-1">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Judul Artikel</label>
-                            <input type="text" id="art-title" required placeholder="Contoh: Tips Jitu Optimasi Website" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                <!-- Bagian Login Admin -->
+                <div class="max-w-md mx-auto gold-card rounded-3xl p-6 text-center">
+                    <div id="admin-logged-out">
+                        <h4 class="font-bold text-sm text-obsidian mb-2"><i class="fa-solid fa-lock text-gold-600"></i> Area Khusus Admin</h4>
+                        <p class="text-xs text-gray-500 mb-3">Masukkan PIN Admin (default: <strong>1234</strong>) untuk menyetujui artikel/media atau melihat data Leads.</p>
+                        <div class="flex gap-2">
+                            <input type="password" id="admin-pin-input" placeholder="Masukkan PIN Admin" class="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-sm">
+                            <button onclick="loginAdmin()" class="bg-obsidian text-white px-5 py-2 rounded-xl text-sm font-semibold">Login</button>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Kategori / Topik</label>
-                                <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Kata Kunci (Keywords)</label>
-                                <input type="text" id="art-keywords" required placeholder="jasa website, seo pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                            </div>
+                    </div>
+                    <div id="admin-logged-in" class="hidden">
+                        <div class="flex items-center justify-between bg-gold-50 p-3 rounded-xl border border-gold-300">
+                            <span class="text-xs font-bold text-gold-800"><i class="fa-solid fa-shield-halved"></i> Admin Mode Aktif</span>
+                            <button onclick="logoutAdmin()" class="text-xs text-rose-600 font-semibold underline">Logout Admin</button>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Meta Deskripsi (Ringkasan Google)</label>
-                            <textarea id="art-meta-desc" rows="2" required placeholder="Tulis ringkasan singkat max 155 karakter untuk cuplikan Google..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 text-sm"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Tagging (Pisahkan dengan koma)</label>
-                            <input type="text" id="art-tags" required placeholder="website, umkm, tips, pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Isi Lengkap Artikel</label>
-                            <textarea id="art-content" rows="5" required placeholder="Tulis isi artikel secara mendalam di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
-                        </div>
-                        <div class="flex gap-4">
-                            <button type="submit" id="btn-save-article" class="flex-1 bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
-                                Publikasikan Artikel SEO
-                            </button>
-                            <button type="button" id="btn-cancel-edit-art" onclick="cancelEditArticle()" class="hidden px-6 bg-gray-200 hover:bg-gray-300 text-obsidian font-bold py-3.5 rounded-xl transition">
-                                Batal
-                            </button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
 
-                <!-- Manajemen Artikel & Media Terpublikasi -->
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Kelola Artikel -->
-                    <div class="gold-card rounded-3xl p-8 shadow-sm space-y-4">
-                        <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-list-check text-gold-600"></i> Kelola Artikel Terpublikasi</h3>
-                        <div id="manage-articles-list" class="space-y-3 max-h-96 overflow-y-auto pr-2">
-                            <!-- List artikel dirender dinamis -->
+                <!-- Panel Admin (Hanya tampil jika Admin Login) -->
+                <div id="admin-dashboard-panel" class="hidden space-y-12 bg-gold-50/70 p-6 sm:p-10 rounded-3xl border-2 border-gold-400">
+                    <div class="border-b border-gold-300 pb-4">
+                        <h2 class="text-2xl font-bold text-obsidian font-serif">🛠️ Panel Persetujuan Admin (Approval Queue)</h2>
+                        <p class="text-xs text-gray-600">Setujui konten kiriman kontributor agar tayang di website.</p>
+                    </div>
+
+                    <!-- Pending Articles -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-lg text-obsidian">Artikel Menunggu Persetujuan (<span id="pending-art-count">0</span>)</h3>
+                        <div id="pending-articles-list" class="space-y-3">
+                            <p class="text-xs text-gray-500 italic">Tidak ada artikel pending.</p>
                         </div>
                     </div>
 
-                    <!-- Form Tambah / Edit Media -->
+                    <!-- Pending Media -->
+                    <div class="space-y-4 pt-6 border-t border-gold-300">
+                        <h3 class="font-bold text-lg text-obsidian">Media Foto/Video Menunggu Persetujuan (<span id="pending-med-count">0</span>)</h3>
+                        <div id="pending-media-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <p class="text-xs text-gray-500 italic">Tidak ada media pending.</p>
+                        </div>
+                    </div>
+
+                    <!-- Leads Data Management -->
+                    <div class="space-y-4 pt-6 border-t border-gold-300">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-lg text-obsidian">📋 Database Leads / Kontributor (<span id="leads-count">0</span>)</h3>
+                            <button onclick="exportLeads()" class="px-4 py-2 bg-gold-600 text-white text-xs font-semibold rounded-xl shadow">Export / Lihat Data Leads</button>
+                        </div>
+                        <div id="leads-table-container" class="overflow-x-auto bg-white rounded-2xl border border-gold-200 p-4">
+                            <!-- Tabel leads dirender dinamis -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Publik Publikasi Kontributor (Dilengkapi Leads Capture) -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Form Kirim Artikel -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm">
-                        <h3 id="form-media-title" class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema
+                        <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-pen-to-square text-gold-600"></i> Kirim Artikel Kontributor
                         </h3>
-                        <form onsubmit="handleMediaSubmit(event)" class="space-y-4">
-                            <input type="hidden" id="edit-media-index" value="-1">
+                        <form onsubmit="handleContributorArticle(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gold-50 p-4 rounded-2xl border border-gold-200">
+                                <div class="sm:col-span-2">
+                                    <span class="text-[11px] font-bold text-gold-800 uppercase tracking-wider block mb-2"><i class="fa-solid fa-id-card"></i> Data Diri Anda (Leads)</span>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                                    <input type="text" id="contrib-name" required placeholder="Nama Anda" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">No. WhatsApp</label>
+                                    <input type="tel" id="contrib-wa" required placeholder="08123456789" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Judul Artikel</label>
+                                <input type="text" id="art-title" required placeholder="Contoh: Tips Jitu Optimasi Website" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Kategori / Topik</label>
+                                    <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Kata Kunci (Keywords)</label>
+                                    <input type="text" id="art-keywords" required placeholder="jasa website, seo pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Meta Deskripsi (Ringkasan Google)</label>
+                                <textarea id="art-meta-desc" rows="2" required placeholder="Tulis ringkasan singkat max 155 karakter..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 text-sm"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Tagging (Pisahkan koma)</label>
+                                <input type="text" id="art-tags" required placeholder="website, umkm, tips" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Isi Lengkap Artikel</label>
+                                <textarea id="art-content" rows="5" required placeholder="Tulis isi artikel secara mendalam di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
+                                Kirim Artikel untuk Disetujui Admin
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Form Kirim Media Foto / Video -->
+                    <div class="gold-card rounded-3xl p-8 shadow-sm">
+                        <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-photo-film text-gold-600"></i> Kirim Foto / Video Kontributor
+                        </h3>
+                        <form onsubmit="handleContributorMedia(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gold-50 p-4 rounded-2xl border border-gold-200">
+                                <div class="sm:col-span-2">
+                                    <span class="text-[11px] font-bold text-gold-800 uppercase tracking-wider block mb-2"><i class="fa-solid fa-id-card"></i> Data Diri Anda (Leads)</span>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                                    <input type="text" id="contrib-med-name" required placeholder="Nama Anda" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">No. WhatsApp</label>
+                                    <input type="tel" id="contrib-med-wa" required placeholder="08123456789" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm">
+                                </div>
+                            </div>
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Judul Karya / Media</label>
                                 <input type="text" id="media-title" required placeholder="Contoh: Touring XSR di Kubu Raya" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
@@ -556,7 +469,7 @@
                                     <option value="Dokumentasi Wedding & Event">Dokumentasi Wedding & Event</option>
                                     <option value="Kopi & Lifestyle Pontianak">Kopi & Lifestyle Pontianak</option>
                                 </select>
-                                <p class="text-xs text-gray-500 mt-1">*Setiap tema dibatasi maksimal 5 foto/video.</p>
+                                <p class="text-xs text-gray-500 mt-1">*Maksimal 5 file per tema.</p>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Tipe Media</label>
@@ -569,14 +482,9 @@
                                 <label class="block text-sm font-medium text-slate-700 mb-1">URL File Media</label>
                                 <input type="url" id="media-url" required placeholder="https://images.unsplash.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
-                            <div class="flex gap-4">
-                                <button type="submit" id="btn-save-media" class="flex-1 bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
-                                    Upload ke Tema Terkait
-                                </button>
-                                <button type="button" id="btn-cancel-edit-media" onclick="cancelEditMedia()" class="hidden px-6 bg-gray-200 hover:bg-gray-300 text-obsidian font-bold py-3.5 rounded-xl transition">
-                                    Batal
-                                </button>
-                            </div>
+                            <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
+                                Kirim Media untuk Disetujui Admin
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -706,7 +614,7 @@
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
     </footer>
 
-    <!-- JavaScript Navigasi, Kalkulator, & CMS CRUD Lengkap Artikel & Media -->
+    <!-- JavaScript Navigasi, Kalkulator, & Sistem Approval / Leads -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -715,6 +623,7 @@
                 target.classList.remove('hidden');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+            checkAdminSession();
         }
 
         function toggleMobileMenu() {
@@ -782,7 +691,23 @@
             window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
         }
 
-        // --- LOCALSTORAGE DATA CMS ---
+        // --- SISTEM DATA LOCALSTORAGE (LEADS, PENDING, PUBLISHED) ---
+        function getLeads() {
+            const data = localStorage.getItem('sk_leads');
+            return data ? JSON.parse(data) : [];
+        }
+
+        function saveLead(name, wa, type) {
+            const leads = getLeads();
+            const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+            // Cek apakah nomor WA sudah ada, jika belum masukkan sebagai lead baru
+            const existing = leads.find(l => l.wa === wa);
+            if (!existing) {
+                leads.unshift({ name, wa, type, date });
+                localStorage.setItem('sk_leads', JSON.stringify(leads));
+            }
+        }
+
         function getArticles() {
             const data = localStorage.getItem('sk_articles');
             return data ? JSON.parse(data) : [
@@ -793,23 +718,36 @@
                     metaDesc: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.',
                     tags: 'seo, website, umkm, pontianak',
                     content: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat. Dengan optimasi kata kunci lokal dan struktur halaman yang bersih, website UMKM Anda akan lebih mudah ditemukan oleh calon pelanggan setia di Pontianak.', 
-                    date: '24 Oktober 2026' 
+                    date: '24 Oktober 2026',
+                    author: 'Sugeng Klinsman',
+                    wa: '089503846562'
                 }
             ];
+        }
+
+        function getPendingArticles() {
+            const data = localStorage.getItem('sk_pending_articles');
+            return data ? JSON.parse(data) : [];
         }
 
         function getMedia() {
             const data = localStorage.getItem('sk_media');
             return data ? JSON.parse(data) : [
-                { title: 'Touring XSR Santai di Waterfront', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80' },
-                { title: 'Custom Bike Showcase', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80' }
+                { title: 'Touring XSR Santai di Waterfront', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80', author: 'Sugeng', wa: '0895' },
+                { title: 'Custom Bike Showcase', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80', author: 'Sugeng', wa: '0895' }
             ];
         }
 
-        // --- ARTIKEL CRUD ---
-        function handleArticleSubmit(e) {
+        function getPendingMedia() {
+            const data = localStorage.getItem('sk_pending_media');
+            return data ? JSON.parse(data) : [];
+        }
+
+        // --- SUBMIT KONTRIBUTOR (KIRIM DATA KE PENDING & SIMPAN LEADS) ---
+        function handleContributorArticle(e) {
             e.preventDefault();
-            const editIndex = parseInt(document.getElementById('edit-article-index').value);
+            const name = document.getElementById('contrib-name').value;
+            const wa = document.getElementById('contrib-wa').value;
             const title = document.getElementById('art-title').value;
             const category = document.getElementById('art-category').value;
             const keywords = document.getElementById('art-keywords').value;
@@ -818,130 +756,229 @@
             const content = document.getElementById('art-content').value;
             const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
 
-            const articles = getArticles();
+            // Simpan Data Leads
+            saveLead(name, wa, 'Artikel');
 
-            if (editIndex > -1) {
-                articles[editIndex] = { title, category, keywords, metaDesc, tags, content, date: articles[editIndex].date };
-                localStorage.setItem('sk_articles', JSON.stringify(articles));
-                showToast('Berhasil!', 'Artikel SEO berhasil diperbarui.');
-                cancelEditArticle();
-            } else {
-                articles.unshift({ title, category, keywords, metaDesc, tags, content, date });
-                localStorage.setItem('sk_articles', JSON.stringify(articles));
-                showToast('Berhasil!', 'Artikel SEO baru berhasil dipublikasikan.');
-                e.target.reset();
-            }
+            // Simpan ke Pending
+            const pending = getPendingArticles();
+            pending.unshift({ title, category, keywords, metaDesc, tags, content, date, author: name, wa });
+            localStorage.setItem('sk_pending_articles', JSON.stringify(pending));
 
-            renderFrontpageContent();
+            showToast('Berhasil Dikirim!', 'Artikel Anda menunggu persetujuan (Approval) Admin.');
+            e.target.reset();
         }
 
-        function editArticle(index) {
-            const articles = getArticles();
-            const art = articles[index];
-            if (!art) return;
-
-            document.getElementById('edit-article-index').value = index;
-            document.getElementById('art-title').value = art.title;
-            document.getElementById('art-category').value = art.category;
-            document.getElementById('art-keywords').value = art.keywords || '';
-            document.getElementById('art-meta-desc').value = art.metaDesc || '';
-            document.getElementById('art-tags').value = art.tags || '';
-            document.getElementById('art-content').value = art.content;
-
-            document.getElementById('form-article-title').innerHTML = '<i class="fa-solid fa-pen-to-square text-gold-600"></i> Edit Artikel SEO';
-            document.getElementById('btn-save-article').innerText = 'Simpan Perubahan';
-            document.getElementById('btn-cancel-edit-art').classList.remove('hidden');
-
-            window.scrollTo({ top: 200, behavior: 'smooth' });
-        }
-
-        function cancelEditArticle() {
-            document.getElementById('edit-article-index').value = -1;
-            document.getElementById('art-title').form.reset();
-            document.getElementById('form-article-title').innerHTML = '<i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel SEO Baru';
-            document.getElementById('btn-save-article').innerText = 'Publikasikan Artikel SEO';
-            document.getElementById('btn-cancel-edit-art').classList.add('hidden');
-        }
-
-        function deleteArticle(index) {
-            if (confirm('Apakah Anda yakin ingin menghapus artikel ini?')) {
-                const articles = getArticles();
-                articles.splice(index, 1);
-                localStorage.setItem('sk_articles', JSON.stringify(articles));
-                showToast('Terhapus', 'Artikel berhasil dihapus.');
-                renderFrontpageContent();
-            }
-        }
-
-        // --- MEDIA CRUD (FOTO & VIDEO DENGAN EDIT & DELETE) ---
-        function handleMediaSubmit(e) {
+        function handleContributorMedia(e) {
             e.preventDefault();
-            const editIndex = parseInt(document.getElementById('edit-media-index').value);
+            const name = document.getElementById('contrib-med-name').value;
+            const wa = document.getElementById('contrib-med-wa').value;
             const title = document.getElementById('media-title').value;
             const theme = document.getElementById('media-theme').value;
             const type = document.getElementById('media-type').value;
             const url = document.getElementById('media-url').value;
 
-            const mediaList = getMedia();
+            // Simpan Data Leads
+            saveLead(name, wa, 'Media Foto/Video');
 
-            if (editIndex > -1) {
-                // Update Media
-                mediaList[editIndex] = { title, theme, type, url };
-                localStorage.setItem('sk_media', JSON.stringify(mediaList));
-                showToast('Berhasil!', 'Media berhasil diperbarui.');
-                cancelEditMedia();
+            // Simpan ke Pending
+            const pending = getPendingMedia();
+            pending.unshift({ title, theme, type, url, author: name, wa });
+            localStorage.setItem('sk_pending_media', JSON.stringify(pending));
+
+            showToast('Berhasil Dikirim!', 'Media Anda menunggu persetujuan (Approval) Admin.');
+            e.target.reset();
+        }
+
+        // --- ADMIN LOGIN & APPROVAL WORKFLOW ---
+        function loginAdmin() {
+            const pin = document.getElementById('admin-pin-input').value;
+            if (pin === '1234') {
+                localStorage.setItem('sk_admin_logged', 'true');
+                showToast('Login Berhasil', 'Mode Admin Aktif.');
+                checkAdminSession();
             } else {
-                // Tambah Media Baru dengan Batasan Max 5 per Tema
-                const countInTheme = mediaList.filter(m => m.theme === theme).length;
-                if (countInTheme >= 5) {
-                    showToast('Batas Maksimal Tercapai', `Tema "${theme}" sudah memiliki 5 foto/video (Batas maksimal).`, true);
-                    return;
-                }
-                mediaList.unshift({ title, theme, type, url });
-                localStorage.setItem('sk_media', JSON.stringify(mediaList));
-                showToast('Berhasil!', `Media berhasil diupload ke tema ${theme}.`);
-                e.target.reset();
+                showToast('PIN Salah', 'Gunakan PIN: 1234', true);
             }
+        }
 
+        function logoutAdmin() {
+            localStorage.removeItem('sk_admin_logged');
+            showToast('Logout', 'Keluar dari mode admin.');
+            checkAdminSession();
+        }
+
+        function checkAdminSession() {
+            const isLogged = localStorage.getItem('sk_admin_logged') === 'true';
+            const outDiv = document.getElementById('admin-logged-out');
+            const inDiv = document.getElementById('admin-logged-in');
+            const panel = document.getElementById('admin-dashboard-panel');
+
+            if (isLogged) {
+                if(outDiv) outDiv.classList.add('hidden');
+                if(inDiv) inDiv.classList.remove('hidden');
+                if(panel) panel.classList.remove('hidden');
+                renderAdminDashboard();
+            } else {
+                if(outDiv) outDiv.classList.remove('hidden');
+                if(inDiv) inDiv.classList.add('hidden');
+                if(panel) panel.classList.add('hidden');
+            }
+        }
+
+        function approveArticle(index) {
+            const pending = getPendingArticles();
+            const art = pending[index];
+            if (!art) return;
+
+            const articles = getArticles();
+            articles.unshift(art);
+            localStorage.setItem('sk_articles', JSON.stringify(articles));
+
+            pending.splice(index, 1);
+            localStorage.setItem('sk_pending_articles', JSON.stringify(pending));
+
+            showToast('Disetujui', 'Artikel kini dipublikasikan di beranda.');
+            renderAdminDashboard();
             renderFrontpageContent();
         }
 
-        function editMedia(index) {
-            const mediaList = getMedia();
-            const media = mediaList[index];
-            if (!media) return;
-
-            document.getElementById('edit-media-index').value = index;
-            document.getElementById('media-title').value = media.title;
-            document.getElementById('media-theme').value = media.theme;
-            document.getElementById('media-type').value = media.type;
-            document.getElementById('media-url').value = media.url;
-
-            document.getElementById('form-media-title').innerHTML = '<i class="fa-solid fa-pen-to-square text-gold-600"></i> Edit Foto / Video';
-            document.getElementById('btn-save-media').innerText = 'Simpan Perubahan Media';
-            document.getElementById('btn-cancel-edit-media').classList.remove('hidden');
-
-            window.scrollTo({ top: 600, behavior: 'smooth' });
-        }
-
-        function cancelEditMedia() {
-            document.getElementById('edit-media-index').value = -1;
-            document.getElementById('media-title').form.reset();
-            document.getElementById('form-media-title').innerHTML = '<i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema';
-            document.getElementById('btn-save-media').innerText = 'Upload ke Tema Terkait';
-            document.getElementById('btn-cancel-edit-media').classList.add('hidden');
-        }
-
-        function deleteMedia(index) {
-            if (confirm('Apakah Anda yakin ingin menghapus media ini dari galeri?')) {
-                const mediaList = getMedia();
-                mediaList.splice(index, 1);
-                localStorage.setItem('sk_media', JSON.stringify(mediaList));
-                showToast('Terhapus', 'Media berhasil dihapus.');
-                renderFrontpageContent();
+        function rejectArticle(index) {
+            if (confirm('Tolak dan hapus pengajuan artikel ini?')) {
+                const pending = getPendingArticles();
+                pending.splice(index, 1);
+                localStorage.setItem('sk_pending_articles', JSON.stringify(pending));
+                showToast('Ditolak', 'Artikel dihapus dari antrean.');
+                renderAdminDashboard();
             }
         }
 
+        function approveMedia(index) {
+            const pending = getPendingMedia();
+            const med = pending[index];
+            if (!med) return;
+
+            const mediaList = getMedia();
+            const countInTheme = mediaList.filter(m => m.theme === med.theme).length;
+            if (countInTheme >= 5) {
+                showToast('Batas Tema Penuh', `Tema "${med.theme}" sudah mencapai batas maksimal 5 file.`, true);
+                return;
+            }
+
+            mediaList.unshift(med);
+            localStorage.setItem('sk_media', JSON.stringify(mediaList));
+
+            pending.splice(index, 1);
+            localStorage.setItem('sk_pending_media', JSON.stringify(pending));
+
+            showToast('Disetujui', 'Media kini dipublikasikan di galeri.');
+            renderAdminDashboard();
+            renderFrontpageContent();
+        }
+
+        function rejectMedia(index) {
+            if (confirm('Tolak dan hapus pengajuan media ini?')) {
+                const pending = getPendingMedia();
+                pending.splice(index, 1);
+                localStorage.setItem('sk_pending_media', JSON.stringify(pending));
+                showToast('Ditolak', 'Media dihapus dari antrean.');
+                renderAdminDashboard();
+            }
+        }
+
+        function exportLeads() {
+            const leads = getLeads();
+            if (leads.length === 0) {
+                alert('Belum ada data leads tersimpan.');
+                return;
+            }
+            let text = "DATA LEADS KONTRIBUTOR KLIEN\n\n";
+            leads.forEach((l, i) => {
+                text += `${i+1}. Nama: ${l.name} | WhatsApp: ${l.wa} | Minat/Kirim: ${l.type} | Tanggal: ${l.date}\n`;
+            });
+            alert(text);
+        }
+
+        function renderAdminDashboard() {
+            const pendingArt = getPendingArticles();
+            const pendingMed = getPendingMedia();
+            const leads = getLeads();
+
+            document.getElementById('pending-art-count').innerText = pendingArt.length;
+            document.getElementById('pending-med-count').innerText = pendingMed.length;
+            document.getElementById('leads-count').innerText = leads.length;
+
+            // Render Pending Articles
+            const artListDiv = document.getElementById('pending-articles-list');
+            if (pendingArt.length === 0) {
+                artListDiv.innerHTML = '<p class="text-xs text-gray-500 italic">Tidak ada artikel pending.</p>';
+            } else {
+                artListDiv.innerHTML = pendingArt.map((art, idx) => `
+                    <div class="bg-white p-4 rounded-2xl border border-gold-200 flex justify-between items-center gap-4">
+                        <div>
+                            <h4 class="font-bold text-sm text-obsidian">${art.title}</h4>
+                            <p class="text-xs text-gray-500">Kontributor: <strong>${art.author}</strong> (${art.wa}) • ${art.category}</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="approveArticle(${idx})" class="px-3.5 py-1.5 bg-emerald-600 text-white text-xs font-semibold rounded-xl">Setujui</button>
+                            <button onclick="rejectArticle(${idx})" class="px-3.5 py-1.5 bg-rose-600 text-white text-xs font-semibold rounded-xl">Tolak</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render Pending Media
+            const medListDiv = document.getElementById('pending-media-list');
+            if (pendingMed.length === 0) {
+                medListDiv.innerHTML = '<p class="text-xs text-gray-500 italic">Tidak ada media pending.</p>';
+            } else {
+                medListDiv.innerHTML = pendingMed.map((med, idx) => `
+                    <div class="bg-white p-4 rounded-2xl border border-gold-200 space-y-2">
+                        <div class="h-32 bg-slate-900 rounded-xl overflow-hidden">
+                            <img src="${med.url}" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-xs text-obsidian truncate">${med.title}</h4>
+                        <p class="text-[10px] text-gray-500">Oleh: ${med.author} (${med.wa}) • ${med.theme}</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="approveMedia(${idx})" class="flex-1 py-1.5 bg-emerald-600 text-white text-xs font-semibold rounded-lg">Setujui</button>
+                            <button onclick="rejectMedia(${idx})" class="flex-1 py-1.5 bg-rose-600 text-white text-xs font-semibold rounded-lg">Tolak</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render Leads Table
+            const leadsContainer = document.getElementById('leads-table-container');
+            if (leads.length === 0) {
+                leadsContainer.innerHTML = '<p class="text-xs text-gray-500 italic">Belum ada data leads.</p>';
+            } else {
+                leadsContainer.innerHTML = `
+                    <table class="w-full text-left text-xs">
+                        <thead>
+                            <tr class="border-b border-gray-200 text-gold-700">
+                                <th class="pb-2">No</th>
+                                <th class="pb-2">Nama Lengkap</th>
+                                <th class="pb-2">No. WhatsApp</th>
+                                <th class="pb-2">Jenis Kiriman</th>
+                                <th class="pb-2">Tanggal</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            ${leads.map((l, i) => `
+                                <tr class="hover:bg-gold-50/50">
+                                    <td class="py-2">${i+1}</td>
+                                    <td class="py-2 font-semibold text-obsidian">${l.name}</td>
+                                    <td class="py-2"><a href="https://wa.me/${l.wa}" target="_blank" class="text-emerald-600 underline">${l.wa}</a></td>
+                                    <td class="py-2">${l.type}</td>
+                                    <td class="py-2 text-gray-500">${l.date}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+            }
+        }
+
+        // --- RENDER FRONT PAGE PUBLISHED CONTENT ---
         function openArticleModal(index) {
             const articles = getArticles();
             const art = articles[index];
@@ -949,6 +986,8 @@
 
             document.getElementById('modal-article-meta').innerText = `${art.date} • ${art.category}`;
             document.getElementById('modal-article-title').innerText = art.title;
+            document.getElementById('modal-author').innerText = art.author || 'Sugeng Klinsman';
+            document.getElementById('modal-wa').innerText = art.wa || '-';
             document.getElementById('modal-keywords').innerText = art.keywords || '-';
             document.getElementById('modal-tags').innerText = art.tags || '-';
             document.getElementById('modal-article-content').innerHTML = `<p class="font-medium text-gold-700 italic mb-3">"${art.metaDesc || ''}"</p><p>` + art.content.replace(/\n/g, '</p><p class="mt-3">') + '</p>';
@@ -960,7 +999,6 @@
         }
 
         function renderFrontpageContent() {
-            // Render Artikel di Beranda
             const articles = getArticles();
             const artContainer = document.getElementById('frontpage-articles-grid');
             if (artContainer) {
@@ -977,7 +1015,7 @@
                                 ${art.tags ? `<div class="mt-4 flex flex-wrap gap-1.5">${art.tags.split(',').map(tag => `<span class="text-[10px] bg-gold-50 text-gold-700 px-2.5 py-0.5 rounded-full border border-gold-200">#${tag.trim()}</span>`).join('')}</div>` : ''}
                             </div>
                             <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
-                                <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Sugeng Klinsman</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Oleh: ${art.author || 'Sugeng Klinsman'}</span>
                                 <button onclick="openArticleModal(${index})" class="text-xs font-bold text-gold-700 hover:underline">Selengkapnya &rarr;</button>
                             </div>
                         </article>
@@ -985,24 +1023,6 @@
                 }).join('');
             }
 
-            // Render List Manajemen Artikel di Studio Kreator
-            const manageList = document.getElementById('manage-articles-list');
-            if (manageList) {
-                manageList.innerHTML = articles.map((art, index) => `
-                    <div class="p-4 bg-slate-50 border border-gray-200 rounded-2xl flex items-center justify-between gap-4">
-                        <div class="min-w-0">
-                            <h4 class="font-bold text-sm text-obsidian truncate">${art.title}</h4>
-                            <span class="text-xs text-gray-500">${art.date} • ${art.category}</span>
-                        </div>
-                        <div class="flex items-center gap-2 flex-shrink-0">
-                            <button onclick="editArticle(${index})" class="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-800 text-xs font-semibold rounded-lg transition"><i class="fa-solid fa-pen"></i> Edit</button>
-                            <button onclick="deleteArticle(${index})" class="px-3 py-1.5 bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs font-semibold rounded-lg transition"><i class="fa-solid fa-trash"></i> Hapus</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            // Render Galeri Media di Beranda (Dengan Tombol Edit & Hapus pada setiap kartu media)
             const mediaList = getMedia();
             const mediaContainer = document.getElementById('frontpage-media-container');
             if (mediaContainer) {
@@ -1016,27 +1036,20 @@
                                 <span class="text-xs font-semibold px-3 py-1 bg-gold-100 text-gold-800 rounded-full">${itemsInTheme.length} / 5 File</span>
                             </div>
                             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                ${itemsInTheme.map(item => {
-                                    const realIndex = mediaList.findIndex(m => m.title === item.title && m.url === item.url && m.theme === item.theme);
-                                    return `
-                                        <div class="gold-card rounded-2xl overflow-hidden shadow-sm relative group">
-                                            <div class="h-56 bg-obsidian relative">
-                                                ${item.type === 'video' 
-                                                    ? `<video src="${item.url}" controls class="w-full h-full object-cover"></video>` 
-                                                    : `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover">`
-                                                }
-                                                <div class="absolute top-3 right-3 flex items-center gap-2">
-                                                    <button onclick="editMedia(${realIndex})" class="bg-amber-500 hover:bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-md transition" title="Edit Media"><i class="fa-solid fa-pen"></i></button>
-                                                    <button onclick="deleteMedia(${realIndex})" class="bg-rose-600 hover:bg-rose-700 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-md transition" title="Hapus Media"><i class="fa-solid fa-trash"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="p-5">
-                                                <h4 class="font-bold text-obsidian">${item.title}</h4>
-                                                <span class="text-xs text-gold-700 font-semibold mt-1 inline-block">Tema: ${item.theme}</span>
-                                            </div>
+                                ${itemsInTheme.map(item => `
+                                    <div class="gold-card rounded-2xl overflow-hidden shadow-sm">
+                                        <div class="h-56 bg-obsidian relative">
+                                            ${item.type === 'video' 
+                                                ? `<video src="${item.url}" controls class="w-full h-full object-cover"></video>` 
+                                                : `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover">`
+                                            }
                                         </div>
-                                    `;
-                                }).join('')}
+                                        <div class="p-5">
+                                            <h4 class="font-bold text-obsidian">${item.title}</h4>
+                                            <span class="text-xs text-gold-700 font-semibold mt-1 inline-block">Kontributor: ${item.author || 'Sugeng'}</span>
+                                        </div>
+                                    </div>
+                                `).join('')}
                             </div>
                         </div>
                     `;
@@ -1047,6 +1060,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             calculateTotal();
             renderFrontpageContent();
+            checkAdminSession();
         });
     </script>
 </body>
