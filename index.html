@@ -96,8 +96,6 @@
         .text-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .gold-card { background: #FFFFFF; border: 1px solid rgba(212, 175, 55, 0.3); transition: all 0.3s ease; }
         .gold-card:hover { border-color: #D4AF37; box-shadow: 0 10px 30px -4px rgba(212, 175, 55, 0.15); transform: translateY(-3px); }
-        
-        /* Custom Scrollbar untuk slider ulasan */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -110,6 +108,20 @@
         <div>
             <h4 id="toast-title" class="font-semibold text-sm">Berhasil!</h4>
             <p id="toast-desc" class="text-xs text-slate-300">Aksi berhasil dilakukan.</p>
+        </div>
+    </div>
+
+    <!-- Modal Baca Artikel Utuh -->
+    <div id="article-modal" class="fixed inset-0 z-50 hidden bg-obsidian/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative border border-gold-300">
+            <button onclick="closeArticleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-obsidian text-2xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modal-article-meta" class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2"></div>
+            <h2 id="modal-article-title" class="text-2xl sm:text-3xl font-bold font-serif text-obsidian mb-4"></h2>
+            <div id="modal-article-content" class="text-gray-700 text-base leading-relaxed space-y-4 border-t border-gray-100 pt-6"></div>
+            <div class="mt-8 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+                <span>Ditulis oleh: <strong>Sugeng Klinsman</strong></span>
+                <button onclick="closeArticleModal()" class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-obsidian rounded-xl font-semibold">Tutup</button>
+            </div>
         </div>
     </div>
 
@@ -275,249 +287,7 @@
                 </div>
             </section>
 
-            <!-- ==================== ULASAN KLIEN HORIZONTAL SCROLL (SLIDER) ==================== -->
-            <section class="py-20 bg-gold-50/50 border-t border-gold-200/50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-                    <div class="text-center max-w-3xl mx-auto">
-                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Testimoni & Kepercayaan Klien</span>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Ulasan Autentik Pengguna Layanan</h2>
-                        <p class="text-gray-600 mt-2 text-sm">Geser ke samping untuk melihat berbagai ulasan mendalam dari klien untuk masing-masing layanan kami.</p>
-                    </div>
-
-                    <!-- LAYANAN 1: WEB DEVELOPMENT (5 Ulasan - Scroll Horizontal) -->
-                    <div class="space-y-4">
-                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
-                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
-                                <i class="fa-solid fa-code text-gold-600"></i> Ulasan Jasa Web Development
-                            </h3>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
-                        </div>
-                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
-                            <!-- Review 1 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Pengerjaan website landing page UMKM saya di Pontianak diselesaikan dengan sangat presisi dan cepat oleh Sugeng Klinsman. Tampilannya sangat elegan dengan dominasi warna putih dan emas yang mencerminkan kesan mewah. Selain itu, kecepatan aksesnya luar biasa karena langsung terhubung ke Cloudflare Pages tanpa kendala. Dukungan teknis dan respons yang diberikan sangat ramah serta profesional sekali. Bisnis kuliner saya kini terlihat jauh lebih bonafid di mata pelanggan baru secara online."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Ahmad Zulfikar</h4>
-                                        <span class="text-xs text-gray-500">Owner Kuliner Pontianak</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 2 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Sebagai pelaku usaha rintisan di Kubu Raya, saya sangat terbantu dengan layanan pembuatan web development dari Sugeng. Struktur kodenya bersih, sangat ramah SEO, dan langsung terintegrasi dengan tombol pemesanan WhatsApp yang interaktif. Investasi harganya sangat transparan tanpa ada biaya tersembunyi sama sekali. Fitur keamanan SSL dan kecepatan servernya membuat para pengunjung merasa aman dan nyaman saat menjelajahi katalog produk kami. Sangat direkomendasikan bagi siapa saja yang ingin Go Digital!"
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Dewi Lestari</h4>
-                                        <span class="text-xs text-gray-500">Pengusaha Fashion Lokal</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 3 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Company profile perusahaan kami berhasil dirombak total menjadi jauh lebih modern dan responsif berkat keahlian web developer Sugeng Klinsman. Navigasi halamannya sangat halus, tata letak layoutnya sangat rapi di perangkat smartphone maupun laptop, dan estetikanya benar-benar berkelas. Proses migrasi domain dan pengaturan nameserver Cloudflare dibimbing langsung dengan sabar hingga tuntas. Kami sangat mengapresiasi dedikasi dan kualitas kerja tingkat tinggi yang diberikan."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Rian Hidayat</h4>
-                                        <span class="text-xs text-gray-500">Direktur CV. Borneo Solusi</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 4 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Awalnya saya bingung memilih jasa pembuatan website yang mengerti kebutuhan lokal di Kalimantan Barat. Untunglah saya menemukan situs sugengklinsman.my.id yang menawarkan layanan transparan dan terpercaya. Hasil jadinya melebihi ekspektasi saya; desain putih emasnya sangat elegan dan mencerminkan citra profesional. Fitur kalkulator harganya juga sangat transparan sehingga memudahkan saya menghitung estimasi anggaran proyek sebelum memesan."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Siti Aminah</h4>
-                                        <span class="text-xs text-gray-500">Praktisi Pendidikan & Kursus</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 5 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Pelayanan luar biasa dari awal konsultasi hingga website resmi online di internet. Sugeng benar-benar mendengarkan setiap detail kebutuhan fitur yang saya inginkan untuk portal komunitas kami. Tidak ada kendala server lambat karena langsung di-deploy ke infrastruktur Cloudflare berkecepatan tinggi. Bagi rekan-rekan di Pontianak dan sekitarnya yang memerlukan web developer handal dan berpengalaman, mempercayakan proyek kepada Sugeng Klinsman adalah keputusan paling tepat."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Budi Santoso</h4>
-                                        <span class="text-xs text-gray-500">Koordinator Komunitas Kreatif</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- LAYANAN 2: KONTEN & SEO (5 Ulasan - Scroll Horizontal) -->
-                    <div class="space-y-4 pt-6">
-                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
-                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
-                                <i class="fa-solid fa-pen-nib text-gold-600"></i> Ulasan Paket Konten & Artikel SEO
-                            </h3>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
-                        </div>
-                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
-                            <!-- Review 1 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Artikel SEO buatan Sugeng Klinsman benar-benar terbukti mendongkrak trafik organik website toko online saya. Riset kata kunci yang digunakan sangat akurat dan relevan dengan apa yang sedang dicari oleh calon pembeli di mesin pencari Google. Gaya bahasanya mengalir alami, informatif, dan sangat memikat pembaca untuk melakukan transaksi pembelian. Dalam waktu beberapa minggu saja, beberapa keyword produk kami sudah merangkak naik ke halaman pertama Google."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Hesti Rahmawati</h4>
-                                        <span class="text-xs text-gray-500">Pemilik Toko Online Herbal</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 2 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Sebagai seorang penulis dan jurnalis digital, standar penulisan artikel SEO yang dikerjakan oleh Sugeng sangat memuaskan dan berstandar tinggi. Pengaturan meta title dan meta description dioptimalkan secara cermat untuk mendongkrak rasio klik dari pengguna internet. Konsistensi dalam menyusun jadwal publikasi konten bulanan membuat brand kedai kopi kami semakin dikenal luas oleh masyarakat penikmat kopi di Pontianak."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Fajar Pratama</h4>
-                                        <span class="text-xs text-gray-500">Content Manager Cafe Lokal</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 3 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Paket konten bulanan dari layanan ini sangat membantu operasional media digital kami. Artikel yang dihasilkan tidak pernah mengecewakan, minim kesalahan ejaan, serta sangat mendalam pembahasannya. Pemahaman mendalam mengenai teknik SEO on-page membuat web portal kami memiliki visibilitas yang jauh lebih stabil di mesin pencari. Kolaborasi kerja sama yang sangat menyenangkan dan profesional."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Yusuf Maulana</h4>
-                                        <span class="text-xs text-gray-500">Editor Portal Berita Daerah</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 4 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Strategi keyword lokal yang diterapkan Sugeng pada artikel bisnis properti saya terbukti sangat efektif menjangkau calon klien potensial di wilayah Kalimantan Barat. Penjelasannya sangat terstruktur dengan heading yang rapi sehingga sangat disukai oleh algoritma Google. Komunikasi sangat lancar dan pengerjaan selalu tepat waktu sesuai kesepakatan jadwal yang telah disepakati bersama."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Melinda Kusuma</h4>
-                                        <span class="text-xs text-gray-500">Marketing Eksekutif Properti</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 5 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Layanan paket konten artikel SEO terbaik yang pernah saya gunakan untuk bisnis layanan jasa saya. Artikel yang dibuat benar-benar memberikan solusi informatif bagi pembaca tanpa terkesan hard-selling yang berlebihan. Peningkatan pengunjung organik web saya naik drastis sejak menggunakan jasa dari Sugeng Klinsman. Sangat direkomendasikan bagi para pemilik UMKM yang ingin meningkatkan penjualan lewat jalur pencarian Google organik."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Dedi Iskandar</h4>
-                                        <span class="text-xs text-gray-500">Penyedia Layanan Jasa Profesional</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- LAYANAN 3: FOTO & VIDEO KREATIF (5 Ulasan - Scroll Horizontal) -->
-                    <div class="space-y-4 pt-6">
-                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
-                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
-                                <i class="fa-solid fa-camera-retro text-gold-600"></i> Ulasan Jasa Foto & Video Kreatif
-                            </h3>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
-                        </div>
-                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
-                            <!-- Review 1 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Hasil jepretan foto produk dan video komersial untuk brand UMKM saya dikerjakan dengan sentuhan seni visual yang sangat berkelas. Sugeng sangat mengerti cara menonjolkan detail produk agar terlihat mewah dan memikat di media sosial seperti Instagram dan TikTok. Proses penyuntingan warna (color grading) terasa sangat sinematik dan selaras dengan identitas brand kami. Sungguh investasi visual yang sangat sepadan dengan hasilnya."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Rahmat Hidayat</h4>
-                                        <span class="text-xs text-gray-500">Founder Brand Aksesoris Lokal</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 2 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Dokumentasi liputan event komunitas otomotif XBI Brotherhood Chapter Pontianak yang diabadikan oleh Sugeng sungguh memukau seluruh anggota. Sudut pengambilan gambar (angle) sangat dinamis, tajam, dan berhasil menangkap momen-momen seru selama touring berlangsung. Format video yang diserahkan sudah siap upload dengan kualitas resolusi tinggi yang sangat jernih di berbagai perangkat layar smartphone."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Reza Pahlevi</h4>
-                                        <span class="text-xs text-gray-500">Penggiat Komunitas Motor XBI</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 3 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Sangat puas dengan hasil video profil perusahaan yang dikerjakan secara profesional. Peralatan yang digunakan modern dan penanganan di lapangan sangat terstruktur rapi. Tim bekerja dengan penuh ketelitian sehingga menghasilkan video sinematik berdurasi pas yang sangat efektif menarik minat calon klien korporat kami. Terima kasih banyak atas karya visual yang sangat membanggakan ini."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Nadia Paramita</h4>
-                                        <span class="text-xs text-gray-500">Corporate Secretary Perusahaan</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 4 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Sesi pemotretan produk kuliner di cafe kami berjalan sangat santai namun menghasilkan foto-foto yang sangat menggugah selera. Sugeng memiliki ketajaman mata artistik dalam menata cahaya dan latar belakang objek foto. Hasil editannya pun cepat diserahkan tanpa mengurangi kualitas resolusi sedikit pun. Sangat direkomendasikan bagi para pemilik kafe dan resto di Pontianak yang ingin menaikkan level promosi visualnya."
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Arya Wiguna</h4>
-                                        <span class="text-xs text-gray-500">Manager Operasional Cafe</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                            <!-- Review 5 -->
-                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                                <p class="text-gray-700 text-sm italic leading-relaxed">
-                                    "Jasa foto dan video kreatif terbaik di Pontianak! Kualitas estetika warna yang dihasilkan benar-benar memberikan karakter kuat pada portofolio karya saya. Komunikasi sangat interaktif, ramah, dan sangat fleksibel dalam mengakomodasi konsep visual yang saya inginkan. Seluruh master file diserahkan secara lengkap tanpa ada batasan yang menyulitkan klien. Sukses selalu untuk Sugeng Klinsman!"
-                                </p>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                    <div>
-                                        <h4 class="font-bold text-sm text-obsidian">Intan Permata</h4>
-                                        <span class="text-xs text-gray-500">Content Creator & Influencer</span>
-                                    </div>
-                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TAMPILAN ARTIKEL TERBARU DARI STUDIO KREATOR -->
+            <!-- ==================== ARTIKEL TERBARU (HANYA JUDUL & RINGKASAN / META DESKRIPSI) ==================== -->
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gold-200/50">
                 <div class="flex justify-between items-end mb-10">
                     <div>
@@ -527,20 +297,163 @@
                     <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Tulis Artikel Baru</button>
                 </div>
                 <div id="frontpage-articles-grid" class="grid md:grid-cols-3 gap-8">
-                    <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
-                        <div>
-                            <span class="text-xs text-gold-600 font-bold uppercase">24 Oktober 2026 • SEO & Web Dev</span>
-                            <h3 class="text-lg font-bold text-obsidian mt-2 mb-2">Strategi SEO Lokal untuk UMKM di Pontianak</h3>
-                            <p class="text-gray-600 text-sm">Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-100">
-                            <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Sugeng Klinsman</span>
-                        </div>
-                    </article>
+                    <!-- Artikel dirender otomatis oleh JavaScript -->
                 </div>
             </section>
 
-            <!-- TAMPILAN GALERI FOTO & VIDEO BERDASARKAN TEMA (MAKSIMAL 5 PER TEMA) -->
+            <!-- ==================== ULASAN KLIEN HORIZONTAL SCROLL ==================== -->
+            <section class="py-20 bg-gold-50/50 border-t border-gold-200/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+                    <div class="text-center max-w-3xl mx-auto">
+                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Testimoni & Kepercayaan Klien</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Ulasan Autentik Pengguna Layanan</h2>
+                        <p class="text-gray-600 mt-2 text-sm">Geser ke samping untuk melihat berbagai ulasan mendalam dari klien untuk masing-masing layanan kami.</p>
+                    </div>
+
+                    <!-- LAYANAN 1: WEB DEVELOPMENT (5 Ulasan) -->
+                    <div class="space-y-4">
+                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
+                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
+                                <i class="fa-solid fa-code text-gold-600"></i> Ulasan Jasa Web Development
+                            </h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
+                        </div>
+                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Pengerjaan website landing page UMKM saya di Pontianak diselesaikan dengan sangat presisi dan cepat oleh Sugeng Klinsman. Tampilannya sangat elegan dengan dominasi warna putih dan emas yang mencerminkan kesan mewah. Selain itu, kecepatan aksesnya luar biasa karena langsung terhubung ke Cloudflare Pages tanpa kendala. Dukungan teknis dan respons yang diberikan sangat ramah serta profesional sekali. Bisnis kuliner saya kini terlihat jauh lebih bonafid di mata pelanggan baru secara online."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Ahmad Zulfikar</h4><span class="text-xs text-gray-500">Owner Kuliner Pontianak</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sebagai pelaku usaha rintisan di Kubu Raya, saya sangat terbantu dengan layanan pembuatan web development dari Sugeng. Struktur kodenya bersih, sangat ramah SEO, dan langsung terintegrasi dengan tombol pemesanan WhatsApp yang interaktif. Investasi harganya sangat transparan tanpa ada biaya tersembunyi sama sekali. Fitur keamanan SSL dan kecepatan servernya membuat para pengunjung merasa aman dan nyaman saat menjelajahi katalog produk kami. Sangat direkomendasikan bagi siapa saja yang ingin Go Digital!"</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Dewi Lestari</h4><span class="text-xs text-gray-500">Pengusaha Fashion Lokal</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Company profile perusahaan kami berhasil dirombak total menjadi jauh lebih modern dan responsif berkat keahlian web developer Sugeng Klinsman. Navigasi halamannya sangat halus, tata letak layoutnya sangat rapi di perangkat smartphone maupun laptop, dan estetikanya benar-benar berkelas. Proses migrasi domain dan pengaturan nameserver Cloudflare dibimbing langsung dengan sabar hingga tuntas. Kami sangat mengapresiasi dedikasi dan kualitas kerja tingkat tinggi yang diberikan."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Rian Hidayat</h4><span class="text-xs text-gray-500">Direktur CV. Borneo Solusi</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Awalnya saya bingung memilih jasa pembuatan website yang mengerti kebutuhan lokal di Kalimantan Barat. Untunglah saya menemukan situs sugengklinsman.my.id yang menawarkan layanan transparan dan terpercaya. Hasil jadinya melebihi ekspektasi saya; desain putih emasnya sangat elegan dan mencerminkan citra profesional. Fitur kalkulator harganya juga sangat transparan sehingga memudahkan saya menghitung estimasi anggaran proyek sebelum memesan."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Siti Aminah</h4><span class="text-xs text-gray-500">Praktisi Pendidikan & Kursus</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Pelayanan luar biasa dari awal konsultasi hingga website resmi online di internet. Sugeng benar-benar mendengarkan setiap detail kebutuhan fitur yang saya inginkan untuk portal komunitas kami. Tidak ada kendala server lambat karena langsung di-deploy ke infrastruktur Cloudflare berkecepatan tinggi. Bagi rekan-rekan di Pontianak dan sekitarnya yang memerlukan web developer handal dan berpengalaman, mempercayakan proyek kepada Sugeng Klinsman adalah keputusan paling tepat."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Budi Santoso</h4><span class="text-xs text-gray-500">Koordinator Komunitas Kreatif</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LAYANAN 2: KONTEN & SEO (5 Ulasan) -->
+                    <div class="space-y-4 pt-6">
+                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
+                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
+                                <i class="fa-solid fa-pen-nib text-gold-600"></i> Ulasan Paket Konten & Artikel SEO
+                            </h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
+                        </div>
+                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Artikel SEO buatan Sugeng Klinsman benar-benar terbukti mendongkrak trafik organik website toko online saya. Riset kata kunci yang digunakan sangat akurat dan relevan dengan apa yang sedang dicari oleh calon pembeli di mesin pencari Google. Gaya bahasanya mengalir alami, informatif, dan sangat memikat pembaca untuk melakukan transaksi pembelian. Dalam waktu beberapa minggu saja, beberapa keyword produk kami sudah merangkak naik ke halaman pertama Google."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Hesti Rahmawati</h4><span class="text-xs text-gray-500">Pemilik Toko Online Herbal</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sebagai seorang penulis dan jurnalis digital, standar penulisan artikel SEO yang dikerjakan oleh Sugeng sangat memuaskan dan berstandar tinggi. Pengaturan meta title dan meta description dioptimalkan secara cermat untuk mendongkrak rasio klik dari pengguna internet. Konsistensi dalam menyusun jadwal publikasi konten bulanan membuat brand kedai kopi kami semakin dikenal luas oleh masyarakat penikmat kopi di Pontianak."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Fajar Pratama</h4><span class="text-xs text-gray-500">Content Manager Cafe Lokal</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Paket konten bulanan dari layanan ini sangat membantu operasional media digital kami. Artikel yang dihasilkan tidak pernah mengecewakan, minim kesalahan ejaan, serta sangat mendalam pembahasannya. Pemahaman mendalam mengenai teknik SEO on-page membuat web portal kami memiliki visibilitas yang jauh lebih stabil di mesin pencari. Kolaborasi kerja sama yang sangat menyenangkan dan profesional."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Yusuf Maulana</h4><span class="text-xs text-gray-500">Editor Portal Berita Daerah</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Strategi keyword lokal yang diterapkan Sugeng pada artikel bisnis properti saya terbukti sangat efektif menjangkau calon klien potensial di wilayah Kalimantan Barat. Penjelasannya sangat terstruktur dengan heading yang rapi sehingga sangat disukai oleh algoritma Google. Komunikasi sangat lancar dan pengerjaan selalu tepat waktu sesuai kesepakatan jadwal yang telah disepakati bersama."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Melinda Kusuma</h4><span class="text-xs text-gray-500">Marketing Eksekutif Properti</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Layanan paket konten artikel SEO terbaik yang pernah saya gunakan untuk bisnis layanan jasa saya. Artikel yang dibuat benar-benar memberikan solusi informatif bagi pembaca tanpa terkesan hard-selling yang berlebihan. Peningkatan pengunjung organik web saya naik drastis sejak menggunakan jasa dari Sugeng Klinsman. Sangat direkomendasikan bagi para pemilik UMKM yang ingin meningkatkan penjualan lewat jalur pencarian Google organik."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Dedi Iskandar</h4><span class="text-xs text-gray-500">Penyedia Layanan Jasa Profesional</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LAYANAN 3: FOTO & VIDEO KREATIF (5 Ulasan) -->
+                    <div class="space-y-4 pt-6">
+                        <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
+                            <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
+                                <i class="fa-solid fa-camera-retro text-gold-600"></i> Ulasan Jasa Foto & Video Kreatif
+                            </h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-100 px-3 py-1 rounded-full">5 Ulasan (Geser &rarr;)</span>
+                        </div>
+                        <div class="flex overflow-x-auto space-x-6 pb-4 pt-2 no-scrollbar snap-x snap-mandatory">
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Hasil jepretan foto produk dan video komersial untuk brand UMKM saya dikerjakan dengan sentuhan seni visual yang sangat berkelas. Sugeng sangat mengerti cara menonjolkan detail produk agar terlihat mewah dan memikat di media sosial seperti Instagram dan TikTok. Proses penyuntingan warna (color grading) terasa sangat sinematik dan selaras dengan identitas brand kami. Sungguh investasi visual yang sangat sepadan dengan hasilnya."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Rahmat Hidayat</h4><span class="text-xs text-gray-500">Founder Brand Aksesoris Lokal</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Dokumentasi liputan event komunitas otomotif XBI Brotherhood Chapter Pontianak yang diabadikan oleh Sugeng sungguh memukau seluruh anggota. Sudut pengambilan gambar (angle) sangat dinamis, tajam, dan berhasil menangkap momen-momen seru selama touring berlangsung. Format video yang diserahkan sudah siap upload dengan kualitas resolusi tinggi yang sangat jernih di berbagai perangkat layar smartphone."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Reza Pahlevi</h4><span class="text-xs text-gray-500">Penggiat Komunitas Motor XBI</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sangat puas dengan hasil video profil perusahaan yang dikerjakan secara profesional. Peralatan yang digunakan modern dan penanganan di lapangan sangat terstruktur rapi. Tim bekerja dengan penuh ketelitian sehingga menghasilkan video sinematik berdurasi pas yang sangat efektif menarik minat calon klien korporat kami. Terima kasih banyak atas karya visual yang sangat membanggakan ini."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Nadia Paramita</h4><span class="text-xs text-gray-500">Corporate Secretary Perusahaan</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Sesi pemotretan produk kuliner di cafe kami berjalan sangat santai namun menghasilkan foto-foto yang sangat menggugah selera. Sugeng memiliki ketajaman mata artistik dalam menata cahaya dan latar belakang objek foto. Hasil editannya pun cepat diserahkan tanpa mengurangi kualitas resolusi sedikit pun. Sangat direkomendasikan bagi para pemilik kafe dan resto di Pontianak yang ingin menaikkan level promosi visualnya."</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Arya Wiguna</h4><span class="text-xs text-gray-500">Manager Operasional Cafe</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-80 sm:w-96 snap-center gold-card rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                                <p class="text-gray-700 text-sm italic leading-relaxed">"Jasa foto dan video kreatif terbaik di Pontianak! Kualitas estetika warna yang dihasilkan benar-benar memberikan karakter kuat pada portofolio karya saya. Komunikasi sangat interaktif, ramah, dan sangat fleksibel dalam mengakomodasi konsep visual yang saya inginkan. Seluruh master file diserahkan secara lengkap tanpa ada batasan yang menyulitkan klien. Sukses selalu untuk Sugeng Klinsman!"</p>
+                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    <div><h4 class="font-bold text-sm text-obsidian">Intan Permata</h4><span class="text-xs text-gray-500">Content Creator & Influencer</span></div>
+                                    <div class="text-gold-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAMPILAN GALERI FOTO & VIDEO BERDASARKAN TEMA -->
             <section class="py-16 bg-gold-50/40 border-t border-gold-200/50">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between items-end mb-10">
@@ -551,7 +464,7 @@
                         <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Upload Media Baru</button>
                     </div>
                     <div id="frontpage-media-container" class="space-y-12">
-                        <!-- Konten galeri berdasarkan tema dirender dinamis -->
+                        <!-- Konten galeri dirender dinamis -->
                     </div>
                 </div>
             </section>
@@ -581,8 +494,8 @@
                                 <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Isi / Ringkasan Artikel</label>
-                                <textarea id="art-content" rows="4" required placeholder="Tulis ringkasan atau isi artikel di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Isi Lengkap Artikel</label>
+                                <textarea id="art-content" rows="6" required placeholder="Tulis isi lengkap artikel di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
                             </div>
                             <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
                                 Publikasikan Artikel
@@ -752,7 +665,7 @@
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
     </footer>
 
-    <!-- JavaScript Navigasi, Kalkulator, & CMS -->
+    <!-- JavaScript Navigasi, Kalkulator, & CMS Artikel Ringkasan -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -828,11 +741,16 @@
             window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
         }
 
-        // --- CMS LOCALSTORAGE (ARTIKEL & MEDIA MAKS 5 PER TEMA) ---
+        // --- CMS LOCALSTORAGE ARTIKEL HANYA JUDUL & RINGKASAN ---
         function getArticles() {
             const data = localStorage.getItem('sk_articles');
             return data ? JSON.parse(data) : [
-                { title: 'Strategi SEO Lokal untuk UMKM di Pontianak', category: 'SEO & Web Dev', content: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.', date: '24 Oktober 2026' }
+                { 
+                    title: 'Strategi SEO Lokal untuk UMKM di Pontianak', 
+                    category: 'SEO & Web Dev', 
+                    content: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat. Dengan optimasi kata kunci lokal dan struktur halaman yang bersih, website UMKM Anda akan lebih mudah ditemukan oleh calon pelanggan setia di Pontianak.', 
+                    date: '24 Oktober 2026' 
+                }
             ];
         }
 
@@ -884,22 +802,44 @@
             switchPage('beranda');
         }
 
+        function openArticleModal(index) {
+            const articles = getArticles();
+            const art = articles[index];
+            if (!art) return;
+
+            document.getElementById('modal-article-meta').innerText = `${art.date} • ${art.category}`;
+            document.getElementById('modal-article-title').innerText = art.title;
+            document.getElementById('modal-article-content').innerHTML = `<p>${art.content.replace(/\n/g, '</p><p class="mt-3">')}</p>`;
+            document.getElementById('article-modal').classList.remove('hidden');
+        }
+
+        function closeArticleModal() {
+            document.getElementById('article-modal').classList.add('hidden');
+        }
+
         function renderFrontpageContent() {
             const articles = getArticles();
             const artContainer = document.getElementById('frontpage-articles-grid');
             if (artContainer) {
-                artContainer.innerHTML = articles.map(art => `
-                    <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6">
-                        <div>
-                            <span class="text-xs text-gold-600 font-bold uppercase">${art.date} • ${art.category}</span>
-                            <h3 class="text-lg font-bold text-obsidian mt-2 mb-2">${art.title}</h3>
-                            <p class="text-gray-600 text-sm">${art.content}</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-100">
-                            <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Sugeng Klinsman</span>
-                        </div>
-                    </article>
-                `).join('');
+                artContainer.innerHTML = articles.map((art, index) => {
+                    // Ambil ringkasan / 120 karakter pertama untuk meta deskripsi preview
+                    const summary = art.content.length > 120 ? art.content.substring(0, 120) + '...' : art.content;
+                    return `
+                        <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6 shadow-sm">
+                            <div>
+                                <span class="text-xs text-gold-600 font-bold uppercase">${art.date} • ${art.category}</span>
+                                <h3 class="text-xl font-bold text-obsidian mt-2 mb-3 leading-snug">
+                                    <a href="javascript:void(0)" onclick="openArticleModal(${index})" class="hover:text-gold-600 transition">${art.title}</a>
+                                </h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">${summary}</p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Sugeng Klinsman</span>
+                                <button onclick="openArticleModal(${index})" class="text-xs font-bold text-gold-700 hover:underline">Selengkapnya &rarr;</button>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
             }
 
             const mediaList = getMedia();
