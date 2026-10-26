@@ -474,7 +474,7 @@
             </section>
         </div>
 
-        <!-- ==================== HALAMAN STUDIO KREATOR (DENGAN EDIT & HAPUS) ==================== -->
+        <!-- ==================== HALAMAN STUDIO KREATOR (DENGAN EDIT & HAPUS ARTIKEL & MEDIA) ==================== -->
         <div id="page-studio" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
                 <div class="text-center max-w-3xl mx-auto">
@@ -527,9 +527,9 @@
                     </form>
                 </div>
 
-                <!-- Daftar Artikel & Media yang Sudah Dipublish (untuk Edit/Hapus) -->
+                <!-- Manajemen Artikel & Media Terpublikasi -->
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Manajemen Artikel -->
+                    <!-- Kelola Artikel -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm space-y-4">
                         <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-list-check text-gold-600"></i> Kelola Artikel Terpublikasi</h3>
                         <div id="manage-articles-list" class="space-y-3 max-h-96 overflow-y-auto pr-2">
@@ -537,12 +537,13 @@
                         </div>
                     </div>
 
-                    <!-- Form Upload Media -->
+                    <!-- Form Tambah / Edit Media -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm">
-                        <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
+                        <h3 id="form-media-title" class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema
                         </h3>
                         <form onsubmit="handleMediaSubmit(event)" class="space-y-4">
+                            <input type="hidden" id="edit-media-index" value="-1">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Judul Karya / Media</label>
                                 <input type="text" id="media-title" required placeholder="Contoh: Touring XSR di Kubu Raya" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
@@ -568,9 +569,14 @@
                                 <label class="block text-sm font-medium text-slate-700 mb-1">URL File Media</label>
                                 <input type="url" id="media-url" required placeholder="https://images.unsplash.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
-                            <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
-                                Upload ke Tema Terkait
-                            </button>
+                            <div class="flex gap-4">
+                                <button type="submit" id="btn-save-media" class="flex-1 bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
+                                    Upload ke Tema Terkait
+                                </button>
+                                <button type="button" id="btn-cancel-edit-media" onclick="cancelEditMedia()" class="hidden px-6 bg-gray-200 hover:bg-gray-300 text-obsidian font-bold py-3.5 rounded-xl transition">
+                                    Batal
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -700,7 +706,7 @@
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
     </footer>
 
-    <!-- JavaScript Navigasi, Kalkulator, & CMS CRUD (Create, Read, Update, Delete) -->
+    <!-- JavaScript Navigasi, Kalkulator, & CMS CRUD Lengkap Artikel & Media -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -776,7 +782,7 @@
             window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
         }
 
-        // --- CMS LOCALSTORAGE ARTIKEL & MEDIA DENGAN EDIT & DELETE ---
+        // --- LOCALSTORAGE DATA CMS ---
         function getArticles() {
             const data = localStorage.getItem('sk_articles');
             return data ? JSON.parse(data) : [
@@ -800,6 +806,7 @@
             ];
         }
 
+        // --- ARTIKEL CRUD ---
         function handleArticleSubmit(e) {
             e.preventDefault();
             const editIndex = parseInt(document.getElementById('edit-article-index').value);
@@ -814,13 +821,11 @@
             const articles = getArticles();
 
             if (editIndex > -1) {
-                // Update Artikel
                 articles[editIndex] = { title, category, keywords, metaDesc, tags, content, date: articles[editIndex].date };
                 localStorage.setItem('sk_articles', JSON.stringify(articles));
                 showToast('Berhasil!', 'Artikel SEO berhasil diperbarui.');
                 cancelEditArticle();
             } else {
-                // Tambah Artikel Baru
                 articles.unshift({ title, category, keywords, metaDesc, tags, content, date });
                 localStorage.setItem('sk_articles', JSON.stringify(articles));
                 showToast('Berhasil!', 'Artikel SEO baru berhasil dipublikasikan.');
@@ -868,26 +873,63 @@
             }
         }
 
+        // --- MEDIA CRUD (FOTO & VIDEO DENGAN EDIT & DELETE) ---
         function handleMediaSubmit(e) {
             e.preventDefault();
+            const editIndex = parseInt(document.getElementById('edit-media-index').value);
             const title = document.getElementById('media-title').value;
             const theme = document.getElementById('media-theme').value;
             const type = document.getElementById('media-type').value;
             const url = document.getElementById('media-url').value;
 
             const mediaList = getMedia();
-            const countInTheme = mediaList.filter(m => m.theme === theme).length;
-            if (countInTheme >= 5) {
-                showToast('Batas Maksimal Tercapai', `Tema "${theme}" sudah memiliki 5 foto/video (Batas maksimal).`, true);
-                return;
+
+            if (editIndex > -1) {
+                // Update Media
+                mediaList[editIndex] = { title, theme, type, url };
+                localStorage.setItem('sk_media', JSON.stringify(mediaList));
+                showToast('Berhasil!', 'Media berhasil diperbarui.');
+                cancelEditMedia();
+            } else {
+                // Tambah Media Baru dengan Batasan Max 5 per Tema
+                const countInTheme = mediaList.filter(m => m.theme === theme).length;
+                if (countInTheme >= 5) {
+                    showToast('Batas Maksimal Tercapai', `Tema "${theme}" sudah memiliki 5 foto/video (Batas maksimal).`, true);
+                    return;
+                }
+                mediaList.unshift({ title, theme, type, url });
+                localStorage.setItem('sk_media', JSON.stringify(mediaList));
+                showToast('Berhasil!', `Media berhasil diupload ke tema ${theme}.`);
+                e.target.reset();
             }
 
-            mediaList.unshift({ title, theme, type, url });
-            localStorage.setItem('sk_media', JSON.stringify(mediaList));
-
-            showToast('Berhasil!', `Media berhasil diupload ke tema ${theme}.`);
-            e.target.reset();
             renderFrontpageContent();
+        }
+
+        function editMedia(index) {
+            const mediaList = getMedia();
+            const media = mediaList[index];
+            if (!media) return;
+
+            document.getElementById('edit-media-index').value = index;
+            document.getElementById('media-title').value = media.title;
+            document.getElementById('media-theme').value = media.theme;
+            document.getElementById('media-type').value = media.type;
+            document.getElementById('media-url').value = media.url;
+
+            document.getElementById('form-media-title').innerHTML = '<i class="fa-solid fa-pen-to-square text-gold-600"></i> Edit Foto / Video';
+            document.getElementById('btn-save-media').innerText = 'Simpan Perubahan Media';
+            document.getElementById('btn-cancel-edit-media').classList.remove('hidden');
+
+            window.scrollTo({ top: 600, behavior: 'smooth' });
+        }
+
+        function cancelEditMedia() {
+            document.getElementById('edit-media-index').value = -1;
+            document.getElementById('media-title').form.reset();
+            document.getElementById('form-media-title').innerHTML = '<i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema';
+            document.getElementById('btn-save-media').innerText = 'Upload ke Tema Terkait';
+            document.getElementById('btn-cancel-edit-media').classList.add('hidden');
         }
 
         function deleteMedia(index) {
@@ -960,7 +1002,7 @@
                 `).join('');
             }
 
-            // Render Galeri Media di Beranda
+            // Render Galeri Media di Beranda (Dengan Tombol Edit & Hapus pada setiap kartu media)
             const mediaList = getMedia();
             const mediaContainer = document.getElementById('frontpage-media-container');
             if (mediaContainer) {
@@ -975,8 +1017,7 @@
                             </div>
                             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                 ${itemsInTheme.map(item => {
-                                    // Cari index asli item di mediaList untuk tombol hapus
-                                    const realIndex = mediaList.findIndex(m => m.title === item.title && m.url === item.url);
+                                    const realIndex = mediaList.findIndex(m => m.title === item.title && m.url === item.url && m.theme === item.theme);
                                     return `
                                         <div class="gold-card rounded-2xl overflow-hidden shadow-sm relative group">
                                             <div class="h-56 bg-obsidian relative">
@@ -984,7 +1025,10 @@
                                                     ? `<video src="${item.url}" controls class="w-full h-full object-cover"></video>` 
                                                     : `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover">`
                                                 }
-                                                <button onclick="deleteMedia(${realIndex})" class="absolute top-3 right-3 bg-rose-600 hover:bg-rose-700 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-md transition" title="Hapus Media"><i class="fa-solid fa-trash"></i></button>
+                                                <div class="absolute top-3 right-3 flex items-center gap-2">
+                                                    <button onclick="editMedia(${realIndex})" class="bg-amber-500 hover:bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-md transition" title="Edit Media"><i class="fa-solid fa-pen"></i></button>
+                                                    <button onclick="deleteMedia(${realIndex})" class="bg-rose-600 hover:bg-rose-700 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-md transition" title="Hapus Media"><i class="fa-solid fa-trash"></i></button>
+                                                </div>
                                             </div>
                                             <div class="p-5">
                                                 <h4 class="font-bold text-obsidian">${item.title}</h4>
