@@ -291,7 +291,7 @@
                 </div>
             </section>
 
-            <!-- ==================== ARTIKEL TERBARU (DENGAN META DESKRIPSI, KEYWORDS & TAGS) ==================== -->
+            <!-- ==================== ARTIKEL TERBARU ==================== -->
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gold-200/50">
                 <div class="flex justify-between items-end mb-10">
                     <div>
@@ -301,7 +301,7 @@
                     <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Tulis Artikel Baru</button>
                 </div>
                 <div id="frontpage-articles-grid" class="grid md:grid-cols-3 gap-8">
-                    <!-- Artikel dirender otomatis oleh JavaScript -->
+                    <!-- Artikel dirender otomatis -->
                 </div>
             </section>
 
@@ -314,7 +314,7 @@
                         <p class="text-gray-600 mt-2 text-sm">Geser ke samping untuk melihat berbagai ulasan mendalam dari klien untuk masing-masing layanan kami.</p>
                     </div>
 
-                    <!-- LAYANAN 1: WEB DEVELOPMENT (5 Ulasan) -->
+                    <!-- LAYANAN 1: WEB DEVELOPMENT -->
                     <div class="space-y-4">
                         <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
                             <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
@@ -361,7 +361,7 @@
                         </div>
                     </div>
 
-                    <!-- LAYANAN 2: KONTEN & SEO (5 Ulasan) -->
+                    <!-- LAYANAN 2: KONTEN & SEO -->
                     <div class="space-y-4 pt-6">
                         <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
                             <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
@@ -408,7 +408,7 @@
                         </div>
                     </div>
 
-                    <!-- LAYANAN 3: FOTO & VIDEO KREATIF (5 Ulasan) -->
+                    <!-- LAYANAN 3: FOTO & VIDEO KREATIF -->
                     <div class="space-y-4 pt-6">
                         <div class="border-b border-gold-300 pb-3 flex items-center justify-between">
                             <h3 class="font-serif text-2xl font-bold text-obsidian flex items-center gap-2">
@@ -474,55 +474,70 @@
             </section>
         </div>
 
-        <!-- ==================== HALAMAN STUDIO KREATOR ==================== -->
+        <!-- ==================== HALAMAN STUDIO KREATOR (DENGAN EDIT & HAPUS) ==================== -->
         <div id="page-studio" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
                 <div class="text-center max-w-3xl mx-auto">
                     <span class="px-4 py-1.5 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase tracking-widest">Dashboard CMS sugengklinsman.my.id</span>
                     <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-3">Studio Kreator & Manajemen Konten</h1>
-                    <p class="text-gray-600 mt-2 text-sm">Tulis artikel SEO lengkap dengan Meta Deskripsi, Kata Kunci, Taging, serta upload media berbatas 5 file per tema.</p>
+                    <p class="text-gray-600 mt-2 text-sm">Publikasikan, edit, atau hapus artikel SEO dan galeri media Anda dengan mudah.</p>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Form 1: Tulis Artikel dengan SEO Fields -->
-                    <div class="gold-card rounded-3xl p-8 shadow-sm">
-                        <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel SEO Baru
-                        </h3>
-                        <form onsubmit="handleArticleSubmit(event)" class="space-y-4">
+                <!-- Form Tambah / Edit Artikel -->
+                <div class="gold-card rounded-3xl p-8 shadow-sm">
+                    <h3 id="form-article-title" class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel SEO Baru
+                    </h3>
+                    <form onsubmit="handleArticleSubmit(event)" class="space-y-4">
+                        <input type="hidden" id="edit-article-index" value="-1">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Judul Artikel</label>
+                            <input type="text" id="art-title" required placeholder="Contoh: Tips Jitu Optimasi Website" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Judul Artikel</label>
-                                <input type="text" id="art-title" required placeholder="Contoh: Tips Jitu Optimasi Website" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-1">Kategori / Topik</label>
-                                    <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-1">Kata Kunci (Keywords)</label>
-                                    <input type="text" id="art-keywords" required placeholder="jasa website, seo pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                                </div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Kategori / Topik</label>
+                                <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Meta Deskripsi (Ringkasan Google)</label>
-                                <textarea id="art-meta-desc" rows="2" required placeholder="Tulis ringkasan singkat max 155 karakter untuk cuplikan Google..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 text-sm"></textarea>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Kata Kunci (Keywords)</label>
+                                <input type="text" id="art-keywords" required placeholder="jasa website, seo pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Tagging (Pisahkan dengan koma)</label>
-                                <input type="text" id="art-tags" required placeholder="website, umkm, tips, pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Isi Lengkap Artikel</label>
-                                <textarea id="art-content" rows="5" required placeholder="Tulis isi artikel secara mendalam di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Meta Deskripsi (Ringkasan Google)</label>
+                            <textarea id="art-meta-desc" rows="2" required placeholder="Tulis ringkasan singkat max 155 karakter untuk cuplikan Google..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 text-sm"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Tagging (Pisahkan dengan koma)</label>
+                            <input type="text" id="art-tags" required placeholder="website, umkm, tips, pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Isi Lengkap Artikel</label>
+                            <textarea id="art-content" rows="5" required placeholder="Tulis isi artikel secara mendalam di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
+                        </div>
+                        <div class="flex gap-4">
+                            <button type="submit" id="btn-save-article" class="flex-1 bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
                                 Publikasikan Artikel SEO
                             </button>
-                        </form>
+                            <button type="button" id="btn-cancel-edit-art" onclick="cancelEditArticle()" class="hidden px-6 bg-gray-200 hover:bg-gray-300 text-obsidian font-bold py-3.5 rounded-xl transition">
+                                Batal
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Daftar Artikel & Media yang Sudah Dipublish (untuk Edit/Hapus) -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Manajemen Artikel -->
+                    <div class="gold-card rounded-3xl p-8 shadow-sm space-y-4">
+                        <h3 class="text-xl font-bold text-obsidian mb-4"><i class="fa-solid fa-list-check text-gold-600"></i> Kelola Artikel Terpublikasi</h3>
+                        <div id="manage-articles-list" class="space-y-3 max-h-96 overflow-y-auto pr-2">
+                            <!-- List artikel dirender dinamis -->
+                        </div>
                     </div>
 
-                    <!-- Form 2: Upload Foto / Video Bertema -->
+                    <!-- Form Upload Media -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm">
                         <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema
@@ -550,7 +565,7 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">URL File Media (Unsplash / Cloudinary / MP4 URL)</label>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">URL File Media</label>
                                 <input type="url" id="media-url" required placeholder="https://images.unsplash.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
                             <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
@@ -685,7 +700,7 @@
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
     </footer>
 
-    <!-- JavaScript Navigasi, Kalkulator, & CMS dengan SEO Meta Fields -->
+    <!-- JavaScript Navigasi, Kalkulator, & CMS CRUD (Create, Read, Update, Delete) -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -761,7 +776,7 @@
             window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
         }
 
-        // --- CMS LOCALSTORAGE ARTIKEL DENGAN SEO FIELDS ---
+        // --- CMS LOCALSTORAGE ARTIKEL & MEDIA DENGAN EDIT & DELETE ---
         function getArticles() {
             const data = localStorage.getItem('sk_articles');
             return data ? JSON.parse(data) : [
@@ -787,6 +802,7 @@
 
         function handleArticleSubmit(e) {
             e.preventDefault();
+            const editIndex = parseInt(document.getElementById('edit-article-index').value);
             const title = document.getElementById('art-title').value;
             const category = document.getElementById('art-category').value;
             const keywords = document.getElementById('art-keywords').value;
@@ -796,13 +812,60 @@
             const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
 
             const articles = getArticles();
-            articles.unshift({ title, category, keywords, metaDesc, tags, content, date });
-            localStorage.setItem('sk_articles', JSON.stringify(articles));
 
-            showToast('Berhasil!', 'Artikel SEO baru berhasil dipublikasikan.');
-            e.target.reset();
+            if (editIndex > -1) {
+                // Update Artikel
+                articles[editIndex] = { title, category, keywords, metaDesc, tags, content, date: articles[editIndex].date };
+                localStorage.setItem('sk_articles', JSON.stringify(articles));
+                showToast('Berhasil!', 'Artikel SEO berhasil diperbarui.');
+                cancelEditArticle();
+            } else {
+                // Tambah Artikel Baru
+                articles.unshift({ title, category, keywords, metaDesc, tags, content, date });
+                localStorage.setItem('sk_articles', JSON.stringify(articles));
+                showToast('Berhasil!', 'Artikel SEO baru berhasil dipublikasikan.');
+                e.target.reset();
+            }
+
             renderFrontpageContent();
-            switchPage('beranda');
+        }
+
+        function editArticle(index) {
+            const articles = getArticles();
+            const art = articles[index];
+            if (!art) return;
+
+            document.getElementById('edit-article-index').value = index;
+            document.getElementById('art-title').value = art.title;
+            document.getElementById('art-category').value = art.category;
+            document.getElementById('art-keywords').value = art.keywords || '';
+            document.getElementById('art-meta-desc').value = art.metaDesc || '';
+            document.getElementById('art-tags').value = art.tags || '';
+            document.getElementById('art-content').value = art.content;
+
+            document.getElementById('form-article-title').innerHTML = '<i class="fa-solid fa-pen-to-square text-gold-600"></i> Edit Artikel SEO';
+            document.getElementById('btn-save-article').innerText = 'Simpan Perubahan';
+            document.getElementById('btn-cancel-edit-art').classList.remove('hidden');
+
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+
+        function cancelEditArticle() {
+            document.getElementById('edit-article-index').value = -1;
+            document.getElementById('art-title').form.reset();
+            document.getElementById('form-article-title').innerHTML = '<i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel SEO Baru';
+            document.getElementById('btn-save-article').innerText = 'Publikasikan Artikel SEO';
+            document.getElementById('btn-cancel-edit-art').classList.add('hidden');
+        }
+
+        function deleteArticle(index) {
+            if (confirm('Apakah Anda yakin ingin menghapus artikel ini?')) {
+                const articles = getArticles();
+                articles.splice(index, 1);
+                localStorage.setItem('sk_articles', JSON.stringify(articles));
+                showToast('Terhapus', 'Artikel berhasil dihapus.');
+                renderFrontpageContent();
+            }
         }
 
         function handleMediaSubmit(e) {
@@ -825,7 +888,16 @@
             showToast('Berhasil!', `Media berhasil diupload ke tema ${theme}.`);
             e.target.reset();
             renderFrontpageContent();
-            switchPage('beranda');
+        }
+
+        function deleteMedia(index) {
+            if (confirm('Apakah Anda yakin ingin menghapus media ini dari galeri?')) {
+                const mediaList = getMedia();
+                mediaList.splice(index, 1);
+                localStorage.setItem('sk_media', JSON.stringify(mediaList));
+                showToast('Terhapus', 'Media berhasil dihapus.');
+                renderFrontpageContent();
+            }
         }
 
         function openArticleModal(index) {
@@ -846,6 +918,7 @@
         }
 
         function renderFrontpageContent() {
+            // Render Artikel di Beranda
             const articles = getArticles();
             const artContainer = document.getElementById('frontpage-articles-grid');
             if (artContainer) {
@@ -870,6 +943,24 @@
                 }).join('');
             }
 
+            // Render List Manajemen Artikel di Studio Kreator
+            const manageList = document.getElementById('manage-articles-list');
+            if (manageList) {
+                manageList.innerHTML = articles.map((art, index) => `
+                    <div class="p-4 bg-slate-50 border border-gray-200 rounded-2xl flex items-center justify-between gap-4">
+                        <div class="min-w-0">
+                            <h4 class="font-bold text-sm text-obsidian truncate">${art.title}</h4>
+                            <span class="text-xs text-gray-500">${art.date} • ${art.category}</span>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="editArticle(${index})" class="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-800 text-xs font-semibold rounded-lg transition"><i class="fa-solid fa-pen"></i> Edit</button>
+                            <button onclick="deleteArticle(${index})" class="px-3 py-1.5 bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs font-semibold rounded-lg transition"><i class="fa-solid fa-trash"></i> Hapus</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render Galeri Media di Beranda
             const mediaList = getMedia();
             const mediaContainer = document.getElementById('frontpage-media-container');
             if (mediaContainer) {
@@ -883,20 +974,25 @@
                                 <span class="text-xs font-semibold px-3 py-1 bg-gold-100 text-gold-800 rounded-full">${itemsInTheme.length} / 5 File</span>
                             </div>
                             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                ${itemsInTheme.map(item => `
-                                    <div class="gold-card rounded-2xl overflow-hidden shadow-sm">
-                                        <div class="h-56 bg-obsidian relative">
-                                            ${item.type === 'video' 
-                                                ? `<video src="${item.url}" controls class="w-full h-full object-cover"></video>` 
-                                                : `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover">`
-                                            }
+                                ${itemsInTheme.map(item => {
+                                    // Cari index asli item di mediaList untuk tombol hapus
+                                    const realIndex = mediaList.findIndex(m => m.title === item.title && m.url === item.url);
+                                    return `
+                                        <div class="gold-card rounded-2xl overflow-hidden shadow-sm relative group">
+                                            <div class="h-56 bg-obsidian relative">
+                                                ${item.type === 'video' 
+                                                    ? `<video src="${item.url}" controls class="w-full h-full object-cover"></video>` 
+                                                    : `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover">`
+                                                }
+                                                <button onclick="deleteMedia(${realIndex})" class="absolute top-3 right-3 bg-rose-600 hover:bg-rose-700 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-md transition" title="Hapus Media"><i class="fa-solid fa-trash"></i></button>
+                                            </div>
+                                            <div class="p-5">
+                                                <h4 class="font-bold text-obsidian">${item.title}</h4>
+                                                <span class="text-xs text-gold-700 font-semibold mt-1 inline-block">Tema: ${item.theme}</span>
+                                            </div>
                                         </div>
-                                        <div class="p-5">
-                                            <h4 class="font-bold text-obsidian">${item.title}</h4>
-                                            <span class="text-xs text-gold-700 font-semibold mt-1 inline-block">Tema: ${item.theme}</span>
-                                        </div>
-                                    </div>
-                                `).join('')}
+                                    `;
+                                }).join('')}
                             </div>
                         </div>
                     `;
