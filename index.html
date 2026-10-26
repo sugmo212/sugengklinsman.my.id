@@ -116,8 +116,12 @@
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative border border-gold-300">
             <button onclick="closeArticleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-obsidian text-2xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
             <div id="modal-article-meta" class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2"></div>
-            <h2 id="modal-article-title" class="text-2xl sm:text-3xl font-bold font-serif text-obsidian mb-4"></h2>
-            <div id="modal-article-content" class="text-gray-700 text-base leading-relaxed space-y-4 border-t border-gray-100 pt-6"></div>
+            <h2 id="modal-article-title" class="text-2xl sm:text-3xl font-bold font-serif text-obsidian mb-3"></h2>
+            <div id="modal-article-seo-info" class="bg-gold-50 p-3 rounded-xl border border-gold-200 text-xs text-gray-600 mb-4 space-y-1">
+                <div><strong>Kata Kunci:</strong> <span id="modal-keywords"></span></div>
+                <div><strong>Tags:</strong> <span id="modal-tags"></span></div>
+            </div>
+            <div id="modal-article-content" class="text-gray-700 text-base leading-relaxed space-y-4 border-t border-gray-100 pt-4"></div>
             <div class="mt-8 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
                 <span>Ditulis oleh: <strong>Sugeng Klinsman</strong></span>
                 <button onclick="closeArticleModal()" class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-obsidian rounded-xl font-semibold">Tutup</button>
@@ -287,7 +291,7 @@
                 </div>
             </section>
 
-            <!-- ==================== ARTIKEL TERBARU (HANYA JUDUL & RINGKASAN / META DESKRIPSI) ==================== -->
+            <!-- ==================== ARTIKEL TERBARU (DENGAN META DESKRIPSI, KEYWORDS & TAGS) ==================== -->
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gold-200/50">
                 <div class="flex justify-between items-end mb-10">
                     <div>
@@ -476,33 +480,49 @@
                 <div class="text-center max-w-3xl mx-auto">
                     <span class="px-4 py-1.5 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase tracking-widest">Dashboard CMS sugengklinsman.my.id</span>
                     <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-3">Studio Kreator & Manajemen Konten</h1>
-                    <p class="text-gray-600 mt-2 text-sm">Kelola artikel SEO dan upload foto/video dengan batasan maksimal 5 file per tema.</p>
+                    <p class="text-gray-600 mt-2 text-sm">Tulis artikel SEO lengkap dengan Meta Deskripsi, Kata Kunci, Taging, serta upload media berbatas 5 file per tema.</p>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Form 1: Tulis Artikel dengan SEO Fields -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm">
                         <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel Baru
+                            <i class="fa-solid fa-pen-to-square text-gold-600"></i> Tulis Artikel SEO Baru
                         </h3>
                         <form onsubmit="handleArticleSubmit(event)" class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Judul Artikel</label>
                                 <input type="text" id="art-title" required placeholder="Contoh: Tips Jitu Optimasi Website" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Kategori / Topik</label>
+                                    <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Kata Kunci (Keywords)</label>
+                                    <input type="text" id="art-keywords" required placeholder="jasa website, seo pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                                </div>
+                            </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Kategori / Topik</label>
-                                <input type="text" id="art-category" required placeholder="Contoh: SEO & Web Dev" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Meta Deskripsi (Ringkasan Google)</label>
+                                <textarea id="art-meta-desc" rows="2" required placeholder="Tulis ringkasan singkat max 155 karakter untuk cuplikan Google..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 text-sm"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Tagging (Pisahkan dengan koma)</label>
+                                <input type="text" id="art-tags" required placeholder="website, umkm, tips, pontianak" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Isi Lengkap Artikel</label>
-                                <textarea id="art-content" rows="6" required placeholder="Tulis isi lengkap artikel di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
+                                <textarea id="art-content" rows="5" required placeholder="Tulis isi artikel secara mendalam di sini..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800"></textarea>
                             </div>
                             <button type="submit" class="w-full bg-gold-gradient text-white font-bold py-3.5 rounded-xl shadow-gold-sm hover:opacity-95 transition">
-                                Publikasikan Artikel
+                                Publikasikan Artikel SEO
                             </button>
                         </form>
                     </div>
 
+                    <!-- Form 2: Upload Foto / Video Bertema -->
                     <div class="gold-card rounded-3xl p-8 shadow-sm">
                         <h3 class="text-2xl font-bold text-obsidian mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-photo-film text-gold-600"></i> Upload Foto / Video Bertema
@@ -665,7 +685,7 @@
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
     </footer>
 
-    <!-- JavaScript Navigasi, Kalkulator, & CMS Artikel Ringkasan -->
+    <!-- JavaScript Navigasi, Kalkulator, & CMS dengan SEO Meta Fields -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -741,13 +761,16 @@
             window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
         }
 
-        // --- CMS LOCALSTORAGE ARTIKEL HANYA JUDUL & RINGKASAN ---
+        // --- CMS LOCALSTORAGE ARTIKEL DENGAN SEO FIELDS ---
         function getArticles() {
             const data = localStorage.getItem('sk_articles');
             return data ? JSON.parse(data) : [
                 { 
                     title: 'Strategi SEO Lokal untuk UMKM di Pontianak', 
                     category: 'SEO & Web Dev', 
+                    keywords: 'seo pontianak, umkm go digital, jasa website',
+                    metaDesc: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.',
+                    tags: 'seo, website, umkm, pontianak',
                     content: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat. Dengan optimasi kata kunci lokal dan struktur halaman yang bersih, website UMKM Anda akan lebih mudah ditemukan oleh calon pelanggan setia di Pontianak.', 
                     date: '24 Oktober 2026' 
                 }
@@ -766,14 +789,17 @@
             e.preventDefault();
             const title = document.getElementById('art-title').value;
             const category = document.getElementById('art-category').value;
+            const keywords = document.getElementById('art-keywords').value;
+            const metaDesc = document.getElementById('art-meta-desc').value;
+            const tags = document.getElementById('art-tags').value;
             const content = document.getElementById('art-content').value;
             const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
 
             const articles = getArticles();
-            articles.unshift({ title, category, content, date });
+            articles.unshift({ title, category, keywords, metaDesc, tags, content, date });
             localStorage.setItem('sk_articles', JSON.stringify(articles));
 
-            showToast('Berhasil!', 'Artikel baru berhasil dipublikasikan.');
+            showToast('Berhasil!', 'Artikel SEO baru berhasil dipublikasikan.');
             e.target.reset();
             renderFrontpageContent();
             switchPage('beranda');
@@ -809,7 +835,9 @@
 
             document.getElementById('modal-article-meta').innerText = `${art.date} • ${art.category}`;
             document.getElementById('modal-article-title').innerText = art.title;
-            document.getElementById('modal-article-content').innerHTML = `<p>${art.content.replace(/\n/g, '</p><p class="mt-3">')}</p>`;
+            document.getElementById('modal-keywords').innerText = art.keywords || '-';
+            document.getElementById('modal-tags').innerText = art.tags || '-';
+            document.getElementById('modal-article-content').innerHTML = `<p class="font-medium text-gold-700 italic mb-3">"${art.metaDesc || ''}"</p><p>` + art.content.replace(/\n/g, '</p><p class="mt-3">') + '</p>';
             document.getElementById('article-modal').classList.remove('hidden');
         }
 
@@ -822,8 +850,7 @@
             const artContainer = document.getElementById('frontpage-articles-grid');
             if (artContainer) {
                 artContainer.innerHTML = articles.map((art, index) => {
-                    // Ambil ringkasan / 120 karakter pertama untuk meta deskripsi preview
-                    const summary = art.content.length > 120 ? art.content.substring(0, 120) + '...' : art.content;
+                    const desc = art.metaDesc || (art.content.length > 120 ? art.content.substring(0, 120) + '...' : art.content);
                     return `
                         <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6 shadow-sm">
                             <div>
@@ -831,7 +858,8 @@
                                 <h3 class="text-xl font-bold text-obsidian mt-2 mb-3 leading-snug">
                                     <a href="javascript:void(0)" onclick="openArticleModal(${index})" class="hover:text-gold-600 transition">${art.title}</a>
                                 </h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">${summary}</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">${desc}</p>
+                                ${art.tags ? `<div class="mt-4 flex flex-wrap gap-1.5">${art.tags.split(',').map(tag => `<span class="text-[10px] bg-gold-50 text-gold-700 px-2.5 py-0.5 rounded-full border border-gold-200">#${tag.trim()}</span>`).join('')}</div>` : ''}
                             </div>
                             <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
                                 <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Sugeng Klinsman</span>
