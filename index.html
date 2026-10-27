@@ -61,14 +61,6 @@
                 extend: {
                     colors: {
                         obsidian: '#1A1A1A',
-                        wedding: {
-                            gold: '#C5A880',
-                            goldLight: '#E8DCC4',
-                            dark: '#1A1A1A',
-                            cream: '#FAF8F5',
-                            rose: '#E3B7A0',
-                            sage: '#8F9E8B'
-                        },
                         gold: {
                             50: '#FDFBF7',
                             100: '#F9F4E8',
@@ -79,13 +71,21 @@
                             600: '#AA7C11',
                             700: '#8A630E',
                         },
-                        roseGold: { 500: '#B76E79' }
+                        roseGold: { 500: '#B76E79' },
+                        wedding: {
+                            gold: '#C5A880',
+                            goldLight: '#E8DCC4',
+                            dark: '#1A1A1A',
+                            cream: '#FAF8F5',
+                            rose: '#E3B7A0',
+                            sage: '#8F9E8B'
+                        }
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
-                        script: ['Great Vibes', 'cursive'],
                         luxury: ['Playfair Display', 'serif'],
+                        script: ['Great Vibes', 'cursive']
                     },
                     boxShadow: {
                         'gold-sm': '0 4px 20px -2px rgba(212, 175, 55, 0.1)',
@@ -96,11 +96,12 @@
             }
         }
     </script>
-    <!-- Google Fonts & FontAwesome -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for smooth entrance animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
     <style>
         .bg-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); }
         .text-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -114,7 +115,7 @@
 
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-obsidian text-white px-6 py-3 rounded-xl shadow-2xl flex items-center space-x-3 border border-gold-400/40">
-        <i id="toast-icon" class="fa-solid fa-circle-check text-wedding-gold text-xl"></i>
+        <i id="toast-icon" class="fa-solid fa-circle-check text-gold-400 text-xl"></i>
         <div>
             <h4 id="toast-title" class="font-semibold text-sm">Berhasil!</h4>
             <p id="toast-desc" class="text-xs text-slate-300">Aksi berhasil dilakukan.</p>
@@ -199,7 +200,7 @@
                             </p>
                             <div class="flex flex-wrap gap-4 pt-2">
                                 <a href="#kalkulator-harga-section" class="bg-gold-gradient text-white px-7 py-3.5 rounded-full font-semibold shadow-gold-md hover:opacity-95 transition">Coba Kalkulator Harga</a>
-                                <button onclick="switchPage('undangan')" class="bg-white text-wedding-gold border border-wedding-gold px-7 py-3.5 rounded-full font-semibold hover:bg-wedding-gold/10 transition">Buat Undangan Online</button>
+                                <button onclick="switchPage('studio')" class="bg-white text-gold-700 border border-gold-400 px-7 py-3.5 rounded-full font-semibold hover:bg-gold-50 transition">Kirim Konten & Karya</button>
                             </div>
                         </div>
                         <div class="lg:col-span-5">
@@ -348,688 +349,6 @@
                         <!-- Galeri dipublikasikan dirender otomatis -->
                     </div>
                 </div>
-            </section>
-        </div>
-
-        <!-- ==================== HALAMAN UNDANGAN ONLINE (TERINTEGRASI PENUH) ==================== -->
-        <div id="page-undangan" class="page-section hidden">
-            <!-- HERO SECTION UNDANGAN -->
-            <section class="relative pt-20 pb-20 md:pt-28 md:pb-32 overflow-hidden bg-gradient-to-b from-wedding-goldLight/30 to-wedding-cream text-wedding-dark">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                            <div class="inline-flex items-center gap-2 bg-wedding-gold/10 text-wedding-dark px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-wedding-gold/30">
-                                <i class="fa-solid fa-heart text-wedding-gold"></i> Platform Undangan Nikah Digital #1 di Indonesia[cite: 4]
-                            </div>
-                            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-wedding-dark">
-                                Wujudkan Undangan Pernikahan <span class="font-script text-wedding-gold text-5xl sm:text-6xl lg:text-7xl block sm:inline font-normal">Impian Anda</span> dalam Hitungan Menit[cite: 4]
-                            </h1>
-                            <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
-                                Sugeng Klinsman menghadirkan layanan pembuatan undangan nikah digital interaktif yang elegan, dilengkapi peta lokasi, hitung mundur, galeri foto eksklusif, RSVP digital, dan musik latar romantis[cite: 4].
-                            </p>
-                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                                <a href="#templates" onclick="document.getElementById('templates-section').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto bg-wedding-dark hover:bg-wedding-gold text-white px-8 py-4 rounded-full font-semibold shadow-lg transition duration-300 flex items-center justify-center gap-3 group">
-                                    <span>Pilih Template & Edit</span>
-                                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Hero Visual Showcase -->
-                        <div class="lg:col-span-5 relative">
-                            <div class="relative mx-auto max-w-xs sm:max-w-sm rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-white group">
-                                <div class="absolute top-0 left-0 right-0 h-6 bg-gray-900 z-20 flex items-center justify-center">
-                                    <div class="w-16 h-3 bg-black rounded-full"></div>
-                                </div>
-                                <div class="pt-6 h-[500px] bg-gradient-to-br from-amber-50 to-orange-50 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-                                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                                    <span class="text-xs uppercase tracking-widest text-wedding-gold font-semibold mb-2">The Wedding Of[cite: 4]</span>
-                                    <h3 class="font-serif text-3xl font-bold text-wedding-dark mb-1">Rizky & Anisa[cite: 4]</h3>
-                                    <p class="font-script text-2xl text-wedding-gold mb-6">Minggu, 18 Oktober 2026[cite: 4]</p>
-                                    <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-wedding-gold shadow-lg mb-4">
-                                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=400" alt="Couple" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="bg-white/80 backdrop-blur-sm p-3 rounded-xl shadow-sm w-full text-xs text-gray-600 mb-4">
-                                        <i class="fa-solid fa-location-dot text-wedding-gold mr-1"></i> Gedung Mulia Convention Hall, Jakarta[cite: 4]
-                                    </div>
-                                    <span class="bg-wedding-dark text-white px-4 py-2 rounded-full text-xs font-semibold shadow">Buka Undangan[cite: 4]</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FEATURES HIGHLIGHT SECTION -->
-            <section class="py-20 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Fitur Lengkap & Canggih[cite: 4]</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wedding-dark mt-2">Semua yang Anda Butuhkan untuk Hari Bahagia[cite: 4]</h2>
-                        <p class="text-gray-600 mt-3">Nikmati kemudahan menyebar undangan digital dengan fitur interaktif termodern yang membuat tamu undangan terkesan[cite: 4].</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="bg-wedding-cream p-8 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-14 h-14 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                            </div>
-                            <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Peta & Navigasi Lokasi[cite: 4]</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Integrasi langsung dengan Google Maps memudahkan tamu menuju lokasi akad dan resepsi tanpa nyasar[cite: 4].</p>
-                        </div>
-                        <div class="bg-wedding-cream p-8 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-14 h-14 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Hitung Mundur Otomatis[cite: 4]</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Timer real-time yang menghitung hari, jam, dan detik menuju hari pernikahan sakral Anda[cite: 4].</p>
-                        </div>
-                        <div class="bg-wedding-cream p-8 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-14 h-14 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-envelope-open-text"></i>
-                            </div>
-                            <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">RSVP & Ucapan Tamu[cite: 4]</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Dapatkan konfirmasi kehadiran (Hadir/Tidak) serta doa dan ucapan selamat dari para tamu secara interaktif[cite: 4].</p>
-                        </div>
-                        <div class="bg-wedding-cream p-8 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-14 h-14 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-music"></i>
-                            </div>
-                            <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Musik Latar Romantis[cite: 4]</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Lagu latar pilihan yang mendayu-dayu membuat suasana undangan terasa lebih emosional dan berkesan[cite: 4].</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TEMPLATES SHOWCASE & LIVE CUSTOMIZER SECTION -->
-            <section id="templates-section" class="py-20 bg-wedding-cream/55">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Katalog Desain Premium[cite: 4]</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wedding-dark mt-2">Pilih & Edit Template Pilihan Anda[cite: 4]</h2>
-                        <p class="text-gray-600 mt-3">Klik tombol "Gunakan & Edit Template" untuk menyesuaikan data mempelai dan melihat pratinjau langsung secara real-time![cite: 4]</p>
-                    </div>
-
-                    <!-- Templates Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
-                            <div class="relative h-64 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Minimalist Elegant" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Minimalist Elegant[cite: 4]</div>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Aura & Sophistication[cite: 4]</h3>
-                                    <p class="text-gray-600 text-sm mb-4">Gaya modern minimalis dengan tipografi bersih, sentuhan warna emas lembut, sangat cocok untuk pasangan urban[cite: 4].</p>
-                                </div>
-                                <button onclick="selectTemplate('minimalist')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template[cite: 4]
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
-                            <div class="relative h-64 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600" alt="Floral Rustic" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Floral Rustic[cite: 4]</div>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Botanical Garden[cite: 4]</h3>
-                                    <p class="text-gray-600 text-sm mb-4">Nuansa alam dengan ornamen bunga-bunga romantis, tone warna hijau sage dan earthy warm yang menenangkan[cite: 4].</p>
-                                </div>
-                                <button onclick="selectTemplate('rustic')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template[cite: 4]
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
-                            <div class="relative h-64 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600" alt="Modern Javanese / Islamic" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Modern Islamic/Javanese[cite: 4]</div>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Royal Heritage[cite: 4]</h3>
-                                    <p class="text-gray-600 text-sm mb-4">Kombinasi kemewahan ornamen tradisional klasik dengan sentuhan Islami modern yang sakral dan megah[cite: 4].</p>
-                                </div>
-                                <button onclick="selectTemplate('royal')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template[cite: 4]
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- LIVE EDITOR & CUSTOMIZER WORKSPACE -->
-                    <div id="editor-workspace" class="bg-white rounded-3xl shadow-2xl border border-wedding-gold/30 overflow-hidden hidden transition-all duration-500">
-                        <div class="bg-wedding-dark text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-                            <div class="flex items-center gap-3">
-                                <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
-                                <h3 class="font-serif text-xl font-bold">Live Editor & Customizer[cite: 4]</h3>
-                                <span id="active-template-badge" class="bg-wedding-gold text-white text-xs px-3 py-1 rounded-full font-semibold">Minimalist[cite: 4]</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <button onclick="openFullPreview()" class="bg-wedding-gold hover:bg-amber-600 text-white px-5 py-2 rounded-xl text-sm font-semibold shadow transition flex items-center gap-2">
-                                    <i class="fa-solid fa-eye"></i> Preview Penuh & Musik[cite: 4]
-                                </button>
-                                <button onclick="downloadInvitation()" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl text-sm font-semibold shadow transition flex items-center gap-2">
-                                    <i class="fa-solid fa-download"></i> Download / Simpan HTML[cite: 4]
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                            <!-- Form Editor Input Column -->
-                            <div class="lg:col-span-5 p-6 sm:p-8 border-r border-gray-100 bg-wedding-cream/30 space-y-6 max-h-[750px] overflow-y-auto">
-                                <h4 class="font-serif font-bold text-lg text-wedding-dark border-b pb-2 flex items-center gap-2">
-                                    <i class="fa-solid fa-sliders text-wedding-gold"></i> Sesuaikan Informasi Undangan[cite: 4]
-                                </h4>
-
-                                <div class="space-y-4">
-                                    <h5 class="text-xs font-bold uppercase tracking-wider text-wedding-gold">Mempelai Pria[cite: 4]</h5>
-                                    <div>
-                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Lengkap Pria[cite: 4]</label>
-                                        <input type="text" id="input-groom-name" value="Rizky Pratama, S.T." oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Orang Tua Pria[cite: 4]</label>
-                                        <input type="text" id="input-groom-parents" value="Putra dari Bpk. H. Ahmad & Ibu Hj. Siti" oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <div class="space-y-4 pt-2">
-                                    <h5 class="text-xs font-bold uppercase tracking-wider text-wedding-gold">Mempelai Wanita[cite: 4]</h5>
-                                    <div>
-                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Lengkap Wanita[cite: 4]</label>
-                                        <input type="text" id="input-bride-name" value="Anisa Rahmawati, S.Pd." oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Orang Tua Wanita[cite: 4]</label>
-                                        <input type="text" id="input-bride-parents" value="Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah" oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <div class="space-y-4 pt-2">
-                                    <h5 class="text-xs font-bold uppercase tracking-wider text-wedding-gold">Waktu & Lokasi Acara[cite: 4]</h5>
-                                    <div>
-                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Tanggal Acara[cite: 4]</label>
-                                        <input type="text" id="input-date" value="Minggu, 18 Oktober 2026" oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Waktu Akad & Resepsi[cite: 4]</label>
-                                        <input type="text" id="input-time" value="08.00 WIB - Selesai" oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Tempat / Gedung[cite: 4]</label>
-                                        <input type="text" id="input-venue" value="Gedung Mulia Convention Hall, Jakarta Selatan" oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <div class="space-y-4 pt-2">
-                                    <h5 class="text-xs font-bold uppercase tracking-wider text-wedding-gold">Ayat / Pesan Suci[cite: 4]</h5>
-                                    <div>
-                                        <textarea id="input-quote" rows="3" oninput="updatePreview()" class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-wedding-gold focus:outline-none">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..." (QS. Ar-Rum: 21)</textarea>
-                                    </div>
-                                </div>
-
-                                <div class="pt-4">
-                                    <button onclick="copyShareableLink()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2">
-                                        <i class="fa-solid fa-share-nodes"></i> Salin Tautan / Link Undangan Siap Pakai[cite: 4]
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Live Preview Display Column -->
-                            <div class="lg:col-span-7 p-6 sm:p-10 bg-gray-100 flex items-center justify-center relative min-h-[700px]">
-                                <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl border-4 border-gray-800 overflow-hidden flex flex-col h-[650px] relative">
-                                    <div class="bg-gray-900 text-white text-xs px-6 py-2 flex items-center justify-between z-30">
-                                        <span id="preview-time-bar">10:24</span>
-                                        <div class="w-20 h-3 bg-black rounded-full mx-auto"></div>
-                                        <div class="flex items-center gap-1">
-                                            <i class="fa-solid fa-wifi text-[10px]"></i>
-                                            <i class="fa-solid fa-battery-full text-[10px]"></i>
-                                        </div>
-                                    </div>
-
-                                    <div id="preview-scroll-area" class="flex-1 overflow-y-auto bg-wedding-cream text-wedding-dark p-6 text-center space-y-8 relative">
-                                        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#C5A880_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none"></div>
-
-                                        <div class="pt-6">
-                                            <span id="prev-theme-label" class="text-xs uppercase tracking-widest text-wedding-gold font-bold">The Wedding Of[cite: 4]</span>
-                                            <h2 id="prev-couple-title" class="font-serif text-3xl font-bold mt-2 text-wedding-dark">Rizky & Anisa[cite: 4]</h2>
-                                            <p id="prev-date-top" class="font-script text-2xl text-wedding-gold mt-1">Minggu, 18 Oktober 2026[cite: 4]</p>
-                                        </div>
-
-                                        <div class="flex justify-center items-center gap-4 py-2">
-                                            <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-wedding-gold shadow-md">
-                                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=300" alt="Groom" class="w-full h-full object-cover">
-                                            </div>
-                                            <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-wedding-gold shadow-md">
-                                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300" alt="Bride" class="w-full h-full object-cover">
-                                            </div>
-                                        </div>
-
-                                        <div class="space-y-4">
-                                            <div>
-                                                <h3 id="prev-groom-name" class="font-serif text-xl font-bold text-wedding-dark">Rizky Pratama, S.T.[cite: 4]</h3>
-                                                <p id="prev-groom-parents" class="text-xs text-gray-500 mt-0.5">Putra dari Bpk. H. Ahmad & Ibu Hj. Siti[cite: 4]</p>
-                                            </div>
-                                            <span class="font-script text-3xl text-wedding-gold block">&</span>
-                                            <div>
-                                                <h3 id="prev-bride-name" class="font-serif text-xl font-bold text-wedding-dark">Anisa Rahmawati, S.Pd.[cite: 4]</h3>
-                                                <p id="prev-bride-parents" class="text-xs text-gray-500 mt-0.5">Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah[cite: 4]</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-white/90 p-5 rounded-2xl shadow-sm border border-wedding-gold/20 text-xs italic text-gray-600 leading-relaxed">
-                                            <p id="prev-quote">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..." (QS. Ar-Rum: 21)[cite: 4]</p>
-                                        </div>
-
-                                        <div class="bg-wedding-dark text-white p-6 rounded-2xl shadow-lg space-y-4 text-left">
-                                            <div class="flex items-start gap-3">
-                                                <i class="fa-solid fa-calendar-day text-wedding-gold text-lg mt-1"></i>
-                                                <div>
-                                                    <p class="text-xs text-wedding-gold font-bold uppercase">Tanggal Acara[cite: 4]</p>
-                                                    <p id="prev-date-main" class="text-sm font-semibold">Minggu, 18 Oktober 2026[cite: 4]</p>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start gap-3">
-                                                <i class="fa-solid fa-clock text-wedding-gold text-lg mt-1"></i>
-                                                <div>
-                                                    <p class="text-xs text-wedding-gold font-bold uppercase">Waktu[cite: 4]</p>
-                                                    <p id="prev-time-main" class="text-sm font-semibold">08.00 WIB - Selesai[cite: 4]</p>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start gap-3">
-                                                <i class="fa-solid fa-location-dot text-wedding-gold text-lg mt-1"></i>
-                                                <div>
-                                                    <p class="text-xs text-wedding-gold font-bold uppercase">Lokasi[cite: 4]</p>
-                                                    <p id="prev-venue-main" class="text-sm font-semibold">Gedung Mulia Convention Hall, Jakarta Selatan[cite: 4]</p>
-                                                </div>
-                                            </div>
-                                            <div class="pt-2 text-center">
-                                                <a href="https://maps.google.com" target="_blank" class="inline-block bg-wedding-gold hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow transition">
-                                                    <i class="fa-solid fa-map mr-1"></i> Buka Google Maps[cite: 4]
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-wedding-gold/20 text-left space-y-3">
-                                            <h4 class="font-serif font-bold text-sm text-wedding-dark text-center">RSVP & Konfirmasi Kehadiran[cite: 4]</h4>
-                                            <div>
-                                                <label class="block text-[10px] font-bold text-gray-700">Nama Tamu[cite: 4]</label>
-                                                <input type="text" id="rsvp-name" placeholder="Nama Anda" class="w-full mt-1 px-3 py-1.5 border rounded-lg text-xs">
-                                            </div>
-                                            <div>
-                                                <label class="block text-[10px] font-bold text-gray-700">Konfirmasi[cite: 4]</label>
-                                                <select id="rsvp-status" class="w-full mt-1 px-3 py-1.5 border rounded-lg text-xs">
-                                                    <option value="Hadir">Hadir (Datang)[cite: 4]</option>
-                                                    <option value="Tidak Hadir">Berhalangan Hadir[cite: 4]</option>
-                                                </select>
-                                            </div>
-                                            <button onclick="submitRSVP()" class="w-full bg-wedding-dark text-white py-2 rounded-lg text-xs font-bold shadow">Kirim Konfirmasi[cite: 4]</button>
-                                            <div id="rsvp-success-msg" class="hidden text-center text-xs text-green-600 font-semibold pt-1">Terima kasih! Konfirmasi Anda telah tercatat.[cite: 4]</div>
-                                        </div>
-
-                                        <div class="text-xs text-gray-400 pb-4">
-                                            Made with ❤️ by Sugeng Klinsman Digital Invitations[cite: 4]
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PRICING & PACKAGES -->
-            <section class="py-20 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Investasi Pernikahan Terbaik[cite: 4]</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wedding-dark mt-2">Pilihan Paket Jasa Undangan Digital[cite: 4]</h2>
-                        <p class="text-gray-600 mt-3">Pilih paket yang sesuai dengan kebutuhan Anda. Proses cepat, hasil memukau, dan bergaransi kepuasan[cite: 4].</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                        <div class="bg-wedding-cream rounded-3xl p-8 border border-wedding-gold/20 shadow-lg relative flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs uppercase tracking-widest text-wedding-gold font-bold">Paket Silver[cite: 4]</span>
-                                <h3 class="font-serif text-2xl font-bold text-wedding-dark mt-1">Basic Digital[cite: 4]</h3>
-                                <div class="mt-4 mb-6">
-                                    <span class="text-4xl font-extrabold text-wedding-dark">Rp 99rb[cite: 4]</span>
-                                    <span class="text-gray-500 text-sm"> / sekali bayar[cite: 4]</span>
-                                </div>
-                                <ul class="space-y-3 text-sm text-gray-600 mb-8">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> 1 Pilihan Template Eksklusif[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> Masa Aktif 1 Tahun[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> Hitung Mundur & Peta Lokasi[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> RSVP & Buku Tamu Digital[cite: 4]</li>
-                                    <li class="flex items-center gap-2 text-gray-400"><i class="fa-solid fa-xmark text-red-400"></i> Musik Latar Pilihan[cite: 4]</li>
-                                </ul>
-                            </div>
-                            <a href="#templates-section" onclick="document.getElementById('templates-section').scrollIntoView({behavior: 'smooth'})" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold text-center transition shadow">Pilih Paket Silver[cite: 4]</a>
-                        </div>
-
-                        <div class="bg-wedding-dark text-white rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between transform md:-translate-y-4 border-2 border-wedding-gold">
-                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-wedding-gold text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow">
-                                Paling Populer[cite: 4]
-                            </div>
-                            <div>
-                                <span class="text-xs uppercase tracking-widest text-wedding-gold font-bold">Paket Gold[cite: 4]</span>
-                                <h3 class="font-serif text-2xl font-bold text-white mt-1">Professional VIP[cite: 4]</h3>
-                                <div class="mt-4 mb-6">
-                                    <span class="text-4xl font-extrabold text-wedding-gold">Rp 199rb[cite: 4]</span>
-                                    <span class="text-gray-400 text-sm"> / selamanya[cite: 4]</span>
-                                </div>
-                                <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-wedding-gold"></i> Bebas Pilih Semua Template[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-wedding-gold"></i> Masa Aktif Selamanya (Lifetime)[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-wedding-gold"></i> Musik Latar Romantis Custom[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-wedding-gold"></i> Galeri Foto & Video Pernikahan[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-wedding-gold"></i> Custom Nama Tamu Tanpa Batas[cite: 4]</li>
-                                </ul>
-                            </div>
-                            <a href="#templates-section" onclick="document.getElementById('templates-section').scrollIntoView({behavior: 'smooth'})" class="w-full bg-wedding-gold hover:bg-amber-600 text-white py-3 rounded-xl font-semibold text-center transition shadow-lg">Pilih Paket Gold VIP[cite: 4]</a>
-                        </div>
-
-                        <div class="bg-wedding-cream rounded-3xl p-8 border border-wedding-gold/20 shadow-lg relative flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs uppercase tracking-widest text-wedding-gold font-bold">Paket Platinum[cite: 4]</span>
-                                <h3 class="font-serif text-2xl font-bold text-wedding-dark mt-1">Custom Exclusive[cite: 4]</h3>
-                                <div class="mt-4 mb-6">
-                                    <span class="text-4xl font-extrabold text-wedding-dark">Rp 399rb[cite: 4]</span>
-                                    <span class="text-gray-500 text-sm"> / selamanya[cite: 4]</span>
-                                </div>
-                                <ul class="space-y-3 text-sm text-gray-600 mb-8">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> Desain Custom Sesuai Keinginan[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> Domain Khusus (namapasangan.com)[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> Fitur Angpao / Amplop Digital[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> Bantuan Tim Ahli 24/7[cite: 4]</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600"></i> Export File HTML Siap Upload[cite: 4]</li>
-                                </ul>
-                            </div>
-                            <a href="#templates-section" onclick="document.getElementById('templates-section').scrollIntoView({behavior: 'smooth'})" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold text-center transition shadow">Pilih Paket Platinum[cite: 4]</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TESTIMONIALS -->
-            <section class="py-20 bg-wedding-cream/50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Testimoni Pengantin[cite: 4]</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wedding-dark mt-2">Apa Kata Mereka yang Telah Menggunakan Sugeng Klinsman?[cite: 4]</h2>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-white p-8 rounded-3xl shadow-md border border-wedding-gold/20 flex flex-col justify-between">
-                            <div>
-                                <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                                <p class="text-gray-600 text-sm leading-relaxed italic mb-6">
-                                    "Sangat mudah digunakan! Tamu-tamu undangan kami sangat terkesan dengan desain template Floral Rustic yang anggun serta musik latarnya. Pelayanan Sugeng Klinsman luar biasa!"[cite: 4]
-                                </p>
-                            </div>
-                            <div class="flex items-center gap-4 border-t pt-4">
-                                <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="User" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-serif font-bold text-wedding-dark text-sm">Nadya & Dimas[cite: 4]</h4>
-                                    <p class="text-xs text-gray-500">Menikah di Bandung[cite: 4]</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-3xl shadow-md border border-wedding-gold/20 flex flex-col justify-between">
-                            <div>
-                                <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                                <p class="text-gray-600 text-sm leading-relaxed italic mb-6">
-                                    "Fitur hitung mundur dan peta lokasi sangat membantu para tamu dari luar kota. Proses edit langsung di webnya cepat banget gak pakai ribet. Recommended banget!"[cite: 4]
-                                </p>
-                            </div>
-                            <div class="flex items-center gap-4 border-t pt-4">
-                                <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="User" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-serif font-bold text-wedding-dark text-sm">Fikri & Salsabila[cite: 4]</h4>
-                                    <p class="text-xs text-gray-500">Menikah di Jakarta[cite: 4]</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-3xl shadow-md border border-wedding-gold/20 flex flex-col justify-between">
-                            <div>
-                                <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                                <p class="text-gray-600 text-sm leading-relaxed italic mb-6">
-                                    "Pilihan template Modern Javanese-nya keren banget, elegan dan tetap ada sentuhan budaya tradisional yang megah. Bisa download file HTML-nya juga untuk arsip."[cite: 4]
-                                </p>
-                            </div>
-                            <div class="flex items-center gap-4 border-t pt-4">
-                                <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200" alt="User" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-serif font-bold text-wedding-dark text-sm">Bayu & Sekar[cite: 4]</h4>
-                                    <p class="text-xs text-gray-500">Menikah di Yogyakarta[cite: 4]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- FULL SCREEN PREVIEW MODAL -->
-        <div id="full-preview-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6">
-            <div class="bg-wedding-cream w-full max-w-2xl h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col relative animate__animated animate__fadeInUp">
-                <div class="bg-wedding-dark text-white px-6 py-4 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                        <span class="font-serif font-bold">Pratinjau Penuh Undangan Digital[cite: 4]</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleBackgroundMusic()" id="music-toggle-btn" class="bg-wedding-gold text-white px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow">
-                            <i class="fa-solid fa-music"></i> <span id="music-status-text">Putar Musik[cite: 4]</span>
-                        </button>
-                        <button onclick="closeFullPreview()" class="text-white hover:text-red-400 text-xl font-bold px-2">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex-1 overflow-y-auto p-6 sm:p-12 text-center space-y-10 relative">
-                    <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#C5A880_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none"></div>
-
-                    <div>
-                        <span id="modal-theme-tag" class="text-xs uppercase tracking-widest text-wedding-gold font-bold">The Wedding Of[cite: 4]</span>
-                        <h1 id="modal-couple-title" class="font-serif text-4xl sm:text-5xl font-bold text-wedding-dark mt-3">Rizky & Anisa[cite: 4]</h1>
-                        <p id="modal-date-top" class="font-script text-3xl text-wedding-gold mt-2">Minggu, 18 Oktober 2026[cite: 4]</p>
-                    </div>
-
-                    <div class="flex justify-center items-center gap-6">
-                        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-wedding-gold shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Groom" class="w-full h-full object-cover">
-                        </div>
-                        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-wedding-gold shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Bride" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-
-                    <div class="space-y-6 max-w-lg mx-auto">
-                        <div>
-                            <h2 id="modal-groom-name" class="font-serif text-2xl font-bold text-wedding-dark">Rizky Pratama, S.T.[cite: 4]</h2>
-                            <p id="modal-groom-parents" class="text-sm text-gray-500 mt-1">Putra dari Bpk. H. Ahmad & Ibu Hj. Siti[cite: 4]</p>
-                        </div>
-                        <span class="font-script text-4xl text-wedding-gold block">&</span>
-                        <div>
-                            <h2 id="modal-bride-name" class="font-serif text-2xl font-bold text-wedding-dark">Anisa Rahmawati, S.Pd.[cite: 4]</h2>
-                            <p id="modal-bride-parents" class="text-sm text-gray-500 mt-1">Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah[cite: 4]</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-3xl shadow-md border border-wedding-gold/20 italic text-gray-600 max-w-lg mx-auto">
-                        <p id="modal-quote">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..." (QS. Ar-Rum: 21)[cite: 4]</p>
-                    </div>
-
-                    <div class="bg-wedding-dark text-white p-8 rounded-3xl shadow-xl space-y-6 max-w-lg mx-auto text-left">
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-calendar-day text-wedding-gold text-xl mt-1"></i>
-                            <div>
-                                <p class="text-xs text-wedding-gold font-bold uppercase tracking-widest">Hari & Tanggal[cite: 4]</p>
-                                <p id="modal-date-main" class="text-base font-semibold mt-0.5">Minggu, 18 Oktober 2026[cite: 4]</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-clock text-wedding-gold text-xl mt-1"></i>
-                            <div>
-                                <p class="text-xs text-wedding-gold font-bold uppercase tracking-widest">Waktu Acara[cite: 4]</p>
-                                <p id="modal-time-main" class="text-base font-semibold mt-0.5">08.00 WIB - Selesai[cite: 4]</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-location-dot text-wedding-gold text-xl mt-1"></i>
-                            <div>
-                                <p class="text-xs text-wedding-gold font-bold uppercase tracking-widest">Lokasi Gedung[cite: 4]</p>
-                                <p id="modal-venue-main" class="text-base font-semibold mt-0.5">Gedung Mulia Convention Hall, Jakarta Selatan[cite: 4]</p>
-                            </div>
-                        </div>
-                        <div class="pt-2 text-center">
-                            <a href="https://maps.google.com" target="_blank" class="inline-block bg-wedding-gold hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-xl shadow transition text-sm">
-                                <i class="fa-solid fa-map-location-dot mr-2"></i> Buka Petunjuk Lokasi Google Maps[cite: 4]
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="pb-10">
-                        <button onclick="downloadInvitation()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition">
-                            <i class="fa-solid fa-download mr-2"></i> Download / Simpan File Undangan Ini[cite: 4]
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================== HALAMAN TENTANG KAMI ==================== -->
-        <div id="page-tentang" class="page-section hidden">
-            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-5">
-                        <div class="relative p-4 bg-white rounded-3xl border border-gold-400 shadow-gold-md">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman Pontianak" class="w-full h-96 object-cover rounded-2xl">
-                            <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
-                                <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
-                                <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-7 space-y-6">
-                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Tentang Kami</span>
-                        <h1 class="text-3xl sm:text-4xl font-bold text-obsidian leading-tight">
-                            Menggabungkan Keahlian Teknologi, Jurnalisme Digital, dan Seni Visual di Pontianak.
-                        </h1>
-                        <p class="text-gray-600 leading-relaxed">
-                            <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu di Pontianak yang mengutamakan presisi, estetika, dan dampak nyata.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ==================== HALAMAN LAYANAN ==================== -->
-        <div id="page-layanan" class="page-section hidden">
-            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Katalog Layanan</span>
-                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Solusi Komprehensif untuk Brand Anda</h1>
-                </div>
-                <div class="space-y-10">
-                    <div class="gold-card rounded-3xl p-8 lg:p-10 grid lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-4"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" class="w-full h-60 object-cover rounded-2xl"></div>
-                        <div class="lg:col-span-8 space-y-3">
-                            <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase">01 • Web Engineering</span>
-                            <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional</h3>
-                            <p class="text-gray-600">Pembangunan Landing Page UMKM, Company Profile, Portal Berita/Media Online, serta Custom Theme WordPress.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ==================== HALAMAN DAFTAR HARGA LENGKAP ==================== -->
-        <div id="page-harga" class="page-section hidden">
-            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Investasi Transparan & Promo</span>
-                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Daftar Paket & Rincian Fasilitas Layanan</h1>
-                </div>
-
-                <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Web Development</span>
-                            <h3 class="text-2xl font-bold text-obsidian mt-1">Landing Page / UMKM</h3>
-                            <div class="my-4">
-                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 2.500.000</span>
-                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.500.000</span>
-                            </div>
-                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
-                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Website Landing Page Profesional & Responsif</span></li>
-                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Domain gratis sesuai paket & SSL (HTTPS) aman</span></li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Website" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Website</a>
-                    </div>
-                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between border-2 border-gold-400 relative shadow-gold-md">
-                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gold-gradient text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full">Paling Diminati</div>
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Content & Social Media</span>
-                            <h3 class="text-2xl font-bold text-obsidian mt-1">Paket Konten & SEO</h3>
-                            <div class="my-4">
-                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 1.800.000</span>
-                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.250.000</span>
-                            </div>
-                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
-                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Pembuatan artikel SEO berkualitas tinggi</span></li>
-                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Riset kata kunci (Keyword Research) tertarget</span></li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Konten" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Konten</a>
-                    </div>
-                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Visual Production</span>
-                            <h3 class="text-2xl font-bold text-obsidian mt-1">Foto & Video Kreatif</h3>
-                            <div class="my-4">
-                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 2.500.000</span>
-                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.750.000</span>
-                            </div>
-                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
-                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Sesi liputan foto & video profesional</span></li>
-                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Editing & Color Grading estetik</span></li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Visual" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Visual</a>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ==================== HALAMAN KONTAK ==================== -->
-        <div id="page-kontak" class="page-section hidden">
-            <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-                <h1 class="text-3xl font-bold text-obsidian">Hubungi Kami</h1>
-                <p class="text-gray-700">Hubungi langsung via WhatsApp di <a href="https://wa.me/6289503846562" class="text-gold-600 font-bold">0895-0384-6562</a>.</p>
             </section>
         </div>
 
@@ -1198,7 +517,625 @@
             </section>
         </div>
 
+        <!-- ==================== HALAMAN TENTANG KAMI ==================== -->
+        <div id="page-tentang" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="relative p-4 bg-white rounded-3xl border border-gold-400 shadow-gold-md">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman Pontianak" class="w-full h-96 object-cover rounded-2xl">
+                            <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
+                                <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
+                                <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Tentang Kami</span>
+                        <h1 class="text-3xl sm:text-4xl font-bold text-obsidian leading-tight">
+                            Menggabungkan Keahlian Teknologi, Jurnalisme Digital, dan Seni Visual di Pontianak.
+                        </h1>
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu di Pontianak yang mengutamakan presisi, estetika, dan dampak nyata.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN LAYANAN ==================== -->
+        <div id="page-layanan" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Katalog Layanan</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Solusi Komprehensif untuk Brand Anda</h1>
+                </div>
+                <div class="space-y-10">
+                    <div class="gold-card rounded-3xl p-8 lg:p-10 grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" class="w-full h-60 object-cover rounded-2xl"></div>
+                        <div class="lg:col-span-8 space-y-3">
+                            <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase">01 • Web Engineering</span>
+                            <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional</h3>
+                            <p class="text-gray-600">Pembangunan Landing Page UMKM, Company Profile, Portal Berita/Media Online, serta Custom Theme WordPress.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN DAFTAR HARGA LENGKAP ==================== -->
+        <div id="page-harga" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Investasi Transparan & Promo</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Daftar Paket & Rincian Fasilitas Layanan</h1>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                    <!-- Paket 1 -->
+                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Web Development</span>
+                            <h3 class="text-2xl font-bold text-obsidian mt-1">Landing Page / UMKM</h3>
+                            <div class="my-4">
+                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 2.500.000</span>
+                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.500.000</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Website Landing Page Profesional & Responsif</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Domain gratis sesuai paket & SSL (HTTPS) aman</span></li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Website" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Website</a>
+                    </div>
+                    <!-- Paket 2 -->
+                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between border-2 border-gold-400 relative shadow-gold-md">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gold-gradient text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full">Paling Diminati</div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Content & Social Media</span>
+                            <h3 class="text-2xl font-bold text-obsidian mt-1">Paket Konten & SEO</h3>
+                            <div class="my-4">
+                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 1.800.000</span>
+                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.250.000</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Pembuatan artikel SEO berkualitas tinggi</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Riset kata kunci (Keyword Research) tertarget</span></li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Konten" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Konten</a>
+                    </div>
+                    <!-- Paket 3 -->
+                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Visual Production</span>
+                            <h3 class="text-2xl font-bold text-obsidian mt-1">Foto & Video Kreatif</h3>
+                            <div class="my-4">
+                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 2.500.000</span>
+                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.750.000</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Sesi liputan foto & video profesional</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Editing & Color Grading estetik</span></li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Visual" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Visual</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN UNDANGAN ONLINE (PLATFORM PLATFORM UNDANGAN NIKAH DIGITAL) ==================== -->
+        <div id="page-undangan" class="page-section hidden">
+            <!-- HERO SECTION UNDANGAN -->
+            <section class="relative pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden bg-gradient-to-b from-wedding-goldLight/30 to-wedding-cream text-wedding-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 bg-wedding-gold/15 text-wedding-dark px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-wedding-gold/30">
+                                <i class="fa-solid fa-heart text-wedding-gold"></i> Platform Undangan Nikah Digital #1 di Indonesia
+                            </div>
+                            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-wedding-dark">
+                                Wujudkan Undangan Pernikahan <span class="font-script text-wedding-gold text-4xl sm:text-5xl lg:text-6xl block sm:inline font-normal">Impian Anda</span> dalam Hitungan Menit
+                            </h1>
+                            <p class="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0">
+                                Sugeng Klinsman menghadirkan layanan pembuatan undangan nikah digital interaktif yang elegan, dilengkapi peta lokasi, hitung mundur, galeri foto eksklusif, RSVP digital, dan musik latar romantis.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                                <a href="#templates" class="w-full sm:w-auto bg-wedding-dark hover:bg-wedding-gold text-white px-8 py-3.5 rounded-full font-semibold shadow-lg transition duration-300 flex items-center justify-center gap-3 group">
+                                    <span>Pilih Template & Edit</span>
+                                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                                </a>
+                                <a href="#features" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-wedding-dark border border-gray-300 px-8 py-3.5 rounded-full font-semibold shadow-sm transition duration-300 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-circle-play text-wedding-gold"></i> Lihat Fitur
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hero Visual Showcase -->
+                        <div class="lg:col-span-5 relative">
+                            <div class="relative mx-auto max-w-xs sm:max-w-sm rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-white group">
+                                <div class="absolute top-0 left-0 right-0 h-6 bg-gray-900 z-20 flex items-center justify-center">
+                                    <div class="w-16 h-3 bg-black rounded-full"></div>
+                                </div>
+                                <div class="pt-6 h-[460px] bg-gradient-to-br from-amber-50 to-orange-50 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+                                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                                    <span class="text-xs uppercase tracking-widest text-wedding-gold font-semibold mb-2">The Wedding Of</span>
+                                    <h3 class="font-serif text-2xl font-bold text-wedding-dark mb-1">Rizky & Anisa</h3>
+                                    <p class="font-script text-xl text-wedding-gold mb-4">Minggu, 18 Oktober 2026</p>
+                                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-wedding-gold shadow-lg mb-3">
+                                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=400" alt="Couple" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="bg-white/80 backdrop-blur-sm p-2.5 rounded-xl shadow-sm w-full text-[11px] text-gray-600 mb-3">
+                                        <i class="fa-solid fa-location-dot text-wedding-gold mr-1"></i> Gedung Mulia Convention Hall, Jakarta
+                                    </div>
+                                    <span class="bg-wedding-dark text-white px-4 py-2 rounded-full text-xs font-semibold shadow">Buka Undangan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEATURES HIGHLIGHT SECTION -->
+            <section id="features" class="py-16 bg-white text-wedding-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Fitur Lengkap & Canggih</span>
+                        <h2 class="font-serif text-3xl font-bold text-wedding-dark mt-2">Semua yang Anda Butuhkan untuk Hari Bahagia</h2>
+                        <p class="text-gray-600 mt-2 text-sm">Nikmati kemudahan menyebar undangan digital dengan fitur interaktif termodern yang membuat tamu undangan terkesan.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
+                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">Peta & Navigasi Lokasi</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Integrasi langsung dengan Google Maps memudahkan tamu menuju lokasi akad dan resepsi tanpa nyasar.</p>
+                        </div>
+                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
+                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">Hitung Mundur Otomatis</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Timer real-time yang menghitung hari, jam, dan detik menuju hari pernikahan sakral Anda.</p>
+                        </div>
+                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
+                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">RSVP & Ucapan Tamu</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Dapatkan konfirmasi kehadiran (Hadir/Tidak) serta doa dan ucapan selamat dari para tamu secara interaktif.</p>
+                        </div>
+                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
+                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">Musik Latar Romantis</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Lagu latar pilihan yang mendayu-dayu membuat suasana undangan terasa lebih emosional dan berkesan.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TEMPLATES SHOWCASE & LIVE CUSTOMIZER SECTION -->
+            <section id="templates" class="py-16 bg-wedding-cream/55 text-wedding-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Katalog Desain Premium</span>
+                        <h2 class="font-serif text-3xl font-bold text-wedding-dark mt-2">Pilih & Edit Template Pilihan Anda</h2>
+                        <p class="text-gray-600 mt-2 text-sm">Klik tombol "Gunakan & Edit Template" untuk menyesuaikan data mempelai dan melihat pratinjau langsung secara real-time!</p>
+                    </div>
+
+                    <!-- Templates Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
+                            <div class="relative h-56 overflow-hidden bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Minimalist Elegant" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Minimalist Elegant</div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Aura & Sophistication</h3>
+                                    <p class="text-gray-600 text-xs mb-4">Gaya modern minimalis dengan tipografi bersih, sentuhan warna emas lembut, sangat cocok untuk pasangan urban.</p>
+                                </div>
+                                <button onclick="selectTemplate('minimalist')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
+                            <div class="relative h-56 overflow-hidden bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600" alt="Floral Rustic" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Floral Rustic</div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Botanical Garden</h3>
+                                    <p class="text-gray-600 text-xs mb-4">Nuansa alam dengan ornamen bunga-bunga romantis, tone warna hijau sage dan earthy warm yang menenangkan.</p>
+                                </div>
+                                <button onclick="selectTemplate('rustic')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
+                            <div class="relative h-56 overflow-hidden bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600" alt="Modern Javanese" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Royal Heritage</div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Royal Heritage</h3>
+                                    <p class="text-gray-600 text-xs mb-4">Kombinasi kemewahan ornamen tradisional klasik dengan sentuhan Islami modern yang sakral dan megah.</p>
+                                </div>
+                                <button onclick="selectTemplate('royal')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LIVE EDITOR & CUSTOMIZER WORKSPACE -->
+                    <div id="editor-workspace" class="bg-white rounded-3xl shadow-2xl border border-wedding-gold/30 overflow-hidden hidden transition-all duration-500">
+                        <div class="bg-wedding-dark text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+                                <h3 class="font-serif text-lg font-bold">Live Editor & Customizer</h3>
+                                <span id="active-template-badge" class="bg-wedding-gold text-white text-xs px-3 py-1 rounded-full font-semibold">Minimalist</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="openFullPreview()" class="bg-wedding-gold hover:bg-amber-600 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-eye"></i> Preview Penuh & Musik
+                                </button>
+                                <button onclick="downloadInvitation()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-download"></i> Download HTML
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                            <!-- Form Editor Input Column -->
+                            <div class="lg:col-span-5 p-6 border-r border-gray-100 bg-wedding-cream/30 space-y-4 max-h-[700px] overflow-y-auto text-left">
+                                <h4 class="font-serif font-bold text-sm text-wedding-dark border-b pb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-sliders text-wedding-gold"></i> Sesuaikan Informasi Undangan
+                                </h4>
+
+                                <div class="space-y-3">
+                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Mempelai Pria</h5>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Lengkap Pria</label>
+                                        <input type="text" id="input-groom-name" value="Rizky Pratama, S.T." oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Orang Tua Pria</label>
+                                        <input type="text" id="input-groom-parents" value="Putra dari Bpk. H. Ahmad & Ibu Hj. Siti" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3 pt-2">
+                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Mempelai Wanita</h5>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Lengkap Wanita</label>
+                                        <input type="text" id="input-bride-name" value="Anisa Rahmawati, S.Pd." oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Orang Tua Wanita</label>
+                                        <input type="text" id="input-bride-parents" value="Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3 pt-2">
+                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Waktu & Lokasi Acara</h5>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Tanggal Acara</label>
+                                        <input type="text" id="input-date" value="Minggu, 18 Oktober 2026" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Waktu Akad & Resepsi</label>
+                                        <input type="text" id="input-time" value="08.00 WIB - Selesai" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Tempat / Gedung</label>
+                                        <input type="text" id="input-venue" value="Gedung Mulia Convention Hall, Jakarta Selatan" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3 pt-2">
+                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Ayat / Pesan Suci</h5>
+                                    <div>
+                                        <textarea id="input-quote" rows="2" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..." (QS. Ar-Rum: 21)</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="pt-3">
+                                    <button onclick="copyShareableLink()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl text-xs font-semibold shadow transition flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-share-nodes"></i> Salin Tautan / Link Undangan
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Live Preview Display Column -->
+                            <div class="lg:col-span-7 p-6 bg-gray-100 flex items-center justify-center relative min-h-[600px]">
+                                <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl border-4 border-gray-800 overflow-hidden flex flex-col h-[580px] relative text-left">
+                                    <div class="bg-gray-900 text-white text-[10px] px-6 py-1.5 flex items-center justify-between z-30">
+                                        <span id="preview-time-bar">10:24</span>
+                                        <div class="w-16 h-2 bg-black rounded-full mx-auto"></div>
+                                        <div class="flex items-center gap-1">
+                                            <i class="fa-solid fa-wifi text-[8px]"></i>
+                                            <i class="fa-solid fa-battery-full text-[8px]"></i>
+                                        </div>
+                                    </div>
+
+                                    <div id="preview-scroll-area" class="flex-1 overflow-y-auto bg-wedding-cream text-wedding-dark p-5 text-center space-y-6 relative">
+                                        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#C5A880_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none"></div>
+
+                                        <div class="pt-2">
+                                            <span id="prev-theme-label" class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">The Wedding Of</span>
+                                            <h2 id="prev-couple-title" class="font-serif text-2xl font-bold mt-1 text-wedding-dark">Rizky & Anisa</h2>
+                                            <p id="prev-date-top" class="font-script text-lg text-wedding-gold">Minggu, 18 Oktober 2026</p>
+                                        </div>
+
+                                        <div class="flex justify-center items-center gap-3">
+                                            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-wedding-gold shadow-md">
+                                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=300" alt="Groom" class="w-full h-full object-cover">
+                                            </div>
+                                            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-wedding-gold shadow-md">
+                                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300" alt="Bride" class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+
+                                        <div class="space-y-3">
+                                            <div>
+                                                <h3 id="prev-groom-name" class="font-serif text-sm font-bold text-wedding-dark">Rizky Pratama, S.T.</h3>
+                                                <p id="prev-groom-parents" class="text-[10px] text-gray-500">Putra dari Bpk. H. Ahmad & Ibu Hj. Siti</p>
+                                            </div>
+                                            <span class="font-script text-xl text-wedding-gold block">&</span>
+                                            <div>
+                                                <h3 id="prev-bride-name" class="font-serif text-sm font-bold text-wedding-dark">Anisa Rahmawati, S.Pd.</h3>
+                                                <p id="prev-bride-parents" class="text-[10px] text-gray-500">Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-white/90 p-3 rounded-xl shadow-sm border border-wedding-gold/20 text-[11px] italic text-gray-600 leading-relaxed">
+                                            <p id="prev-quote">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..."</p>
+                                        </div>
+
+                                        <div class="bg-wedding-dark text-white p-4 rounded-xl shadow-lg space-y-2 text-left">
+                                            <div class="flex items-start gap-2">
+                                                <i class="fa-solid fa-calendar-day text-wedding-gold text-xs mt-0.5"></i>
+                                                <div>
+                                                    <p class="text-[9px] text-wedding-gold font-bold uppercase">Tanggal</p>
+                                                    <p id="prev-date-main" class="text-xs font-semibold">Minggu, 18 Oktober 2026</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i class="fa-solid fa-location-dot text-wedding-gold text-xs mt-0.5"></i>
+                                                <div>
+                                                    <p class="text-[9px] text-wedding-gold font-bold uppercase">Lokasi</p>
+                                                    <p id="prev-venue-main" class="text-xs font-semibold">Gedung Mulia Convention Hall</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-white p-4 rounded-xl shadow-sm border border-wedding-gold/20 text-left space-y-2">
+                                            <h4 class="font-serif font-bold text-xs text-wedding-dark text-center">RSVP Kehadiran</h4>
+                                            <input type="text" id="rsvp-name" placeholder="Nama Tamu" class="w-full px-2 py-1 border rounded text-[10px]">
+                                            <button onclick="submitRSVP()" class="w-full bg-wedding-dark text-white py-1 rounded text-[10px] font-bold">Kirim</button>
+                                            <div id="rsvp-success-msg" class="hidden text-center text-[10px] text-green-600 font-semibold">Tercatat!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRICING & PACKAGES -->
+            <section id="pricing" class="py-16 bg-white text-wedding-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Investasi Pernikahan Terbaik</span>
+                        <h2 class="font-serif text-3xl font-bold text-wedding-dark mt-2">Pilihan Paket Jasa Undangan Digital</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="bg-wedding-cream rounded-3xl p-6 border border-wedding-gold/20 shadow-lg flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">Paket Silver</span>
+                                <h3 class="font-serif text-xl font-bold text-wedding-dark mt-1">Basic Digital</h3>
+                                <div class="mt-3 mb-4"><span class="text-3xl font-extrabold text-wedding-dark">Rp 99rb</span><span class="text-gray-500 text-xs"> / sekali bayar</span></div>
+                                <ul class="space-y-2 text-xs text-gray-600 mb-6">
+                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> 1 Pilihan Template Eksklusif</li>
+                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Masa Aktif 1 Tahun</li>
+                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Hitung Mundur & Peta Lokasi</li>
+                                </ul>
+                            </div>
+                            <a href="#templates" class="w-full bg-wedding-dark text-white py-2.5 rounded-xl font-semibold text-center text-xs transition shadow">Pilih Silver</a>
+                        </div>
+
+                        <div class="bg-wedding-dark text-white rounded-3xl p-6 shadow-2xl relative flex flex-col justify-between transform md:-translate-y-2 border-2 border-wedding-gold">
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-wedding-gold text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full">Paling Populer</div>
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">Paket Gold</span>
+                                <h3 class="font-serif text-xl font-bold text-white mt-1">Professional VIP</h3>
+                                <div class="mt-3 mb-4"><span class="text-3xl font-extrabold text-wedding-gold">Rp 199rb</span><span class="text-gray-400 text-xs"> / selamanya</span></div>
+                                <ul class="space-y-2 text-xs text-gray-300 mb-6">
+                                    <li><i class="fa-solid fa-check text-wedding-gold mr-2"></i> Bebas Pilih Semua Template</li>
+                                    <li><i class="fa-solid fa-check text-wedding-gold mr-2"></i> Masa Aktif Selamanya</li>
+                                    <li><i class="fa-solid fa-check text-wedding-gold mr-2"></i> Musik Latar Romantis Custom</li>
+                                </ul>
+                            </div>
+                            <a href="#templates" class="w-full bg-wedding-gold text-white py-2.5 rounded-xl font-semibold text-center text-xs transition shadow">Pilih Gold VIP</a>
+                        </div>
+
+                        <div class="bg-wedding-cream rounded-3xl p-6 border border-wedding-gold/20 shadow-lg flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">Paket Platinum</span>
+                                <h3 class="font-serif text-xl font-bold text-wedding-dark mt-1">Custom Exclusive</h3>
+                                <div class="mt-3 mb-4"><span class="text-3xl font-extrabold text-wedding-dark">Rp 399rb</span><span class="text-gray-500 text-xs"> / selamanya</span></div>
+                                <ul class="space-y-2 text-xs text-gray-600 mb-6">
+                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Desain Custom Sesuai Keinginan</li>
+                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Domain Khusus (namapasangan.com)</li>
+                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Fitur Angpao Digital</li>
+                                </ul>
+                            </div>
+                            <a href="#templates" class="w-full bg-wedding-dark text-white py-2.5 rounded-xl font-semibold text-center text-xs transition shadow">Pilih Platinum</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN TENTANG KAMI ==================== -->
+        <div id="page-tentang" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="relative p-4 bg-white rounded-3xl border border-gold-400 shadow-gold-md">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman" class="w-full h-96 object-cover rounded-2xl">
+                            <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
+                                <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
+                                <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Tentang Kami</span>
+                        <h1 class="text-3xl sm:text-4xl font-bold text-obsidian leading-tight">
+                            Menggabungkan Keahlian Teknologi, Jurnalisme Digital, dan Seni Visual di Pontianak.
+                        </h1>
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu di Pontianak yang mengutamakan presisi, estetika, dan dampak nyata.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN LAYANAN ==================== -->
+        <div id="page-layanan" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Katalog Layanan</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Solusi Komprehensif untuk Brand Anda</h1>
+                </div>
+                <div class="space-y-10">
+                    <div class="gold-card rounded-3xl p-8 lg:p-10 grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" class="w-full h-60 object-cover rounded-2xl"></div>
+                        <div class="lg:col-span-8 space-y-3">
+                            <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase">01 • Web Engineering</span>
+                            <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional</h3>
+                            <p class="text-gray-600">Pembangunan Landing Page UMKM, Company Profile, Portal Berita/Media Online, serta Custom Theme WordPress.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN KONTAK ==================== -->
+        <div id="page-kontak" class="page-section hidden">
+            <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+                <h1 class="text-3xl font-bold text-obsidian">Hubungi Kami</h1>
+                <p class="text-gray-700">Hubungi langsung via WhatsApp di <a href="https://wa.me/6289503846562" class="text-gold-600 font-bold">0895-0384-6562</a>.</p>
+            </section>
+        </div>
+
     </main>
+
+    <!-- FULL SCREEN PREVIEW MODAL UNTUK UNDANGAN -->
+    <div id="full-preview-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6">
+        <div class="bg-wedding-cream w-full max-w-2xl h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col relative animate__animated animate__fadeInUp text-left">
+            <div class="bg-wedding-dark text-white px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                    <span class="font-serif font-bold text-sm">Pratinjau Penuh Undangan Digital</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleBackgroundMusic()" id="music-toggle-btn" class="bg-wedding-gold text-white px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-music"></i> <span id="music-status-text">Putar Musik</span>
+                    </button>
+                    <button onclick="closeFullPreview()" class="text-white hover:text-red-400 text-xl font-bold px-2">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-6 sm:p-12 text-center space-y-8 relative">
+                <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#C5A880_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none"></div>
+
+                <div>
+                    <span id="modal-theme-tag" class="text-xs uppercase tracking-widest text-wedding-gold font-bold">The Wedding Of</span>
+                    <h1 id="modal-couple-title" class="font-serif text-3xl sm:text-4xl font-bold text-wedding-dark mt-2">Rizky & Anisa</h1>
+                    <p id="modal-date-top" class="font-script text-2xl text-wedding-gold mt-1">Minggu, 18 Oktober 2026</p>
+                </div>
+
+                <div class="flex justify-center items-center gap-6">
+                    <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-wedding-gold shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Groom" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-wedding-gold shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Bride" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="space-y-4 max-w-lg mx-auto">
+                    <div>
+                        <h2 id="modal-groom-name" class="font-serif text-xl font-bold text-wedding-dark">Rizky Pratama, S.T.</h2>
+                        <p id="modal-groom-parents" class="text-xs text-gray-500 mt-0.5">Putra dari Bpk. H. Ahmad & Ibu Hj. Siti</p>
+                    </div>
+                    <span class="font-script text-3xl text-wedding-gold block">&</span>
+                    <div>
+                        <h2 id="modal-bride-name" class="font-serif text-xl font-bold text-wedding-dark">Anisa Rahmawati, S.Pd.</h2>
+                        <p id="modal-bride-parents" class="text-xs text-gray-500 mt-0.5">Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-wedding-gold/20 italic text-gray-600 max-w-lg mx-auto text-xs">
+                    <p id="modal-quote">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..." (QS. Ar-Rum: 21)</p>
+                </div>
+
+                <div class="bg-wedding-dark text-white p-6 rounded-2xl shadow-xl space-y-4 max-w-lg mx-auto text-left">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-calendar-day text-wedding-gold text-lg mt-0.5"></i>
+                        <div>
+                            <p class="text-[10px] text-wedding-gold font-bold uppercase tracking-widest">Hari & Tanggal</p>
+                            <p id="modal-date-main" class="text-sm font-semibold mt-0.5">Minggu, 18 Oktober 2026</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-clock text-wedding-gold text-lg mt-0.5"></i>
+                        <div>
+                            <p class="text-[10px] text-wedding-gold font-bold uppercase tracking-widest">Waktu Acara</p>
+                            <p id="modal-time-main" class="text-sm font-semibold mt-0.5">08.00 WIB - Selesai</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-wedding-gold text-lg mt-0.5"></i>
+                        <div>
+                            <p class="text-[10px] text-wedding-gold font-bold uppercase tracking-widest">Lokasi Gedung</p>
+                            <p id="modal-venue-main" class="text-sm font-semibold mt-0.5">Gedung Mulia Convention Hall, Jakarta Selatan</p>
+                        </div>
+                    </div>
+                    <div class="pt-1 text-center">
+                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-wedding-gold hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow transition text-xs">
+                            <i class="fa-solid fa-map-location-dot mr-1.5"></i> Buka Petunjuk Lokasi Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pb-6">
+                    <button onclick="downloadInvitation()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg transition text-xs">
+                        <i class="fa-solid fa-download mr-1.5"></i> Download / Simpan File Undangan Ini
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-obsidian text-white text-center py-8 border-t border-gold-400/20 text-sm space-y-2">
@@ -1206,7 +1143,7 @@
         <p><button onclick="switchPage('admin')" class="text-xs text-gray-500 hover:text-gold-400 transition underline">🔐 Area Khusus Admin</button></p>
     </footer>
 
-    <!-- JavaScript Navigasi, Kalkulator, & Sistem Undangan & Admin -->
+    <!-- JavaScript Navigasi, Kalkulator, & Sistem Undangan Online -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -1228,7 +1165,7 @@
         function showToast(title, desc) {
             const toast = document.getElementById('toast');
             document.getElementById('toast-title').innerText = title;
-            document.getElementById('toast-desc').innerText = desc;
+            document.getElementById('toast-desc').innerText = desc || '';
             toast.classList.remove('translate-y-32', 'opacity-0');
             setTimeout(() => { toast.classList.add('translate-y-32', 'opacity-0'); }, 4000);
         }
@@ -1285,7 +1222,141 @@
             window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
         }
 
-        // --- SISTEM DATA LOCALSTORAGE ---
+        // --- SISTEM UNDANGAN ONLINE INTERAKTIF ---
+        let currentTemplate = 'minimalist';
+
+        function selectTemplate(templateName) {
+            currentTemplate = templateName;
+            const editorWorkspace = document.getElementById('editor-workspace');
+            const activeBadge = document.getElementById('active-template-badge');
+
+            if (templateName === 'minimalist') {
+                activeBadge.textContent = 'Minimalist Elegant';
+            } else if (templateName === 'rustic') {
+                activeBadge.textContent = 'Floral Rustic';
+            } else if (templateName === 'royal') {
+                activeBadge.textContent = 'Royal Heritage';
+            }
+
+            editorWorkspace.classList.remove('hidden');
+            editorWorkspace.scrollIntoView({ behavior: 'smooth' });
+            updatePreview();
+            showToast('Template berhasil dimuat ke Live Editor!');
+        }
+
+        function updatePreview() {
+            const groomName = document.getElementById('input-groom-name').value;
+            const groomParents = document.getElementById('input-groom-parents').value;
+            const brideName = document.getElementById('input-bride-name').value;
+            const brideParents = document.getElementById('input-bride-parents').value;
+            const dateVal = document.getElementById('input-date').value;
+            const timeVal = document.getElementById('input-time').value;
+            const venueVal = document.getElementById('input-venue').value;
+            const quoteVal = document.getElementById('input-quote').value;
+
+            document.getElementById('prev-couple-title').textContent = `${groomName.split(' ')[0]} & ${brideName.split(' ')[0]}`;
+            document.getElementById('prev-date-top').textContent = dateVal;
+            document.getElementById('prev-groom-name').textContent = groomName;
+            document.getElementById('prev-groom-parents').textContent = groomParents;
+            document.getElementById('prev-bride-name').textContent = brideName;
+            document.getElementById('prev-bride-parents').textContent = brideParents;
+            document.getElementById('prev-quote').textContent = `"${quoteVal}"`;
+            document.getElementById('prev-date-main').textContent = dateVal;
+            document.getElementById('prev-venue-main').textContent = venueVal;
+
+            document.getElementById('modal-couple-title').textContent = `${groomName.split(' ')[0]} & ${brideName.split(' ')[0]}`;
+            document.getElementById('modal-date-top').textContent = dateVal;
+            document.getElementById('modal-groom-name').textContent = groomName;
+            document.getElementById('modal-groom-parents').textContent = groomParents;
+            document.getElementById('modal-bride-name').textContent = brideName;
+            document.getElementById('modal-bride-parents').textContent = brideParents;
+            document.getElementById('modal-quote').textContent = `"${quoteVal}"`;
+            document.getElementById('modal-date-main').textContent = dateVal;
+            document.getElementById('modal-time-main').textContent = timeVal;
+            document.getElementById('modal-venue-main').textContent = venueVal;
+        }
+
+        function submitRSVP() {
+            const name = document.getElementById('rsvp-name').value;
+            if(!name) {
+                showToast('Perhatian', 'Mohon masukkan nama Anda terlebih dahulu!');
+                return;
+            }
+            document.getElementById('rsvp-success-msg').classList.remove('hidden');
+            showToast('Berhasil', 'Konfirmasi RSVP berhasil dikirim!');
+        }
+
+        function copyShareableLink() {
+            const dummy = document.createElement('textarea');
+            const shareUrl = window.location.href.split('#')[0] + '?invitation=sugeng-klinsman-' + Math.floor(Math.random()*10000);
+            document.body.appendChild(dummy);
+            dummy.value = shareUrl;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showToast('Berhasil', 'Tautan undangan berhasil disalin ke clipboard!');
+        }
+
+        function openFullPreview() {
+            const modal = document.getElementById('full-preview-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeFullPreview() {
+            const modal = document.getElementById('full-preview-modal');
+            modal.classList.add('hidden');
+        }
+
+        let isMusicPlaying = false;
+        function toggleBackgroundMusic() {
+            isMusicPlaying = !isMusicPlaying;
+            const statusText = document.getElementById('music-status-text');
+            if (isMusicPlaying) {
+                statusText.textContent = 'Pause Musik';
+                showToast('Info', 'Musik latar romantis diputarkan 🎶');
+            } else {
+                statusText.textContent = 'Putar Musik';
+                showToast('Info', 'Musik latar dijeda.');
+            }
+        }
+
+        function downloadInvitation() {
+            const groomName = document.getElementById('input-groom-name').value;
+            const brideName = document.getElementById('input-bride-name').value;
+            const htmlContent = `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Undangan Pernikahan ${groomName} & ${brideName}</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+</head>
+<body class="bg-[#FAF8F5] text-stone-950 font-sans p-6 text-center">
+    <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl mt-10">
+        <span class="text-xs uppercase tracking-widest text-amber-700 font-bold">The Wedding Of</span>
+        <h1 class="text-4xl font-serif font-bold mt-2">${groomName} & ${brideName}</h1>
+        <p class="text-amber-700 font-serif text-xl mt-2">${document.getElementById('input-date').value}</p>
+        <hr class="my-6 border-amber-200">
+        <p class="text-sm text-gray-600 mb-6">${document.getElementById('input-venue').value}</p>
+        <div class="bg-amber-50 p-4 rounded-xl text-xs text-amber-900 font-medium">
+            Undangan Digital Resmi Dibuat Melalui Sugeng Klinsman Platform.
+        </div>
+    </div>
+</body>
+</html>`;
+
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Undangan_${groomName.split(' ')[0]}_${brideName.split(' ')[0]}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('Berhasil', 'File HTML undangan berhasil didownload!');
+        }
+
+        // --- CMS LOCALSTORAGE & ADMIN AUTH ---
         function getLeads() {
             const data = localStorage.getItem('sk_leads');
             return data ? JSON.parse(data) : [];
@@ -1499,14 +1570,14 @@
                 artListDiv.innerHTML = '<p class="text-xs text-gray-500 italic">Tidak ada artikel pending.</p>';
             } else {
                 artListDiv.innerHTML = pendingArt.map((art, idx) => `
-                    <div class="bg-white p-4 rounded-2xl border border-gold-200 flex justify-between items-center gap-4">
+                    <div class="bg-white p-4 rounded-2xl border border-gold-200 flex justify-between items-center gap-4 text-xs">
                         <div>
-                            <h4 class="font-bold text-sm text-obsidian">${art.title}</h4>
-                            <p class="text-xs text-gray-500">Kontributor: <strong>${art.author}</strong> (${art.wa}) • ${art.category}</p>
+                            <h4 class="font-bold text-obsidian">${art.title}</h4>
+                            <p class="text-gray-500">Kontributor: <strong>${art.author}</strong> (${art.wa}) • ${art.category}</p>
                         </div>
                         <div class="flex gap-2">
-                            <button onclick="approveArticle(${idx})" class="px-3.5 py-1.5 bg-emerald-600 text-white text-xs font-semibold rounded-xl">Setujui</button>
-                            <button onclick="rejectArticle(${idx})" class="px-3.5 py-1.5 bg-rose-600 text-white text-xs font-semibold rounded-xl">Tolak</button>
+                            <button onclick="approveArticle(${idx})" class="px-3 py-1 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
+                            <button onclick="rejectArticle(${idx})" class="px-3 py-1 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
                         </div>
                     </div>
                 `).join('');
@@ -1517,15 +1588,15 @@
                 medListDiv.innerHTML = '<p class="text-xs text-gray-500 italic">Tidak ada media pending.</p>';
             } else {
                 medListDiv.innerHTML = pendingMed.map((med, idx) => `
-                    <div class="bg-white p-4 rounded-2xl border border-gold-200 space-y-2">
-                        <div class="h-32 bg-slate-900 rounded-xl overflow-hidden">
+                    <div class="bg-white p-4 rounded-2xl border border-gold-200 space-y-2 text-xs">
+                        <div class="h-28 bg-slate-900 rounded-xl overflow-hidden">
                             <img src="${med.url}" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="font-bold text-xs text-obsidian truncate">${med.title}</h4>
+                        <h4 class="font-bold text-obsidian truncate">${med.title}</h4>
                         <p class="text-[10px] text-gray-500">Oleh: ${med.author} (${med.wa}) • ${med.theme}</p>
-                        <div class="flex gap-2 pt-2">
-                            <button onclick="approveMedia(${idx})" class="flex-1 py-1.5 bg-emerald-600 text-white text-xs font-semibold rounded-lg">Setujui</button>
-                            <button onclick="rejectMedia(${idx})" class="flex-1 py-1.5 bg-rose-600 text-white text-xs font-semibold rounded-lg">Tolak</button>
+                        <div class="flex gap-2 pt-1">
+                            <button onclick="approveMedia(${idx})" class="flex-1 py-1 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
+                            <button onclick="rejectMedia(${idx})" class="flex-1 py-1 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
                         </div>
                     </div>
                 `).join('');
@@ -1562,142 +1633,6 @@
             }
         }
 
-        // --- SCRIPT INTERAKTIF PLATFORM UNDANGAN DIGITAL ---
-        let currentTemplate = 'minimalist';
-
-        function selectTemplate(templateName) {
-            currentTemplate = templateName;
-            const editorWorkspace = document.getElementById('editor-workspace');
-            const activeBadge = document.getElementById('active-template-badge');
-
-            if (templateName === 'minimalist') {
-                activeBadge.textContent = 'Minimalist Elegant';[cite: 4]
-            } else if (templateName === 'rustic') {
-                activeBadge.textContent = 'Floral Rustic';[cite: 4]
-            } else if (templateName === 'royal') {
-                activeBadge.textContent = 'Modern Islamic/Javanese';[cite: 4]
-            }
-
-            editorWorkspace.classList.remove('hidden');
-            editorWorkspace.scrollIntoView({ behavior: 'smooth' });
-            updatePreview();
-            showToast('Template berhasil dimuat ke Live Editor!', '');
-        }
-
-        function updatePreview() {
-            const groomName = document.getElementById('input-groom-name').value;
-            const groomParents = document.getElementById('input-groom-parents').value;
-            const brideName = document.getElementById('input-bride-name').value;
-            const brideParents = document.getElementById('input-bride-parents').value;
-            const dateVal = document.getElementById('input-date').value;
-            const timeVal = document.getElementById('input-time').value;
-            const venueVal = document.getElementById('input-venue').value;
-            const quoteVal = document.getElementById('input-quote').value;
-
-            document.getElementById('prev-couple-title').textContent = `${groomName.split(' ')[0]} & ${brideName.split(' ')[0]}`;
-            document.getElementById('prev-date-top').textContent = dateVal;
-            document.getElementById('prev-groom-name').textContent = groomName;
-            document.getElementById('prev-groom-parents').textContent = groomParents;
-            document.getElementById('prev-bride-name').textContent = brideName;
-            document.getElementById('prev-bride-parents').textContent = brideParents;
-            document.getElementById('prev-quote').textContent = `"${quoteVal}"`;
-            document.getElementById('prev-date-main').textContent = dateVal;
-            document.getElementById('prev-time-main').textContent = timeVal;
-            document.getElementById('prev-venue-main').textContent = venueVal;
-
-            document.getElementById('modal-couple-title').textContent = `${groomName.split(' ')[0]} & ${brideName.split(' ')[0]}`;
-            document.getElementById('modal-date-top').textContent = dateVal;
-            document.getElementById('modal-groom-name').textContent = groomName;
-            document.getElementById('modal-groom-parents').textContent = groomParents;
-            document.getElementById('modal-bride-name').textContent = brideName;
-            document.getElementById('modal-bride-parents').textContent = brideParents;
-            document.getElementById('modal-quote').textContent = `"${quoteVal}"`;
-            document.getElementById('modal-date-main').textContent = dateVal;
-            document.getElementById('modal-time-main').textContent = timeVal;
-            document.getElementById('modal-venue-main').textContent = venueVal;
-        }
-
-        function submitRSVP() {
-            const name = document.getElementById('rsvp-name').value;
-            if(!name) {
-                showToast('Perhatian', 'Mohon masukkan nama Anda terlebih dahulu!');
-                return;
-            }
-            document.getElementById('rsvp-success-msg').classList.remove('hidden');
-            showToast('Berhasil', 'Konfirmasi RSVP berhasil dikirim!');
-        }
-
-        function copyShareableLink() {
-            const dummy = document.createElement('textarea');
-            const shareUrl = window.location.href.split('#')[0] + '?invitation=sugeng-klinsman-' + Math.floor(Math.random()*10000);
-            document.body.appendChild(dummy);
-            dummy.value = shareUrl;
-            dummy.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummy);
-            showToast('Berhasil', 'Tautan undangan berhasil disalin ke clipboard!');
-        }
-
-        function openFullPreview() {
-            const modal = document.getElementById('full-preview-modal');
-            modal.classList.remove('hidden');
-        }
-
-        function closeFullPreview() {
-            const modal = document.getElementById('full-preview-modal');
-            modal.classList.add('hidden');
-        }
-
-        let isMusicPlaying = false;
-        function toggleBackgroundMusic() {
-            isMusicPlaying = !isMusicPlaying;
-            const statusText = document.getElementById('music-status-text');
-            if (isMusicPlaying) {
-                statusText.textContent = 'Pause Musik (Playing...)';[cite: 4]
-                showToast('Musik', 'Musik latar romantis diputarkan 🎶');
-            } else {
-                statusText.textContent = 'Putar Musik';[cite: 4]
-                showToast('Musik', 'Musik latar dijeda.');
-            }
-        }
-
-        function downloadInvitation() {
-            const groomName = document.getElementById('input-groom-name').value;
-            const brideName = document.getElementById('input-bride-name').value;
-            const htmlContent = `<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Undangan Pernikahan ${groomName} & ${brideName}</title>
-    <script src="https://cdn.tailwindcss.com"><\/script>
-</head>
-<body class="bg-[#FAF8F5] text-stone-900 font-sans p-6 text-center">
-    <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl mt-10">
-        <span class="text-xs uppercase tracking-widest text-amber-700 font-bold">The Wedding Of</span>
-        <h1 class="text-4xl font-serif font-bold mt-2">${groomName} & ${brideName}</h1>
-        <p class="text-amber-700 font-serif text-xl mt-2">${document.getElementById('input-date').value}</p>
-        <hr class="my-6 border-amber-200">
-        <p class="text-sm text-gray-600 mb-6">${document.getElementById('input-venue').value}</p>
-        <div class="bg-amber-50 p-4 rounded-xl text-xs text-amber-900 font-medium">
-            Undangan Digital Resmi Dibuat Melalui Sugeng Klinsman Platform.
-        </div>
-    </div>
-</body>
-</html>`;
-
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `Undangan_${groomName.split(' ')[0]}_${brideName.split(' ')[0]}.html`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast('Download', 'File HTML undangan berhasil didownload!');
-        }
-
-        // --- RENDER FRONT PAGE PUBLISHED CONTENT ---
         function openArticleModal(index) {
             const articles = getArticles();
             const art = articles[index];
