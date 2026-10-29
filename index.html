@@ -172,6 +172,7 @@
                 <button onclick="switchPage('layanan')" class="nav-link text-slate-600 transition hover:text-gold-600">Layanan</button>
                 <button onclick="switchPage('harga')" class="nav-link text-slate-600 transition hover:text-gold-600">Daftar Harga</button>
                 <button onclick="switchPage('undangan')" class="nav-link text-slate-600 transition hover:text-gold-600">Undangan Online</button>
+                <button onclick="switchPage('return-policy')" class="nav-link text-slate-600 transition hover:text-gold-600">Return Policy</button>
                 <button onclick="switchPage('studio')" class="nav-link text-gold-700 font-bold transition hover:text-gold-600 flex items-center gap-1.5"><i class="fa-solid fa-pen-nib"></i> Studio Kontributor</button>
             </nav>
             <div class="flex items-center space-x-4">
@@ -190,6 +191,7 @@
             <button onclick="switchPage('layanan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Layanan</button>
             <button onclick="switchPage('harga'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Daftar Harga</button>
             <button onclick="switchPage('undangan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Undangan Online</button>
+            <button onclick="switchPage('return-policy'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Return Policy</button>
             <button onclick="switchPage('studio'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-gold-700 font-bold">Studio Kontributor</button>
         </div>
     </header>
@@ -639,11 +641,52 @@
             </section>
         </div>
 
-        <!-- ==================== HALAMAN UNDANGAN ONLINE (NIKAHKU PLATFORM INTEGRATED) ==================== -->
+        <!-- ==================== HALAMAN RETURN POLICY ==================== -->
+        <div id="page-return-policy" class="page-section hidden">
+            <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-left">
+                <div class="text-center space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Kebijakan Layanan</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian font-serif">Return & Refund Policy</h1>
+                    <p class="text-gray-500 text-xs">Terakhir diperbarui: Oktober 2026</p>
+                </div>
+
+                <div class="gold-card rounded-3xl p-8 sm:p-10 space-y-6 text-gray-700 text-sm leading-relaxed shadow-sm">
+                    <div>
+                        <h3 class="font-bold text-lg text-obsidian mb-2"><i class="fa-solid fa-shield-heart text-gold-600 mr-2"></i> 1. Ketentuan Umum Layanan Digital</h3>
+                        <p>Karena <strong>sugengklinsman.my.id</strong> menyediakan produk dan layanan digital (seperti Jasa Pembuatan Website, Penulisan Artikel SEO, Produksi Konten Visual, dan Undangan Pernikahan Digital) yang dikerjakan secara custom, kebijakan pengembalian dana (*refund*) memiliki ketentuan khusus demi menjaga profesionalisme kedua belah pihak.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-lg text-obsidian mb-2"><i class="fa-solid fa-rotate-left text-gold-600 mr-2"></i> 2. Kebijakan Revisi & Penyesuaian</h3>
+                        <p>Kami berkomitmen memberikan hasil terbaik sesuai kesepakatan awal pesanan:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li><strong>Jasa Website & Undangan Digital:</strong> Klien berhak mendapatkan revisi tata letak atau teks maksimal 3 kali selama masa pengerjaan sebelum website atau undangan resmi diluncurkan (*live*).</li>
+                            <li><strong>Artikel SEO & Konten:</strong> Klien berhak meminta penyesuaian sudut pandang atau penambahan kata kunci jika draf artikel belum sesuai dengan instruksi awal (*brief*).</li>
+                            <li><strong>Foto & Video Kreatif:</strong> Revisi *color grading* atau pemotongan durasi video dapat diajukan sekali setelah draf awal diserahkan kepada klien.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-lg text-obsidian mb-2"><i class="fa-solid fa-ban text-gold-600 mr-2"></i> 3. Ketentuan Pembatalan & Pengembalian Dana (Refund)</h3>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Dana tidak dapat dikembalikan (*non-refundable*) jika proses pengerjaan proyek atau penulisan telah berjalan lebih dari 50% atau telah memasuki tahap finalisasi.</li>
+                            <li>Pembatalan yang dilakukan sebelum pengerjaan dimulai berhak mendapatkan pengembalian dana sebesar 80% (dipotong biaya administrasi awal).</li>
+                            <li>Produk digital atau undangan online yang sudah diserahterimakan penuh atau di-publish ke internet tidak dapat diretur/dikembalikan.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-lg text-obsidian mb-2"><i class="fa-solid fa-headset text-gold-600 mr-2"></i> 4. Hubungi Kami</h3>
+                        <p>Jika Anda memiliki pertanyaan lebih lanjut mengenai ketentuan layanan atau kendala teknis pesanan, silakan hubungi kami langsung melalui WhatsApp di nomor <a href="https://wa.me/6289503846562" class="text-gold-600 font-bold underline">0895-0384-6562</a>.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN UNDANGAN ONLINE (NIKAHKU INTEGRATED) ==================== -->
         <div id="page-undangan" class="page-section hidden">
             <!-- LANDING / SHOWCASE NIKAHKU -->
             <div id="nikahku-landing" class="view-section">
-                <!-- Hero Section -->
                 <section class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-rose-50/50 via-white to-slate-50">
                     <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#e11d48_1px,transparent_1px)] [background-size:24px_24px]"></div>
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -667,7 +710,6 @@
                             </div>
                         </div>
 
-                        <!-- Feature highlights -->
                         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-20">
                             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
                                 <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl">
@@ -708,7 +750,6 @@
                     </div>
                 </section>
 
-                <!-- Template Showcase Grid -->
                 <section class="py-20 bg-slate-100/70 border-t border-slate-200">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="text-center max-w-2xl mx-auto mb-16">
@@ -724,7 +765,6 @@
                 </section>
             </div>
 
-            <!-- TEMPLATES SELECTION VIEW NIKAHKU -->
             <div id="nikahku-templates" class="view-section hidden py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200">
                     <div>
@@ -746,7 +786,6 @@
                 </div>
             </div>
 
-            <!-- ACTIVE INVITATION PREVIEW CONTAINER NIKAHKU -->
             <div id="nikahku-active" class="view-section hidden relative">
                 <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-slate-900/90 backdrop-blur-md text-white px-5 py-3 rounded-full shadow-2xl border border-slate-700">
                     <button onclick="nikahKuApp.switchView('nikahku-templates')" class="text-xs font-semibold hover:text-rose-400 transition flex items-center gap-1">
@@ -766,6 +805,111 @@
                     <!-- Rendered template here -->
                 </div>
             </div>
+        </div>
+
+        <!-- ==================== HALAMAN TENTANG KAMI ==================== -->
+        <div id="page-tentang" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="relative p-4 bg-white rounded-3xl border border-gold-400 shadow-gold-md">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman" class="w-full h-96 object-cover rounded-2xl">
+                            <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
+                                <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
+                                <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Tentang Kami</span>
+                        <h1 class="text-3xl sm:text-4xl font-bold text-obsidian leading-tight">
+                            Menggabungkan Keahlian Teknologi, Jurnalisme Digital, dan Seni Visual di Pontianak.
+                        </h1>
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu di Pontianak yang mengutamakan presisi, estetika, dan dampak nyata.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN LAYANAN ==================== -->
+        <div id="page-layanan" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Katalog Layanan</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Solusi Komprehensif untuk Brand Anda</h1>
+                </div>
+                <div class="space-y-10">
+                    <div class="gold-card rounded-3xl p-8 lg:p-10 grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" class="w-full h-60 object-cover rounded-2xl"></div>
+                        <div class="lg:col-span-8 space-y-3">
+                            <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase">01 • Web Engineering</span>
+                            <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional</h3>
+                            <p class="text-gray-600">Pembangunan Landing Page UMKM, Company Profile, Portal Berita/Media Online, serta Custom Theme WordPress.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== HALAMAN DAFTAR HARGA LENGKAP ==================== -->
+        <div id="page-harga" class="page-section hidden">
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Investasi Transparan & Promo</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Daftar Paket & Rincian Fasilitas Layanan</h1>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Web Development</span>
+                            <h3 class="text-2xl font-bold text-obsidian mt-1">Landing Page / UMKM</h3>
+                            <div class="my-4">
+                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 2.500.000</span>
+                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.500.000</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Website Landing Page Profesional & Responsif</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Domain gratis sesuai paket & SSL (HTTPS) aman</span></li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Website" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Website</a>
+                    </div>
+                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between border-2 border-gold-400 relative shadow-gold-md">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gold-gradient text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full">Paling Diminati</div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Content & Social Media</span>
+                            <h3 class="text-2xl font-bold text-obsidian mt-1">Paket Konten & SEO</h3>
+                            <div class="my-4">
+                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 1.800.000</span>
+                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.250.000</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Pembuatan artikel SEO berkualitas tinggi</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Riset kata kunci (Keyword Research) tertarget</span></li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Konten" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Konten</a>
+                    </div>
+                    <div class="gold-card rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Visual Production</span>
+                            <h3 class="text-2xl font-bold text-obsidian mt-1">Foto & Video Kreatif</h3>
+                            <div class="my-4">
+                                <span class="text-xs text-rose-500 line-through block">Normal: Rp 2.500.000</span>
+                                <span class="text-2xl sm:text-3xl font-luxury font-bold text-gold-700">Mulai Rp 1.750.000</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6 mb-8">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Sesi liputan foto & video profesional</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold-600 mt-1"></i><span>Editing & Color Grading estetik</span></li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289503846562?text=Halo,%20saya%20tertarik%20pesan%20Visual" target="_blank" class="block text-center py-3.5 rounded-xl bg-gold-gradient text-white font-semibold shadow-gold-sm">Pesan Paket Visual</a>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- ==================== HALAMAN KONTAK ==================== -->
