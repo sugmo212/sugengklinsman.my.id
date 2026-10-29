@@ -55,6 +55,11 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -71,21 +76,17 @@
                             600: '#AA7C11',
                             700: '#8A630E',
                         },
-                        roseGold: { 500: '#B76E79' },
-                        wedding: {
-                            gold: '#C5A880',
-                            goldLight: '#E8DCC4',
-                            dark: '#1A1A1A',
-                            cream: '#FAF8F5',
-                            rose: '#E3B7A0',
-                            sage: '#8F9E8B'
-                        }
+                        roseGold: { 500: '#B76E79' }
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                         luxury: ['Playfair Display', 'serif'],
-                        script: ['Great Vibes', 'cursive']
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                        playfair: ['"Playfair Display"', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        montserrat: ['"Montserrat"', 'sans-serif']
                     },
                     boxShadow: {
                         'gold-sm': '0 4px 20px -2px rgba(212, 175, 55, 0.1)',
@@ -96,12 +97,6 @@
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css for smooth entrance animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         .bg-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); }
         .text-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -109,11 +104,30 @@
         .gold-card:hover { border-color: #D4AF37; box-shadow: 0 10px 30px -4px rgba(212, 175, 55, 0.15); transform: translateY(-3px); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* NikahKu App Specific Styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark-glass {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="bg-white text-slate-800 antialiased selection:bg-gold-400 selection:text-white">
+<body class="bg-white text-slate-800 antialiased selection:bg-rose-500 selection:text-white">
 
-    <!-- Toast Notification -->
+    <!-- Toast Notification Website Utama -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-obsidian text-white px-6 py-3 rounded-xl shadow-2xl flex items-center space-x-3 border border-gold-400/40">
         <i id="toast-icon" class="fa-solid fa-circle-check text-gold-400 text-xl"></i>
         <div>
@@ -146,7 +160,7 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Navbar Header -->
+    <!-- Navbar Header Utama -->
     <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-gold-200 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#beranda" onclick="switchPage('beranda')" class="font-luxury font-bold text-2xl text-obsidian tracking-wide">
@@ -523,7 +537,7 @@
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-5">
                         <div class="relative p-4 bg-white rounded-3xl border border-gold-400 shadow-gold-md">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman Pontianak" class="w-full h-96 object-cover rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman" class="w-full h-96 object-cover rounded-2xl">
                             <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
                                 <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
                                 <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
@@ -625,416 +639,133 @@
             </section>
         </div>
 
-        <!-- ==================== HALAMAN UNDANGAN ONLINE (PLATFORM PLATFORM UNDANGAN NIKAH DIGITAL) ==================== -->
+        <!-- ==================== HALAMAN UNDANGAN ONLINE (NIKAHKU PLATFORM INTEGRATED) ==================== -->
         <div id="page-undangan" class="page-section hidden">
-            <!-- HERO SECTION UNDANGAN -->
-            <section class="relative pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden bg-gradient-to-b from-wedding-goldLight/30 to-wedding-cream text-wedding-dark">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                            <div class="inline-flex items-center gap-2 bg-wedding-gold/15 text-wedding-dark px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-wedding-gold/30">
-                                <i class="fa-solid fa-heart text-wedding-gold"></i> Platform Undangan Nikah Digital #1 di Indonesia
-                            </div>
-                            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-wedding-dark">
-                                Wujudkan Undangan Pernikahan <span class="font-script text-wedding-gold text-4xl sm:text-5xl lg:text-6xl block sm:inline font-normal">Impian Anda</span> dalam Hitungan Menit
+            <!-- LANDING / SHOWCASE NIKAHKU -->
+            <div id="nikahku-landing" class="view-section">
+                <!-- Hero Section -->
+                <section class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-rose-50/50 via-white to-slate-50">
+                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#e11d48_1px,transparent_1px)] [background-size:24px_24px]"></div>
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <div class="text-center max-w-3xl mx-auto">
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100 text-rose-700 text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm">
+                                <i class="fa-solid fa-heart text-rose-500 animate-pulse"></i> Platform Undangan Pernikahan Digital No. 1
+                            </span>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-bold text-slate-900 leading-tight mb-6">
+                                Wujudkan Hari Bahagia dengan <span class="bg-gradient-to-r from-rose-600 to-amber-600 bg-clip-text text-transparent">Undangan Digital Memukau</span>
                             </h1>
-                            <p class="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0">
-                                Sugeng Klinsman menghadirkan layanan pembuatan undangan nikah digital interaktif yang elegan, dilengkapi peta lokasi, hitung mundur, galeri foto eksklusif, RSVP digital, dan musik latar romantis.
+                            <p class="text-lg text-slate-600 mb-10 font-sans">
+                                Hadir dengan 5 template eksklusif berfitur lengkap: Cover interaktif, hitung mundur, peta lokasi, buku tamu & RSVP real-time, musik romantis, hingga QRIS kado digital.
                             </p>
-                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                                <a href="#templates" class="w-full sm:w-auto bg-wedding-dark hover:bg-wedding-gold text-white px-8 py-3.5 rounded-full font-semibold shadow-lg transition duration-300 flex items-center justify-center gap-3 group">
-                                    <span>Pilih Template & Edit</span>
-                                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                                </a>
-                                <a href="#features" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-wedding-dark border border-gray-300 px-8 py-3.5 rounded-full font-semibold shadow-sm transition duration-300 flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-circle-play text-wedding-gold"></i> Lihat Fitur
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Hero Visual Showcase -->
-                        <div class="lg:col-span-5 relative">
-                            <div class="relative mx-auto max-w-xs sm:max-w-sm rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-white group">
-                                <div class="absolute top-0 left-0 right-0 h-6 bg-gray-900 z-20 flex items-center justify-center">
-                                    <div class="w-16 h-3 bg-black rounded-full"></div>
-                                </div>
-                                <div class="pt-6 h-[460px] bg-gradient-to-br from-amber-50 to-orange-50 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-                                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                                    <span class="text-xs uppercase tracking-widest text-wedding-gold font-semibold mb-2">The Wedding Of</span>
-                                    <h3 class="font-serif text-2xl font-bold text-wedding-dark mb-1">Rizky & Anisa</h3>
-                                    <p class="font-script text-xl text-wedding-gold mb-4">Minggu, 18 Oktober 2026</p>
-                                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-wedding-gold shadow-lg mb-3">
-                                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=400" alt="Couple" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="bg-white/80 backdrop-blur-sm p-2.5 rounded-xl shadow-sm w-full text-[11px] text-gray-600 mb-3">
-                                        <i class="fa-solid fa-location-dot text-wedding-gold mr-1"></i> Gedung Mulia Convention Hall, Jakarta
-                                    </div>
-                                    <span class="bg-wedding-dark text-white px-4 py-2 rounded-full text-xs font-semibold shadow">Buka Undangan</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FEATURES HIGHLIGHT SECTION -->
-            <section id="features" class="py-16 bg-white text-wedding-dark">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-12">
-                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Fitur Lengkap & Canggih</span>
-                        <h2 class="font-serif text-3xl font-bold text-wedding-dark mt-2">Semua yang Anda Butuhkan untuk Hari Bahagia</h2>
-                        <p class="text-gray-600 mt-2 text-sm">Nikmati kemudahan menyebar undangan digital dengan fitur interaktif termodern yang membuat tamu undangan terkesan.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                            </div>
-                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">Peta & Navigasi Lokasi</h3>
-                            <p class="text-gray-600 text-xs leading-relaxed">Integrasi langsung dengan Google Maps memudahkan tamu menuju lokasi akad dan resepsi tanpa nyasar.</p>
-                        </div>
-                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">Hitung Mundur Otomatis</h3>
-                            <p class="text-gray-600 text-xs leading-relaxed">Timer real-time yang menghitung hari, jam, dan detik menuju hari pernikahan sakral Anda.</p>
-                        </div>
-                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-envelope-open-text"></i>
-                            </div>
-                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">RSVP & Ucapan Tamu</h3>
-                            <p class="text-gray-600 text-xs leading-relaxed">Dapatkan konfirmasi kehadiran (Hadir/Tidak) serta doa dan ucapan selamat dari para tamu secara interaktif.</p>
-                        </div>
-                        <div class="bg-wedding-cream p-6 rounded-3xl border border-wedding-gold/20 hover:shadow-xl transition group">
-                            <div class="w-12 h-12 rounded-2xl bg-wedding-gold/10 text-wedding-gold flex items-center justify-center text-xl mb-4 group-hover:bg-wedding-gold group-hover:text-white transition">
-                                <i class="fa-solid fa-music"></i>
-                            </div>
-                            <h3 class="font-serif text-lg font-bold text-wedding-dark mb-2">Musik Latar Romantis</h3>
-                            <p class="text-gray-600 text-xs leading-relaxed">Lagu latar pilihan yang mendayu-dayu membuat suasana undangan terasa lebih emosional dan berkesan.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TEMPLATES SHOWCASE & LIVE CUSTOMIZER SECTION -->
-            <section id="templates" class="py-16 bg-wedding-cream/55 text-wedding-dark">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-12">
-                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Katalog Desain Premium</span>
-                        <h2 class="font-serif text-3xl font-bold text-wedding-dark mt-2">Pilih & Edit Template Pilihan Anda</h2>
-                        <p class="text-gray-600 mt-2 text-sm">Klik tombol "Gunakan & Edit Template" untuk menyesuaikan data mempelai dan melihat pratinjau langsung secara real-time!</p>
-                    </div>
-
-                    <!-- Templates Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
-                            <div class="relative h-56 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Minimalist Elegant" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Minimalist Elegant</div>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Aura & Sophistication</h3>
-                                    <p class="text-gray-600 text-xs mb-4">Gaya modern minimalis dengan tipografi bersih, sentuhan warna emas lembut, sangat cocok untuk pasangan urban.</p>
-                                </div>
-                                <button onclick="selectTemplate('minimalist')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2 text-sm">
-                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template
+                            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                                <button onclick="nikahKuApp.switchView('nikahku-templates')" class="px-8 py-4 bg-rose-600 text-white font-semibold rounded-xl shadow-xl shadow-rose-600/20 hover:bg-rose-700 transition transform hover:-translate-y-0.5">
+                                    <i class="fa-solid fa-eye mr-2"></i> Lihat 5 Pilihan Tema
+                                </button>
+                                <button onclick="nikahKuApp.openGlobalEditorModal()" class="px-8 py-4 bg-white text-slate-800 border border-slate-300 font-semibold rounded-xl shadow-md hover:bg-slate-50 transition">
+                                    <i class="fa-solid fa-sliders mr-2 text-rose-600"></i> Kustomisasi Data Utama
                                 </button>
                             </div>
                         </div>
 
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
-                            <div class="relative h-56 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600" alt="Floral Rustic" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Floral Rustic</div>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Botanical Garden</h3>
-                                    <p class="text-gray-600 text-xs mb-4">Nuansa alam dengan ornamen bunga-bunga romantis, tone warna hijau sage dan earthy warm yang menenangkan.</p>
+                        <!-- Feature highlights -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-20">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+                                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-map-location-dot"></i>
                                 </div>
-                                <button onclick="selectTemplate('rustic')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2 text-sm">
-                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template
-                                </button>
+                                <h3 class="font-bold text-slate-800 mb-1">Peta & Navigasi</h3>
+                                <p class="text-xs text-slate-500">Integrasi Google Maps & petunjuk arah langsung.</p>
                             </div>
-                        </div>
-
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-wedding-gold/20 flex flex-col group hover:-translate-y-2 transition duration-300">
-                            <div class="relative h-56 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600" alt="Modern Javanese" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wedding-dark shadow">Royal Heritage</div>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-serif text-xl font-bold text-wedding-dark mb-2">Royal Heritage</h3>
-                                    <p class="text-gray-600 text-xs mb-4">Kombinasi kemewahan ornamen tradisional klasik dengan sentuhan Islami modern yang sakral dan megah.</p>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+                                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-hourglass-half"></i>
                                 </div>
-                                <button onclick="selectTemplate('royal')" class="w-full bg-wedding-dark hover:bg-wedding-gold text-white py-3 rounded-xl font-semibold shadow transition flex items-center justify-center gap-2 text-sm">
-                                    <i class="fa-solid fa-pen-to-square"></i> Gunakan & Edit Template
-                                </button>
+                                <h3 class="font-bold text-slate-800 mb-1">Hitung Mundur</h3>
+                                <p class="text-xs text-slate-500">Timer otomatis menuju hari pernikahan.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+                                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-comments"></i>
+                                </div>
+                                <h3 class="font-bold text-slate-800 mb-1">RSVP & Ucapan</h3>
+                                <p class="text-xs text-slate-500">Konfirmasi kehadiran & buku tamu interaktif.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+                                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-music"></i>
+                                </div>
+                                <h3 class="font-bold text-slate-800 mb-1">Musik Romantis</h3>
+                                <p class="text-xs text-slate-500">Pemutar audio latar belakang dengan tombol kontrol.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition md:col-span-3 lg:col-span-1">
+                                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-qrcode"></i>
+                                </div>
+                                <h3 class="font-bold text-slate-800 mb-1">QRIS Kado Digital</h3>
+                                <p class="text-xs text-slate-500">Kirim hadiah cashless aman & praktis.</p>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <!-- LIVE EDITOR & CUSTOMIZER WORKSPACE -->
-                    <div id="editor-workspace" class="bg-white rounded-3xl shadow-2xl border border-wedding-gold/30 overflow-hidden hidden transition-all duration-500">
-                        <div class="bg-wedding-dark text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-                            <div class="flex items-center gap-3">
-                                <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
-                                <h3 class="font-serif text-lg font-bold">Live Editor & Customizer</h3>
-                                <span id="active-template-badge" class="bg-wedding-gold text-white text-xs px-3 py-1 rounded-full font-semibold">Minimalist</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button onclick="openFullPreview()" class="bg-wedding-gold hover:bg-amber-600 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow transition flex items-center gap-1.5">
-                                    <i class="fa-solid fa-eye"></i> Preview Penuh & Musik
-                                </button>
-                                <button onclick="downloadInvitation()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow transition flex items-center gap-1.5">
-                                    <i class="fa-solid fa-download"></i> Download HTML
-                                </button>
-                            </div>
+                <!-- Template Showcase Grid -->
+                <section class="py-20 bg-slate-100/70 border-t border-slate-200">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center max-w-2xl mx-auto mb-16">
+                            <span class="text-rose-600 font-semibold text-sm tracking-wider uppercase">Pilihan Gaya Berbeda</span>
+                            <h2 class="text-3xl sm:text-4xl font-cinzel font-bold text-slate-900 mt-2">5 Template Premium Siap Pakai</h2>
+                            <p class="text-slate-600 mt-3">Setiap tema dirancang dengan estetika khusus, elegan, dan profesional untuk momen terindah Anda.</p>
                         </div>
 
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                            <!-- Form Editor Input Column -->
-                            <div class="lg:col-span-5 p-6 border-r border-gray-100 bg-wedding-cream/30 space-y-4 max-h-[700px] overflow-y-auto text-left">
-                                <h4 class="font-serif font-bold text-sm text-wedding-dark border-b pb-2 flex items-center gap-2">
-                                    <i class="fa-solid fa-sliders text-wedding-gold"></i> Sesuaikan Informasi Undangan
-                                </h4>
-
-                                <div class="space-y-3">
-                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Mempelai Pria</h5>
-                                    <div>
-                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Lengkap Pria</label>
-                                        <input type="text" id="input-groom-name" value="Rizky Pratama, S.T." oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Orang Tua Pria</label>
-                                        <input type="text" id="input-groom-parents" value="Putra dari Bpk. H. Ahmad & Ibu Hj. Siti" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <div class="space-y-3 pt-2">
-                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Mempelai Wanita</h5>
-                                    <div>
-                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Lengkap Wanita</label>
-                                        <input type="text" id="input-bride-name" value="Anisa Rahmawati, S.Pd." oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Orang Tua Wanita</label>
-                                        <input type="text" id="input-bride-parents" value="Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <div class="space-y-3 pt-2">
-                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Waktu & Lokasi Acara</h5>
-                                    <div>
-                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Tanggal Acara</label>
-                                        <input type="text" id="input-date" value="Minggu, 18 Oktober 2026" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Waktu Akad & Resepsi</label>
-                                        <input type="text" id="input-time" value="08.00 WIB - Selesai" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-semibold text-gray-700 mb-1">Nama Tempat / Gedung</label>
-                                        <input type="text" id="input-venue" value="Gedung Mulia Convention Hall, Jakarta Selatan" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <div class="space-y-3 pt-2">
-                                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-wedding-gold">Ayat / Pesan Suci</h5>
-                                    <div>
-                                        <textarea id="input-quote" rows="2" oninput="updatePreview()" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-wedding-gold focus:outline-none">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..." (QS. Ar-Rum: 21)</textarea>
-                                    </div>
-                                </div>
-
-                                <div class="pt-3">
-                                    <button onclick="copyShareableLink()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl text-xs font-semibold shadow transition flex items-center justify-center gap-2">
-                                        <i class="fa-solid fa-share-nodes"></i> Salin Tautan / Link Undangan
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Live Preview Display Column -->
-                            <div class="lg:col-span-7 p-6 bg-gray-100 flex items-center justify-center relative min-h-[600px]">
-                                <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl border-4 border-gray-800 overflow-hidden flex flex-col h-[580px] relative text-left">
-                                    <div class="bg-gray-900 text-white text-[10px] px-6 py-1.5 flex items-center justify-between z-30">
-                                        <span id="preview-time-bar">10:24</span>
-                                        <div class="w-16 h-2 bg-black rounded-full mx-auto"></div>
-                                        <div class="flex items-center gap-1">
-                                            <i class="fa-solid fa-wifi text-[8px]"></i>
-                                            <i class="fa-solid fa-battery-full text-[8px]"></i>
-                                        </div>
-                                    </div>
-
-                                    <div id="preview-scroll-area" class="flex-1 overflow-y-auto bg-wedding-cream text-wedding-dark p-5 text-center space-y-6 relative">
-                                        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#C5A880_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none"></div>
-
-                                        <div class="pt-2">
-                                            <span id="prev-theme-label" class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">The Wedding Of</span>
-                                            <h2 id="prev-couple-title" class="font-serif text-2xl font-bold mt-1 text-wedding-dark">Rizky & Anisa</h2>
-                                            <p id="prev-date-top" class="font-script text-lg text-wedding-gold">Minggu, 18 Oktober 2026</p>
-                                        </div>
-
-                                        <div class="flex justify-center items-center gap-3">
-                                            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-wedding-gold shadow-md">
-                                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=300" alt="Groom" class="w-full h-full object-cover">
-                                            </div>
-                                            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-wedding-gold shadow-md">
-                                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300" alt="Bride" class="w-full h-full object-cover">
-                                            </div>
-                                        </div>
-
-                                        <div class="space-y-3">
-                                            <div>
-                                                <h3 id="prev-groom-name" class="font-serif text-sm font-bold text-wedding-dark">Rizky Pratama, S.T.</h3>
-                                                <p id="prev-groom-parents" class="text-[10px] text-gray-500">Putra dari Bpk. H. Ahmad & Ibu Hj. Siti</p>
-                                            </div>
-                                            <span class="font-script text-xl text-wedding-gold block">&</span>
-                                            <div>
-                                                <h3 id="prev-bride-name" class="font-serif text-sm font-bold text-wedding-dark">Anisa Rahmawati, S.Pd.</h3>
-                                                <p id="prev-bride-parents" class="text-[10px] text-gray-500">Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-white/90 p-3 rounded-xl shadow-sm border border-wedding-gold/20 text-[11px] italic text-gray-600 leading-relaxed">
-                                            <p id="prev-quote">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..."</p>
-                                        </div>
-
-                                        <div class="bg-wedding-dark text-white p-4 rounded-xl shadow-lg space-y-2 text-left">
-                                            <div class="flex items-start gap-2">
-                                                <i class="fa-solid fa-calendar-day text-wedding-gold text-xs mt-0.5"></i>
-                                                <div>
-                                                    <p class="text-[9px] text-wedding-gold font-bold uppercase">Tanggal</p>
-                                                    <p id="prev-date-main" class="text-xs font-semibold">Minggu, 18 Oktober 2026</p>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-start gap-2">
-                                                <i class="fa-solid fa-location-dot text-wedding-gold text-xs mt-0.5"></i>
-                                                <div>
-                                                    <p class="text-[9px] text-wedding-gold font-bold uppercase">Lokasi</p>
-                                                    <p id="prev-venue-main" class="text-xs font-semibold">Gedung Mulia Convention Hall</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-white p-4 rounded-xl shadow-sm border border-wedding-gold/20 text-left space-y-2">
-                                            <h4 class="font-serif font-bold text-xs text-wedding-dark text-center">RSVP Kehadiran</h4>
-                                            <input type="text" id="rsvp-name" placeholder="Nama Tamu" class="w-full px-2 py-1 border rounded text-[10px]">
-                                            <button onclick="submitRSVP()" class="w-full bg-wedding-dark text-white py-1 rounded text-[10px] font-bold">Kirim</button>
-                                            <div id="rsvp-success-msg" class="hidden text-center text-[10px] text-green-600 font-semibold">Tercatat!</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="nikahku-showcase-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Injected by JavaScript -->
                         </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- TEMPLATES SELECTION VIEW NIKAHKU -->
+            <div id="nikahku-templates" class="view-section hidden py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200">
+                    <div>
+                        <button onclick="nikahKuApp.switchView('nikahku-landing')" class="text-sm font-semibold text-rose-600 hover:text-rose-700 mb-2 flex items-center gap-1">
+                            <i class="fa-solid fa-arrow-left"></i> Kembali ke Katalog Utama
+                        </button>
+                        <h1 class="text-3xl font-cinzel font-bold text-slate-900">Katalog Template Undangan</h1>
+                        <p class="text-slate-500 text-sm">Pilih salah satu tema di bawah ini untuk melihat live preview atau langsung melakukan edit data.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex gap-3">
+                        <button onclick="nikahKuApp.openGlobalEditorModal()" class="px-4 py-2 bg-rose-600 text-white rounded-lg text-sm font-semibold shadow hover:bg-rose-700 transition flex items-center gap-2">
+                            <i class="fa-solid fa-sliders"></i> Edit Data Seluruh Undangan
+                        </button>
                     </div>
                 </div>
-            </section>
 
-            <!-- PRICING & PACKAGES -->
-            <section id="pricing" class="py-16 bg-white text-wedding-dark">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-12">
-                        <span class="text-wedding-gold font-semibold uppercase tracking-widest text-xs">Investasi Pernikahan Terbaik</span>
-                        <h2 class="font-serif text-3xl font-bold text-wedding-dark mt-2">Pilihan Paket Jasa Undangan Digital</h2>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                        <div class="bg-wedding-cream rounded-3xl p-6 border border-wedding-gold/20 shadow-lg flex flex-col justify-between">
-                            <div>
-                                <span class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">Paket Silver</span>
-                                <h3 class="font-serif text-xl font-bold text-wedding-dark mt-1">Basic Digital</h3>
-                                <div class="mt-3 mb-4"><span class="text-3xl font-extrabold text-wedding-dark">Rp 99rb</span><span class="text-gray-500 text-xs"> / sekali bayar</span></div>
-                                <ul class="space-y-2 text-xs text-gray-600 mb-6">
-                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> 1 Pilihan Template Eksklusif</li>
-                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Masa Aktif 1 Tahun</li>
-                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Hitung Mundur & Peta Lokasi</li>
-                                </ul>
-                            </div>
-                            <a href="#templates" class="w-full bg-wedding-dark text-white py-2.5 rounded-xl font-semibold text-center text-xs transition shadow">Pilih Silver</a>
-                        </div>
-
-                        <div class="bg-wedding-dark text-white rounded-3xl p-6 shadow-2xl relative flex flex-col justify-between transform md:-translate-y-2 border-2 border-wedding-gold">
-                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-wedding-gold text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full">Paling Populer</div>
-                            <div>
-                                <span class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">Paket Gold</span>
-                                <h3 class="font-serif text-xl font-bold text-white mt-1">Professional VIP</h3>
-                                <div class="mt-3 mb-4"><span class="text-3xl font-extrabold text-wedding-gold">Rp 199rb</span><span class="text-gray-400 text-xs"> / selamanya</span></div>
-                                <ul class="space-y-2 text-xs text-gray-300 mb-6">
-                                    <li><i class="fa-solid fa-check text-wedding-gold mr-2"></i> Bebas Pilih Semua Template</li>
-                                    <li><i class="fa-solid fa-check text-wedding-gold mr-2"></i> Masa Aktif Selamanya</li>
-                                    <li><i class="fa-solid fa-check text-wedding-gold mr-2"></i> Musik Latar Romantis Custom</li>
-                                </ul>
-                            </div>
-                            <a href="#templates" class="w-full bg-wedding-gold text-white py-2.5 rounded-xl font-semibold text-center text-xs transition shadow">Pilih Gold VIP</a>
-                        </div>
-
-                        <div class="bg-wedding-cream rounded-3xl p-6 border border-wedding-gold/20 shadow-lg flex flex-col justify-between">
-                            <div>
-                                <span class="text-[10px] uppercase tracking-widest text-wedding-gold font-bold">Paket Platinum</span>
-                                <h3 class="font-serif text-xl font-bold text-wedding-dark mt-1">Custom Exclusive</h3>
-                                <div class="mt-3 mb-4"><span class="text-3xl font-extrabold text-wedding-dark">Rp 399rb</span><span class="text-gray-500 text-xs"> / selamanya</span></div>
-                                <ul class="space-y-2 text-xs text-gray-600 mb-6">
-                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Desain Custom Sesuai Keinginan</li>
-                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Domain Khusus (namapasangan.com)</li>
-                                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Fitur Angpao Digital</li>
-                                </ul>
-                            </div>
-                            <a href="#templates" class="w-full bg-wedding-dark text-white py-2.5 rounded-xl font-semibold text-center text-xs transition shadow">Pilih Platinum</a>
-                        </div>
-                    </div>
+                <div id="nikahku-catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Injected by JS -->
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <!-- ==================== HALAMAN TENTANG KAMI ==================== -->
-        <div id="page-tentang" class="page-section hidden">
-            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-5">
-                        <div class="relative p-4 bg-white rounded-3xl border border-gold-400 shadow-gold-md">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sugeng Klinsman" class="w-full h-96 object-cover rounded-2xl">
-                            <div class="mt-4 p-4 bg-gold-50 rounded-2xl border border-gold-200 text-center">
-                                <h3 class="font-luxury font-bold text-2xl text-obsidian">Sugeng Klinsman</h3>
-                                <p class="text-xs uppercase tracking-widest text-gold-700 font-semibold mt-1">Founder • Web Developer & Digital Content Creator</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-7 space-y-6">
-                        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Tentang Kami</span>
-                        <h1 class="text-3xl sm:text-4xl font-bold text-obsidian leading-tight">
-                            Menggabungkan Keahlian Teknologi, Jurnalisme Digital, dan Seni Visual di Pontianak.
-                        </h1>
-                        <p class="text-gray-600 leading-relaxed">
-                            <strong>sugengklinsman.my.id</strong> lahir dari dedikasi untuk menghadirkan layanan digital satu pintu di Pontianak yang mengutamakan presisi, estetika, dan dampak nyata.
-                        </p>
-                    </div>
+            <!-- ACTIVE INVITATION PREVIEW CONTAINER NIKAHKU -->
+            <div id="nikahku-active" class="view-section hidden relative">
+                <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-slate-900/90 backdrop-blur-md text-white px-5 py-3 rounded-full shadow-2xl border border-slate-700">
+                    <button onclick="nikahKuApp.switchView('nikahku-templates')" class="text-xs font-semibold hover:text-rose-400 transition flex items-center gap-1">
+                        <i class="fa-solid fa-arrow-left"></i> Ganti Tema
+                    </button>
+                    <span class="text-slate-600">|</span>
+                    <button onclick="nikahKuApp.openGlobalEditorModal()" class="text-xs font-semibold text-rose-400 hover:text-rose-300 transition flex items-center gap-1">
+                        <i class="fa-solid fa-pen-to-square"></i> Live Edit
+                    </button>
+                    <span class="text-slate-600">|</span>
+                    <button id="nikahku-music-btn" onclick="nikahKuApp.toggleMusic()" class="w-8 h-8 rounded-full bg-rose-600 flex items-center justify-center text-white hover:bg-rose-500 transition">
+                        <i class="fa-solid fa-music text-xs animate-spin"></i>
+                    </button>
                 </div>
-            </section>
-        </div>
 
-        <!-- ==================== HALAMAN LAYANAN ==================== -->
-        <div id="page-layanan" class="page-section hidden">
-            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Katalog Layanan</span>
-                    <h1 class="text-3xl sm:text-4xl font-bold text-obsidian mt-2">Solusi Komprehensif untuk Brand Anda</h1>
+                <div id="nikahku-render-area">
+                    <!-- Rendered template here -->
                 </div>
-                <div class="space-y-10">
-                    <div class="gold-card rounded-3xl p-8 lg:p-10 grid lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-4"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" class="w-full h-60 object-cover rounded-2xl"></div>
-                        <div class="lg:col-span-8 space-y-3">
-                            <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-800 text-xs font-bold uppercase">01 • Web Engineering</span>
-                            <h3 class="text-2xl font-bold text-obsidian">Jasa Pembuatan Website Profesional</h3>
-                            <p class="text-gray-600">Pembangunan Landing Page UMKM, Company Profile, Portal Berita/Media Online, serta Custom Theme WordPress.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
 
         <!-- ==================== HALAMAN KONTAK ==================== -->
@@ -1047,95 +778,91 @@
 
     </main>
 
-    <!-- FULL SCREEN PREVIEW MODAL UNTUK UNDANGAN -->
-    <div id="full-preview-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6">
-        <div class="bg-wedding-cream w-full max-w-2xl h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col relative animate__animated animate__fadeInUp text-left">
-            <div class="bg-wedding-dark text-white px-6 py-4 flex items-center justify-between">
+    <!-- GLOBAL EDITOR MODAL NIKAHKU -->
+    <div id="nikahku-global-editor-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-2xl overflow-hidden border border-slate-200 flex flex-col max-h-[90vh]">
+            <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                    <span class="font-serif font-bold text-sm">Pratinjau Penuh Undangan Digital</span>
+                    <i class="fa-solid fa-wand-magic-sparkles text-rose-400"></i>
+                    <h3 class="font-bold text-lg font-cinzel">Live Editor Data Pernikahan</h3>
                 </div>
-                <div class="flex items-center gap-3">
-                    <button onclick="toggleBackgroundMusic()" id="music-toggle-btn" class="bg-wedding-gold text-white px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow">
-                        <i class="fa-solid fa-music"></i> <span id="music-status-text">Putar Musik</span>
-                    </button>
-                    <button onclick="closeFullPreview()" class="text-white hover:text-red-400 text-xl font-bold px-2">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
+                <button onclick="nikahKuApp.closeGlobalEditorModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto space-y-4 text-sm flex-grow text-left">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Nama Panggilan Pria</label>
+                        <input type="text" id="nikahku-edit-groom-short" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Nama Lengkap Pria</label>
+                        <input type="text" id="nikahku-edit-groom-full" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Nama Panggilan Wanita</label>
+                        <input type="text" id="nikahku-edit-bride-short" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Nama Lengkap Wanita</label>
+                        <input type="text" id="nikahku-edit-bride-full" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Tanggal Acara</label>
+                        <input type="date" id="nikahku-edit-wedding-date" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Waktu / Pukul</label>
+                        <input type="text" id="nikahku-edit-wedding-time" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none" placeholder="08.00 WIB - Selesai">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Nama Tempat / Gedung</label>
+                    <input type="text" id="nikahku-edit-location-name" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Alamat Lengkap Lokasi</label>
+                    <textarea id="nikahku-edit-location-address" rows="2" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Nama Bank / E-Wallet (QRIS)</label>
+                        <input type="text" id="nikahku-edit-qris-bank" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Nomor Rekening / Akun</label>
+                        <input type="text" id="nikahku-edit-qris-acc" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Nama Tamu Undangan (Default / Simulasi)</label>
+                    <input type="text" id="nikahku-edit-guest-name" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-rose-500 outline-none" placeholder="Bpk/Ibu/Saudara/i (Tamu Kehormatan)">
                 </div>
             </div>
 
-            <div class="flex-1 overflow-y-auto p-6 sm:p-12 text-center space-y-8 relative">
-                <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#C5A880_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none"></div>
-
-                <div>
-                    <span id="modal-theme-tag" class="text-xs uppercase tracking-widest text-wedding-gold font-bold">The Wedding Of</span>
-                    <h1 id="modal-couple-title" class="font-serif text-3xl sm:text-4xl font-bold text-wedding-dark mt-2">Rizky & Anisa</h1>
-                    <p id="modal-date-top" class="font-script text-2xl text-wedding-gold mt-1">Minggu, 18 Oktober 2026</p>
-                </div>
-
-                <div class="flex justify-center items-center gap-6">
-                    <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-wedding-gold shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Groom" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-wedding-gold shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Bride" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <div class="space-y-4 max-w-lg mx-auto">
-                    <div>
-                        <h2 id="modal-groom-name" class="font-serif text-xl font-bold text-wedding-dark">Rizky Pratama, S.T.</h2>
-                        <p id="modal-groom-parents" class="text-xs text-gray-500 mt-0.5">Putra dari Bpk. H. Ahmad & Ibu Hj. Siti</p>
-                    </div>
-                    <span class="font-script text-3xl text-wedding-gold block">&</span>
-                    <div>
-                        <h2 id="modal-bride-name" class="font-serif text-xl font-bold text-wedding-dark">Anisa Rahmawati, S.Pd.</h2>
-                        <p id="modal-bride-parents" class="text-xs text-gray-500 mt-0.5">Putri dari Bpk. H. Mahmud & Ibu Hj. Aminah</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-5 rounded-2xl shadow-md border border-wedding-gold/20 italic text-gray-600 max-w-lg mx-auto text-xs">
-                    <p id="modal-quote">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..." (QS. Ar-Rum: 21)</p>
-                </div>
-
-                <div class="bg-wedding-dark text-white p-6 rounded-2xl shadow-xl space-y-4 max-w-lg mx-auto text-left">
-                    <div class="flex items-start gap-3">
-                        <i class="fa-solid fa-calendar-day text-wedding-gold text-lg mt-0.5"></i>
-                        <div>
-                            <p class="text-[10px] text-wedding-gold font-bold uppercase tracking-widest">Hari & Tanggal</p>
-                            <p id="modal-date-main" class="text-sm font-semibold mt-0.5">Minggu, 18 Oktober 2026</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i class="fa-solid fa-clock text-wedding-gold text-lg mt-0.5"></i>
-                        <div>
-                            <p class="text-[10px] text-wedding-gold font-bold uppercase tracking-widest">Waktu Acara</p>
-                            <p id="modal-time-main" class="text-sm font-semibold mt-0.5">08.00 WIB - Selesai</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i class="fa-solid fa-location-dot text-wedding-gold text-lg mt-0.5"></i>
-                        <div>
-                            <p class="text-[10px] text-wedding-gold font-bold uppercase tracking-widest">Lokasi Gedung</p>
-                            <p id="modal-venue-main" class="text-sm font-semibold mt-0.5">Gedung Mulia Convention Hall, Jakarta Selatan</p>
-                        </div>
-                    </div>
-                    <div class="pt-1 text-center">
-                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-wedding-gold hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow transition text-xs">
-                            <i class="fa-solid fa-map-location-dot mr-1.5"></i> Buka Petunjuk Lokasi Google Maps
-                        </a>
-                    </div>
-                </div>
-
-                <div class="pb-6">
-                    <button onclick="downloadInvitation()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg transition text-xs">
-                        <i class="fa-solid fa-download mr-1.5"></i> Download / Simpan File Undangan Ini
-                    </button>
-                </div>
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end gap-3">
+                <button onclick="nikahKuApp.closeGlobalEditorModal()" class="px-4 py-2 border rounded-xl font-semibold text-slate-600 hover:bg-slate-100 transition">Batal</button>
+                <button onclick="nikahKuApp.saveGlobalEditorData()" class="px-5 py-2 bg-rose-600 text-white rounded-xl font-semibold hover:bg-rose-700 transition shadow">Simpan & Perbarui</button>
             </div>
         </div>
     </div>
+
+    <!-- AUDIO PLAYER BACKGROUND NIKAHKU -->
+    <audio id="nikahku-bg-audio" loop>
+        <source src="https://actions.google.com/sounds/v1/ambiences/romantic_music_box.ogg" type="audio/ogg">
+    </audio>
 
     <!-- Footer -->
     <footer class="bg-obsidian text-white text-center py-8 border-t border-gold-400/20 text-sm space-y-2">
@@ -1143,7 +870,7 @@
         <p><button onclick="switchPage('admin')" class="text-xs text-gray-500 hover:text-gold-400 transition underline">🔐 Area Khusus Admin</button></p>
     </footer>
 
-    <!-- JavaScript Navigasi, Kalkulator, & Sistem Undangan Online -->
+    <!-- JavaScript Navigasi Website Utama & Script NikahKu Integrated -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -1222,498 +949,486 @@
             window.open(`https://wa.me/6289503846562?text=${text}`, '_blank');
         }
 
-        // --- SISTEM UNDANGAN ONLINE INTERAKTIF ---
-        let currentTemplate = 'minimalist';
+        // --- NIKAHKU PLATFORM LOGIC INTEGRATED ---
+        const weddingData = {
+            groomShort: "Rizky",
+            groomFull: "Rizky Pratama, S.T.",
+            groomParents: "Putra dari Bpk. H. Supriyadi & Ibu Hj. Siti Aminah",
+            brideShort: "Alya",
+            brideFull: "Alya Maharani, S.Psi.",
+            brideParents: "Putri dari Bpk. Ir. H. Budi Santoso & Ibu Dra. Hj. Sri Wahyuni",
+            weddingDate: "2026-12-15",
+            weddingTime: "08:00 WIB - Selesai",
+            locationName: "The Grand Ballroom Hotel Mulia",
+            locationAddress: "Jl. Asia Afrika, Senayan, Kota Jakarta Pusat",
+            qrisBank: "BCA / Mandiri / QRIS Nasional",
+            qrisAcc: "1234567890 (a.n. Rizky & Alya)",
+            guestName: new URLSearchParams(window.location.search).get('to') || "Bpk/Ibu/Saudara/i (Tamu Undangan)"
+        };
 
-        function selectTemplate(templateName) {
-            currentTemplate = templateName;
-            const editorWorkspace = document.getElementById('editor-workspace');
-            const activeBadge = document.getElementById('active-template-badge');
-
-            if (templateName === 'minimalist') {
-                activeBadge.textContent = 'Minimalist Elegant';
-            } else if (templateName === 'rustic') {
-                activeBadge.textContent = 'Floral Rustic';
-            } else if (templateName === 'royal') {
-                activeBadge.textContent = 'Royal Heritage';
+        const templates = [
+            {
+                id: 1,
+                name: "Elegant Classic Maroon & Gold",
+                styleName: "Classic Luxury",
+                desc: "Nuansa warna merah marun mewah berpadu aksen emas berkilau. Memberikan kesan bangsawan yang sakral dan sangat formal.",
+                primaryColor: "bg-rose-950",
+                accentColor: "text-amber-500",
+                buttonColor: "bg-amber-600 hover:bg-amber-700",
+                cardBg: "bg-rose-900/40 border-amber-500/30",
+                fontFamily: "font-cormorant",
+                badgeBg: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+                previewBgGradient: "from-rose-950 via-red-900 to-black"
+            },
+            {
+                id: 2,
+                name: "Modern Minimalist Emerald & Sage",
+                styleName: "Fresh & Modern",
+                desc: "Gaya minimalis modern dengan warna hijau zamrud (emerald) dan sage yang menenangkan, bersih, serta elegan.",
+                primaryColor: "bg-emerald-950",
+                accentColor: "text-emerald-400",
+                buttonColor: "bg-emerald-700 hover:bg-emerald-800",
+                cardBg: "bg-emerald-900/30 border-emerald-500/30",
+                fontFamily: "font-sans",
+                badgeBg: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
+                previewBgGradient: "from-emerald-950 via-teal-900 to-slate-900"
+            },
+            {
+                id: 3,
+                name: "Rustic Woody Warm Brown",
+                styleName: "Warm & Earthy",
+                desc: "Nuansa kayu hangat (earthy brown) yang natural, intim, dan sangat cocok untuk konsep pernikahan outdoor / garden party.",
+                primaryColor: "bg-amber-950",
+                accentColor: "text-amber-300",
+                buttonColor: "bg-amber-800 hover:bg-amber-900",
+                cardBg: "bg-amber-900/40 border-amber-600/30",
+                fontFamily: "font-playfair",
+                badgeBg: "bg-amber-600/10 text-amber-200 border-amber-600/20",
+                previewBgGradient: "from-amber-950 via-stone-900 to-neutral-900"
+            },
+            {
+                id: 4,
+                name: "Luxury Royal Navy & Silver",
+                styleName: "Majestic Navy",
+                desc: "Tampilan megah dengan dominasi biru malam (navy) mendalam dan kilau silver berkelas internasional.",
+                primaryColor: "bg-slate-950",
+                accentColor: "text-sky-300",
+                buttonColor: "bg-sky-600 hover:bg-sky-700",
+                cardBg: "bg-slate-900/50 border-sky-500/30",
+                fontFamily: "font-cinzel",
+                badgeBg: "bg-sky-500/10 text-sky-300 border-sky-500/20",
+                previewBgGradient: "from-slate-950 via-blue-950 to-indigo-950"
+            },
+            {
+                id: 5,
+                name: "Tropical Romantic Blossom",
+                styleName: "Floral Romantic",
+                desc: "Penuh sentuhan kelopak bunga romantis bergradasi warna pastel lembut, menciptakan suasana manis dan penuh cinta.",
+                primaryColor: "bg-rose-900",
+                accentColor: "text-rose-300",
+                buttonColor: "bg-rose-600 hover:bg-rose-700",
+                cardBg: "bg-rose-900/20 border-rose-400/30",
+                fontFamily: "font-script text-3xl",
+                badgeBg: "bg-rose-500/10 text-rose-200 border-rose-500/20",
+                previewBgGradient: "from-rose-900 via-pink-950 to-purple-950"
             }
+        ];
 
-            editorWorkspace.classList.remove('hidden');
-            editorWorkspace.scrollIntoView({ behavior: 'smooth' });
-            updatePreview();
-            showToast('Template berhasil dimuat ke Live Editor!');
-        }
-
-        function updatePreview() {
-            const groomName = document.getElementById('input-groom-name').value;
-            const groomParents = document.getElementById('input-groom-parents').value;
-            const brideName = document.getElementById('input-bride-name').value;
-            const brideParents = document.getElementById('input-bride-parents').value;
-            const dateVal = document.getElementById('input-date').value;
-            const timeVal = document.getElementById('input-time').value;
-            const venueVal = document.getElementById('input-venue').value;
-            const quoteVal = document.getElementById('input-quote').value;
-
-            document.getElementById('prev-couple-title').textContent = `${groomName.split(' ')[0]} & ${brideName.split(' ')[0]}`;
-            document.getElementById('prev-date-top').textContent = dateVal;
-            document.getElementById('prev-groom-name').textContent = groomName;
-            document.getElementById('prev-groom-parents').textContent = groomParents;
-            document.getElementById('prev-bride-name').textContent = brideName;
-            document.getElementById('prev-bride-parents').textContent = brideParents;
-            document.getElementById('prev-quote').textContent = `"${quoteVal}"`;
-            document.getElementById('prev-date-main').textContent = dateVal;
-            document.getElementById('prev-venue-main').textContent = venueVal;
-
-            document.getElementById('modal-couple-title').textContent = `${groomName.split(' ')[0]} & ${brideName.split(' ')[0]}`;
-            document.getElementById('modal-date-top').textContent = dateVal;
-            document.getElementById('modal-groom-name').textContent = groomName;
-            document.getElementById('modal-groom-parents').textContent = groomParents;
-            document.getElementById('modal-bride-name').textContent = brideName;
-            document.getElementById('modal-bride-parents').textContent = brideParents;
-            document.getElementById('modal-quote').textContent = `"${quoteVal}"`;
-            document.getElementById('modal-date-main').textContent = dateVal;
-            document.getElementById('modal-time-main').textContent = timeVal;
-            document.getElementById('modal-venue-main').textContent = venueVal;
-        }
-
-        function submitRSVP() {
-            const name = document.getElementById('rsvp-name').value;
-            if(!name) {
-                showToast('Perhatian', 'Mohon masukkan nama Anda terlebih dahulu!');
-                return;
-            }
-            document.getElementById('rsvp-success-msg').classList.remove('hidden');
-            showToast('Berhasil', 'Konfirmasi RSVP berhasil dikirim!');
-        }
-
-        function copyShareableLink() {
-            const dummy = document.createElement('textarea');
-            const shareUrl = window.location.href.split('#')[0] + '?invitation=sugeng-klinsman-' + Math.floor(Math.random()*10000);
-            document.body.appendChild(dummy);
-            dummy.value = shareUrl;
-            dummy.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummy);
-            showToast('Berhasil', 'Tautan undangan berhasil disalin ke clipboard!');
-        }
-
-        function openFullPreview() {
-            const modal = document.getElementById('full-preview-modal');
-            modal.classList.remove('hidden');
-        }
-
-        function closeFullPreview() {
-            const modal = document.getElementById('full-preview-modal');
-            modal.classList.add('hidden');
-        }
-
+        let currentActiveTemplateId = 1;
         let isMusicPlaying = false;
-        function toggleBackgroundMusic() {
-            isMusicPlaying = !isMusicPlaying;
-            const statusText = document.getElementById('music-status-text');
-            if (isMusicPlaying) {
-                statusText.textContent = 'Pause Musik';
-                showToast('Info', 'Musik latar romantis diputarkan 🎶');
-            } else {
-                statusText.textContent = 'Putar Musik';
-                showToast('Info', 'Musik latar dijeda.');
-            }
-        }
+        let rsvpList = [
+            { name: "Andi Pratama", status: "Hadir", message: "Selamat menempuh hidup baru! Semoga bahagia selalu sampai maut memisahkan." },
+            { name: "Siti Rahma", status: "Hadir", message: "Barakallahufiik untuk kedua mempelai. Lancar sampai hari H!" }
+        ];
 
-        function downloadInvitation() {
-            const groomName = document.getElementById('input-groom-name').value;
-            const brideName = document.getElementById('input-bride-name').value;
-            const htmlContent = `<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Undangan Pernikahan ${groomName} & ${brideName}</title>
-    <script src="https://cdn.tailwindcss.com"><\/script>
-</head>
-<body class="bg-[#FAF8F5] text-stone-950 font-sans p-6 text-center">
-    <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl mt-10">
-        <span class="text-xs uppercase tracking-widest text-amber-700 font-bold">The Wedding Of</span>
-        <h1 class="text-4xl font-serif font-bold mt-2">${groomName} & ${brideName}</h1>
-        <p class="text-amber-700 font-serif text-xl mt-2">${document.getElementById('input-date').value}</p>
-        <hr class="my-6 border-amber-200">
-        <p class="text-sm text-gray-600 mb-6">${document.getElementById('input-venue').value}</p>
-        <div class="bg-amber-50 p-4 rounded-xl text-xs text-amber-900 font-medium">
-            Undangan Digital Resmi Dibuat Melalui Sugeng Klinsman Platform.
-        </div>
-    </div>
-</body>
-</html>`;
+        const nikahKuApp = {
+            init() {
+                this.renderLandingShowcase();
+                this.renderCatalog();
+                this.initGlobalEditorFields();
+            },
 
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `Undangan_${groomName.split(' ')[0]}_${brideName.split(' ')[0]}.html`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast('Berhasil', 'File HTML undangan berhasil didownload!');
-        }
-
-        // --- CMS LOCALSTORAGE & ADMIN AUTH ---
-        function getLeads() {
-            const data = localStorage.getItem('sk_leads');
-            return data ? JSON.parse(data) : [];
-        }
-
-        function saveLead(name, wa, type) {
-            const leads = getLeads();
-            const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-            const existing = leads.find(l => l.wa === wa);
-            if (!existing) {
-                leads.unshift({ name, wa, type, date });
-                localStorage.setItem('sk_leads', JSON.stringify(leads));
-            }
-        }
-
-        function getArticles() {
-            const data = localStorage.getItem('sk_articles');
-            return data ? JSON.parse(data) : [
-                { 
-                    title: 'Strategi SEO Lokal untuk UMKM di Pontianak', 
-                    category: 'SEO & Web Dev', 
-                    keywords: 'seo pontianak, umkm go digital, jasa website',
-                    metaDesc: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat.',
-                    tags: 'seo, website, umkm, pontianak',
-                    content: 'Panduan praktis agar bisnis Anda menduduki peringkat teratas pencarian Google di Kalimantan Barat. Dengan optimasi kata kunci lokal dan struktur halaman yang bersih, website UMKM Anda akan lebih mudah ditemukan oleh calon pelanggan setia di Pontianak.', 
-                    date: '24 Oktober 2026',
-                    author: 'Sugeng Klinsman',
-                    wa: '089503846562'
+            switchView(viewName) {
+                document.querySelectorAll('#page-undangan .view-section').forEach(el => el.classList.add('hidden'));
+                if (viewName === 'nikahku-landing') {
+                    document.getElementById('nikahku-landing').classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else if (viewName === 'nikahku-templates') {
+                    document.getElementById('nikahku-templates').classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else if (viewName === 'nikahku-active') {
+                    document.getElementById('nikahku-active').classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
-            ];
-        }
+            },
 
-        function getPendingArticles() {
-            const data = localStorage.getItem('sk_pending_articles');
-            return data ? JSON.parse(data) : [];
-        }
-
-        function getMedia() {
-            const data = localStorage.getItem('sk_media');
-            return data ? JSON.parse(data) : [
-                { title: 'Touring XSR Santai di Waterfront', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80', author: 'Sugeng', wa: '0895' },
-                { title: 'Custom Bike Showcase', theme: 'Touring XSR & Motor', type: 'image', url: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80', author: 'Sugeng', wa: '0895' }
-            ];
-        }
-
-        function getPendingMedia() {
-            const data = localStorage.getItem('sk_pending_media');
-            return data ? JSON.parse(data) : [];
-        }
-
-        function handleContributorArticle(e) {
-            e.preventDefault();
-            const name = document.getElementById('contrib-name').value;
-            const wa = document.getElementById('contrib-wa').value;
-            const title = document.getElementById('art-title').value;
-            const category = document.getElementById('art-category').value;
-            const keywords = document.getElementById('art-keywords').value;
-            const metaDesc = document.getElementById('art-meta-desc').value;
-            const tags = document.getElementById('art-tags').value;
-            const content = document.getElementById('art-content').value;
-            const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-
-            saveLead(name, wa, 'Artikel');
-
-            const pending = getPendingArticles();
-            pending.unshift({ title, category, keywords, metaDesc, tags, content, date, author: name, wa });
-            localStorage.setItem('sk_pending_articles', JSON.stringify(pending));
-
-            showToast('Berhasil Dikirim!', 'Artikel Anda menunggu persetujuan Admin.');
-            e.target.reset();
-        }
-
-        function handleContributorMedia(e) {
-            e.preventDefault();
-            const name = document.getElementById('contrib-med-name').value;
-            const wa = document.getElementById('contrib-med-wa').value;
-            const title = document.getElementById('media-title').value;
-            const theme = document.getElementById('media-theme').value;
-            const type = document.getElementById('media-type').value;
-            const url = document.getElementById('media-url').value;
-
-            saveLead(name, wa, 'Media Foto/Video');
-
-            const pending = getPendingMedia();
-            pending.unshift({ title, theme, type, url, author: name, wa });
-            localStorage.setItem('sk_pending_media', JSON.stringify(pending));
-
-            showToast('Berhasil Dikirim!', 'Media Anda menunggu persetujuan Admin.');
-            e.target.reset();
-        }
-
-        function handleAdminLogin(e) {
-            e.preventDefault();
-            const pin = document.getElementById('secret-pin').value;
-            if (pin === '1234') {
-                localStorage.setItem('sk_admin_auth', 'true');
-                showToast('Login Berhasil', 'Selamat datang di Dashboard Admin.');
-                checkAdminAuth();
-            } else {
-                showToast('PIN Salah', 'Gunakan PIN: 1234', true);
-            }
-        }
-
-        function adminLogout() {
-            localStorage.removeItem('sk_admin_auth');
-            showToast('Logout', 'Anda telah keluar dari Area Admin.');
-            checkAdminAuth();
-        }
-
-        function checkAdminAuth() {
-            const isAuth = localStorage.getItem('sk_admin_auth') === 'true';
-            const loginBox = document.getElementById('admin-login-box');
-            const panel = document.getElementById('admin-panel-content');
-
-            if (isAuth) {
-                if(loginBox) loginBox.classList.add('hidden');
-                if(panel) panel.classList.remove('hidden');
-                renderAdminDashboard();
-            } else {
-                if(loginBox) loginBox.classList.remove('hidden');
-                if(panel) panel.classList.add('hidden');
-                const pinInput = document.getElementById('secret-pin');
-                if(pinInput) pinInput.value = '';
-            }
-        }
-
-        function approveArticle(index) {
-            const pending = getPendingArticles();
-            const art = pending[index];
-            if (!art) return;
-
-            const articles = getArticles();
-            articles.unshift(art);
-            localStorage.setItem('sk_articles', JSON.stringify(articles));
-
-            pending.splice(index, 1);
-            localStorage.setItem('sk_pending_articles', JSON.stringify(pending));
-
-            showToast('Disetujui', 'Artikel kini dipublikasikan di beranda.');
-            renderAdminDashboard();
-            renderFrontpageContent();
-        }
-
-        function rejectArticle(index) {
-            if (confirm('Tolak dan hapus pengajuan artikel ini?')) {
-                const pending = getPendingArticles();
-                pending.splice(index, 1);
-                localStorage.setItem('sk_pending_articles', JSON.stringify(pending));
-                showToast('Ditolak', 'Artikel dihapus dari antrean.');
-                renderAdminDashboard();
-            }
-        }
-
-        function approveMedia(index) {
-            const pending = getPendingMedia();
-            const med = pending[index];
-            if (!med) return;
-
-            const mediaList = getMedia();
-            const countInTheme = mediaList.filter(m => m.theme === med.theme).length;
-            if (countInTheme >= 5) {
-                showToast('Batas Tema Penuh', `Tema "${med.theme}" sudah mencapai batas maksimal 5 file.`, true);
-                return;
-            }
-
-            mediaList.unshift(med);
-            localStorage.setItem('sk_media', JSON.stringify(mediaList));
-
-            pending.splice(index, 1);
-            localStorage.setItem('sk_pending_media', JSON.stringify(pending));
-
-            showToast('Disetujui', 'Media kini dipublikasikan di galeri.');
-            renderAdminDashboard();
-            renderFrontpageContent();
-        }
-
-        function rejectMedia(index) {
-            if (confirm('Tolak dan hapus pengajuan media ini?')) {
-                const pending = getPendingMedia();
-                pending.splice(index, 1);
-                localStorage.setItem('sk_pending_media', JSON.stringify(pending));
-                showToast('Ditolak', 'Media dihapus dari antrean.');
-                renderAdminDashboard();
-            }
-        }
-
-        function exportLeads() {
-            const leads = getLeads();
-            if (leads.length === 0) {
-                alert('Belum ada data leads tersimpan.');
-                return;
-            }
-            let text = "DATA LEADS KONTRIBUTOR / KLIEN\n\n";
-            leads.forEach((l, i) => {
-                text += `${i+1}. Nama: ${l.name} | WhatsApp: ${l.wa} | Jenis: ${l.type} | Tanggal: ${l.date}\n`;
-            });
-            alert(text);
-        }
-
-        function renderAdminDashboard() {
-            const pendingArt = getPendingArticles();
-            const pendingMed = getPendingMedia();
-            const leads = getLeads();
-
-            document.getElementById('pending-art-count').innerText = pendingArt.length;
-            document.getElementById('pending-med-count').innerText = pendingMed.length;
-            document.getElementById('leads-count').innerText = leads.length;
-
-            const artListDiv = document.getElementById('pending-articles-list');
-            if (pendingArt.length === 0) {
-                artListDiv.innerHTML = '<p class="text-xs text-gray-500 italic">Tidak ada artikel pending.</p>';
-            } else {
-                artListDiv.innerHTML = pendingArt.map((art, idx) => `
-                    <div class="bg-white p-4 rounded-2xl border border-gold-200 flex justify-between items-center gap-4 text-xs">
-                        <div>
-                            <h4 class="font-bold text-obsidian">${art.title}</h4>
-                            <p class="text-gray-500">Kontributor: <strong>${art.author}</strong> (${art.wa}) • ${art.category}</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="approveArticle(${idx})" class="px-3 py-1 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
-                            <button onclick="rejectArticle(${idx})" class="px-3 py-1 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            const medListDiv = document.getElementById('pending-media-list');
-            if (pendingMed.length === 0) {
-                medListDiv.innerHTML = '<p class="text-xs text-gray-500 italic">Tidak ada media pending.</p>';
-            } else {
-                medListDiv.innerHTML = pendingMed.map((med, idx) => `
-                    <div class="bg-white p-4 rounded-2xl border border-gold-200 space-y-2 text-xs">
-                        <div class="h-28 bg-slate-900 rounded-xl overflow-hidden">
-                            <img src="${med.url}" class="w-full h-full object-cover">
-                        </div>
-                        <h4 class="font-bold text-obsidian truncate">${med.title}</h4>
-                        <p class="text-[10px] text-gray-500">Oleh: ${med.author} (${med.wa}) • ${med.theme}</p>
-                        <div class="flex gap-2 pt-1">
-                            <button onclick="approveMedia(${idx})" class="flex-1 py-1 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
-                            <button onclick="rejectMedia(${idx})" class="flex-1 py-1 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            const leadsContainer = document.getElementById('leads-table-container');
-            if (leads.length === 0) {
-                leadsContainer.innerHTML = '<p class="text-xs text-gray-500 italic">Belum ada data leads.</p>';
-            } else {
-                leadsContainer.innerHTML = `
-                    <table class="w-full text-left text-xs">
-                        <thead>
-                            <tr class="border-b border-gray-200 text-gold-700">
-                                <th class="pb-2">No</th>
-                                <th class="pb-2">Nama Lengkap</th>
-                                <th class="pb-2">No. WhatsApp</th>
-                                <th class="pb-2">Jenis Kiriman</th>
-                                <th class="pb-2">Tanggal</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            ${leads.map((l, i) => `
-                                <tr class="hover:bg-gold-50/50">
-                                    <td class="py-2">${i+1}</td>
-                                    <td class="py-2 font-semibold text-obsidian">${l.name}</td>
-                                    <td class="py-2"><a href="https://wa.me/${l.wa}" target="_blank" class="text-emerald-600 underline">${l.wa}</a></td>
-                                    <td class="py-2">${l.type}</td>
-                                    <td class="py-2 text-gray-500">${l.date}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                `;
-            }
-        }
-
-        function openArticleModal(index) {
-            const articles = getArticles();
-            const art = articles[index];
-            if (!art) return;
-
-            document.getElementById('modal-article-meta').innerText = `${art.date} • ${art.category}`;
-            document.getElementById('modal-article-title').innerText = art.title;
-            document.getElementById('modal-author').innerText = art.author || 'Sugeng Klinsman';
-            document.getElementById('modal-wa').innerText = art.wa || '-';
-            document.getElementById('modal-keywords').innerText = art.keywords || '-';
-            document.getElementById('modal-tags').innerText = art.tags || '-';
-            document.getElementById('modal-article-content').innerHTML = `<p class="font-medium text-gold-700 italic mb-3">"${art.metaDesc || ''}"</p><p>` + art.content.replace(/\n/g, '</p><p class="mt-3">') + '</p>';
-            document.getElementById('article-modal').classList.remove('hidden');
-        }
-
-        function closeArticleModal() {
-            document.getElementById('article-modal').classList.add('hidden');
-        }
-
-        function renderFrontpageContent() {
-            const articles = getArticles();
-            const artContainer = document.getElementById('frontpage-articles-grid');
-            if (artContainer) {
-                artContainer.innerHTML = articles.map((art, index) => {
-                    const desc = art.metaDesc || (art.content.length > 120 ? art.content.substring(0, 120) + '...' : art.content);
-                    return `
-                        <article class="gold-card rounded-2xl overflow-hidden flex flex-col justify-between p-6 shadow-sm">
+            renderLandingShowcase() {
+                const grid = document.getElementById('nikahku-showcase-grid');
+                if(!grid) return;
+                grid.innerHTML = templates.map(t => `
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200 flex flex-col hover:shadow-2xl transition duration-300 group">
+                        <div class="h-48 bg-gradient-to-br ${t.previewBgGradient} relative p-6 flex flex-col justify-between text-white">
+                            <span class="self-end px-3 py-1 rounded-full text-xs font-semibold border ${t.badgeBg}">${t.styleName}</span>
                             <div>
-                                <span class="text-xs text-gold-600 font-bold uppercase">${art.date} • ${art.category}</span>
-                                <h3 class="text-xl font-bold text-obsidian mt-2 mb-3 leading-snug">
-                                    <a href="javascript:void(0)" onclick="openArticleModal(${index})" class="hover:text-gold-600 transition">${art.title}</a>
-                                </h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">${desc}</p>
-                                ${art.tags ? `<div class="mt-4 flex flex-wrap gap-1.5">${art.tags.split(',').map(tag => `<span class="text-[10px] bg-gold-50 text-gold-700 px-2.5 py-0.5 rounded-full border border-gold-200">#${tag.trim()}</span>`).join('')}</div>` : ''}
+                                <span class="text-xs uppercase tracking-widest text-slate-300">Tema #${t.id}</span>
+                                <h3 class="text-xl font-cinzel font-bold">${t.name}</h3>
                             </div>
-                            <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
-                                <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Oleh: ${art.author || 'Sugeng Klinsman'}</span>
-                                <button onclick="openArticleModal(${index})" class="text-xs font-bold text-gold-700 hover:underline">Selengkapnya &rarr;</button>
-                            </div>
-                        </article>
-                    `;
-                }).join('');
-            }
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between text-left">
+                            <p class="text-slate-600 text-sm mb-6">${t.desc}</p>
+                            <button onclick="nikahKuApp.previewTemplate(${t.id})" class="w-full py-3 bg-slate-900 text-white rounded-xl font-semibold text-sm hover:bg-rose-600 transition flex items-center justify-center gap-2 shadow">
+                                <i class="fa-solid fa-eye"></i> Buka Undangan Ini
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            },
 
-            const mediaList = getMedia();
-            const mediaContainer = document.getElementById('frontpage-media-container');
-            if (mediaContainer) {
-                const themes = [...new Set(mediaList.map(m => m.theme))];
-                mediaContainer.innerHTML = themes.map(theme => {
-                    const itemsInTheme = mediaList.filter(m => m.theme === theme);
-                    return `
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center border-b border-gold-200 pb-2">
-                                <h3 class="font-serif text-2xl font-bold text-obsidian">${theme}</h3>
-                                <span class="text-xs font-semibold px-3 py-1 bg-gold-100 text-gold-800 rounded-full">${itemsInTheme.length} / 5 File</span>
+            renderCatalog() {
+                const grid = document.getElementById('nikahku-catalog-grid');
+                if(!grid) return;
+                grid.innerHTML = templates.map(t => `
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 flex flex-col hover:shadow-xl transition">
+                        <div class="h-56 bg-gradient-to-br ${t.previewBgGradient} relative p-6 flex flex-col justify-between text-white">
+                            <span class="self-end px-3.5 py-1 rounded-full text-xs font-bold border ${t.badgeBg}">${t.styleName}</span>
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-slate-300">Template 0${t.id}</span>
+                                <h3 class="text-2xl font-cinzel font-bold">${t.name}</h3>
                             </div>
-                            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                ${itemsInTheme.map(item => `
-                                    <div class="gold-card rounded-2xl overflow-hidden shadow-sm">
-                                        <div class="h-56 bg-obsidian relative">
-                                            ${item.type === 'video' 
-                                                ? `<video src="${item.url}" controls class="w-full h-full object-cover"></video>` 
-                                                : `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover">`
-                                            }
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between text-left">
+                            <p class="text-slate-600 text-sm mb-6">${t.desc}</p>
+                            <div class="flex gap-3">
+                                <button onclick="nikahKuApp.previewTemplate(${t.id})" class="flex-1 py-3 bg-rose-600 text-white rounded-xl font-semibold text-sm hover:bg-rose-700 transition text-center shadow">
+                                    <i class="fa-solid fa-play mr-1"></i> Preview & Edit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            },
+
+            previewTemplate(id) {
+                currentActiveTemplateId = id;
+                this.renderActiveInvitationContent();
+                this.switchView('nikahku-active');
+            },
+
+            renderActiveInvitationContent() {
+                const t = templates.find(x => x.id === currentActiveTemplateId) || templates[0];
+                const container = document.getElementById('nikahku-render-area');
+                if(!container) return;
+
+                container.innerHTML = `
+                    <div class="relative min-h-screen ${t.primaryColor} text-white selection:bg-amber-500 selection:text-slate-900">
+                        
+                        <!-- 1. COVER PEMBUKA -->
+                        <div id="nikahku-invitation-cover" class="fixed inset-0 z-50 bg-slate-950 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-700">
+                            <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+                            <div class="relative z-10 max-w-lg mx-auto">
+                                <span class="px-4 py-1.5 rounded-full border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-widest uppercase mb-6 inline-block bg-amber-500/10">
+                                    The Wedding Of
+                                </span>
+                                <h1 class="text-5xl sm:text-6xl font-cinzel font-bold mb-4 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 bg-clip-text text-transparent">
+                                    ${weddingData.groomShort} & ${weddingData.brideShort}
+                                </h1>
+                                <p class="text-slate-300 text-sm mb-8 font-light">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 mb-8 text-amber-300 font-bold text-lg shadow-inner">
+                                    ${weddingData.guestName}
+                                </div>
+                                <button onclick="nikahKuApp.openInvitation()" class="px-8 py-4 bg-amber-500 text-slate-950 font-bold rounded-full shadow-2xl hover:bg-amber-400 transition transform hover:scale-105 flex items-center justify-center gap-2 mx-auto">
+                                    <i class="fa-solid fa-envelope-open-text"></i> Buka Undangan Digital
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- HERO SECTION -->
+                        <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative py-20">
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]"></div>
+                            <div class="relative z-10 max-w-3xl mx-auto">
+                                <p class="text-amber-400 uppercase tracking-widest text-xs sm:text-sm mb-4 font-semibold">Pernikahan Suci Kami</p>
+                                <h1 class="text-5xl sm:text-7xl font-cinzel font-bold mb-6 tracking-wide">
+                                    ${weddingData.groomFull} <br><span class="text-amber-400 font-script text-4xl sm:text-6xl">&</span> <br>${weddingData.brideFull}
+                                </h1>
+                                <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base mb-10 leading-relaxed font-light">
+                                    "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepada-Nya..." (QS. Ar-Rum: 21)
+                                </p>
+                                
+                                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 max-w-md mx-auto shadow-xl">
+                                    <h3 class="text-xs uppercase tracking-widest text-amber-300 font-bold mb-4">Menuju Hari Bahagia</h3>
+                                    <div id="nikahku-countdown-timer" class="grid grid-cols-4 gap-2 text-center">
+                                        <div class="bg-black/30 p-3 rounded-xl"><span id="nikahku-cd-days" class="text-2xl font-bold block">00</span><span class="text-[10px] uppercase text-slate-400">Hari</span></div>
+                                        <div class="bg-black/30 p-3 rounded-xl"><span id="nikahku-cd-hours" class="text-2xl font-bold block">00</span><span class="text-[10px] uppercase text-slate-400">Jam</span></div>
+                                        <div class="bg-black/30 p-3 rounded-xl"><span id="nikahku-cd-mins" class="text-2xl font-bold block">00</span><span class="text-[10px] uppercase text-slate-400">Menit</span></div>
+                                        <div class="bg-black/30 p-3 rounded-xl"><span id="nikahku-cd-secs" class="text-2xl font-bold block">00</span><span class="text-[10px] uppercase text-slate-400">Detik</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- MEMPELAI SECTION -->
+                        <section class="py-20 px-4 max-w-5xl mx-auto">
+                            <div class="text-center mb-16">
+                                <span class="text-amber-400 uppercase tracking-widest text-xs font-semibold">Pasangan Mempelai</span>
+                                <h2 class="text-4xl font-cinzel font-bold mt-2">Megah & Sakral</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl text-center backdrop-blur-sm shadow-xl flex flex-col items-center">
+                                    <div class="w-36 h-36 rounded-full bg-amber-500/20 border-2 border-amber-400/50 flex items-center justify-center text-5xl mb-6 shadow-inner text-amber-300">
+                                        <i class="fa-solid fa-user-tie"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold font-cinzel mb-1">${weddingData.groomFull}</h3>
+                                    <p class="text-amber-400 text-sm font-semibold mb-3">Putra Pertama</p>
+                                    <p class="text-slate-300 text-xs">${weddingData.groomParents}</p>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl text-center backdrop-blur-sm shadow-xl flex flex-col items-center">
+                                    <div class="w-36 h-36 rounded-full bg-rose-500/20 border-2 border-rose-400/50 flex items-center justify-center text-5xl mb-6 shadow-inner text-rose-300">
+                                        <i class="fa-solid fa-user-nurse"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold font-cinzel mb-1">${weddingData.brideFull}</h3>
+                                    <p class="text-rose-400 text-sm font-semibold mb-3">Putri Pertama</p>
+                                    <p class="text-slate-300 text-xs">${weddingData.brideParents}</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ACARA & PETA LOKASI -->
+                        <section class="py-20 px-4 max-w-4xl mx-auto">
+                            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 sm:p-12 rounded-3xl shadow-2xl">
+                                <div class="text-center mb-10">
+                                    <span class="text-amber-400 uppercase tracking-widest text-xs font-semibold">Waktu & Tempat</span>
+                                    <h2 class="text-3xl font-cinzel font-bold mt-2">Pernikahan & Resepsi</h2>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10 text-left">
+                                    <div class="bg-black/20 p-6 rounded-2xl border border-white/10">
+                                        <h3 class="text-amber-400 font-bold text-lg mb-2"><i class="fa-solid fa-ring mr-2"></i> Akad Nikah</h3>
+                                        <p class="text-sm text-slate-300 font-semibold mb-1">Hari: ${new Date(weddingData.weddingDate).toLocaleDateString('id-ID', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'})}</p>
+                                        <p class="text-xs text-slate-400">Pukul 08.00 WIB - Selesai</p>
+                                    </div>
+                                    <div class="bg-black/20 p-6 rounded-2xl border border-white/10">
+                                        <h3 class="text-amber-400 font-bold text-lg mb-2"><i class="fa-solid fa-glass-cheers mr-2"></i> Resepsi</h3>
+                                        <p class="text-sm text-slate-300 font-semibold mb-1">Hari: ${new Date(weddingData.weddingDate).toLocaleDateString('id-ID', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'})}</p>
+                                        <p class="text-xs text-slate-400">Pukul 11.00 - 14.00 WIB</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center bg-black/30 p-6 rounded-2xl border border-white/10">
+                                    <h4 class="font-bold text-lg text-white mb-1"><i class="fa-solid fa-location-dot text-rose-500 mr-2"></i> ${weddingData.locationName}</h4>
+                                    <p class="text-sm text-slate-300 mb-6">${weddingData.locationAddress}</p>
+                                    <a href="https://maps.google.com/?q=${encodeURIComponent(weddingData.locationName + ' ' + weddingData.locationAddress)}" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 text-slate-950 font-bold rounded-xl shadow hover:bg-amber-400 transition">
+                                        <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps & Navigasi
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- QRIS KADO DIGITAL -->
+                        <section class="py-20 px-4 max-w-3xl mx-auto text-center">
+                            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 sm:p-12 rounded-3xl shadow-2xl">
+                                <span class="text-amber-400 uppercase tracking-widest text-xs font-semibold">Tanda Kasih</span>
+                                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">Kado Digital / Amplop Virtual</h2>
+                                <p class="text-slate-300 text-sm mb-8">Doa restu Anda adalah karunia terindah. Namun jika ingin memberikan tanda kasih secara cashless, silakan melalui QRIS di bawah ini:</p>
+                                
+                                <div class="bg-white p-6 rounded-2xl inline-block shadow-lg mb-6 max-w-xs mx-auto text-slate-900">
+                                    <div class="w-48 h-48 bg-slate-100 mx-auto flex items-center justify-center border-2 border-dashed border-slate-300 rounded-xl mb-4 text-slate-800 font-bold flex-col">
+                                        <i class="fa-solid fa-qrcode text-6xl text-slate-700 mb-2"></i>
+                                        <span class="text-xs text-slate-500">QRIS NIKAHKU</span>
+                                    </div>
+                                    <p class="font-bold text-sm">${weddingData.qrisBank}</p>
+                                    <p class="text-slate-600 text-xs font-mono mt-1">${weddingData.qrisAcc}</p>
+                                </div>
+                                <div>
+                                    <button onclick="nikahKuApp.copyAccount('${weddingData.qrisAcc}')" class="px-6 py-2.5 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl shadow hover:bg-amber-400 transition">
+                                        <i class="fa-regular fa-copy mr-1"></i> Salin Nomor Rekening
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- RSVP & BUKU TAMU -->
+                        <section class="py-20 px-4 max-w-3xl mx-auto text-left">
+                            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 sm:p-12 rounded-3xl shadow-2xl">
+                                <div class="text-center mb-8">
+                                    <span class="text-amber-400 uppercase tracking-widest text-xs font-semibold">Konfirmasi Kehadiran</span>
+                                    <h2 class="text-3xl font-cinzel font-bold mt-2">RSVP & Ucapan Tamu</h2>
+                                </div>
+
+                                <form onsubmit="nikahKuApp.submitRsvp(event)" class="space-y-4 mb-10">
+                                    <div>
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Nama Lengkap</label>
+                                        <input type="text" id="nikahku-rsvp-name" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-white/20 text-white placeholder-slate-400 focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Masukkan nama Anda">
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Konfirmasi Kehadiran</label>
+                                            <select id="nikahku-rsvp-status" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/20 text-white focus:ring-2 focus:ring-amber-500 outline-none">
+                                                <option value="Hadir">Hadir (Hadir di Acara)</option>
+                                                <option value="Berhalangan">Berhalangan Hadir</option>
+                                            </select>
                                         </div>
-                                        <div class="p-5">
-                                            <h4 class="font-bold text-obsidian">${item.title}</h4>
-                                            <span class="text-xs text-gold-700 font-semibold mt-1 inline-block">Kontributor: ${item.author || 'Sugeng'}</span>
+                                        <div>
+                                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Jumlah Tamu</label>
+                                            <select id="nikahku-rsvp-pax" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/20 text-white focus:ring-2 focus:ring-amber-500 outline-none">
+                                                <option value="1 Orang">1 Orang</option>
+                                                <option value="2 Orang">2 Orang</option>
+                                            </select>
                                         </div>
                                     </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-            }
-        }
+                                    <div>
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Ucapan & Doa Restu</label>
+                                        <textarea id="nikahku-rsvp-message" required rows="3" class="w-full px-4 py-3 rounded-xl bg-black/30 border border-white/20 text-white placeholder-slate-400 focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Tuliskan ucapan dan doa terbaik Anda..."></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full py-4 bg-amber-500 text-slate-950 font-bold rounded-xl shadow-lg hover:bg-amber-400 transition">
+                                        Kirim Konfirmasi & Ucapan
+                                    </button>
+                                </form>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            calculateTotal();
-            renderFrontpageContent();
+                                <div id="nikahku-rsvp-guest-list" class="space-y-4 max-h-80 overflow-y-auto pr-2">
+                                    <!-- Injected by JS -->
+                                </div>
+                            </div>
+                        </section>
+
+                        <footer class="py-12 text-center text-xs text-slate-400 border-t border-white/10">
+                            <p class="font-cinzel text-lg font-bold text-white mb-1">NikahKu Digital Invitation</p>
+                            <p>Merayakan Cinta, Menjalin Silaturahmi.</p>
+                        </footer>
+                    </div>
+                `;
+
+                this.startCountdown();
+                this.renderRsvpList();
+            },
+
+            openInvitation() {
+                const cover = document.getElementById('nikahku-invitation-cover');
+                if (cover) {
+                    cover.style.opacity = '0';
+                    setTimeout(() => cover.remove(), 700);
+                }
+                this.toggleMusic(true);
+            },
+
+            toggleMusic(forcePlay = false) {
+                const audio = document.getElementById('nikahku-bg-audio');
+                const btn = document.getElementById('nikahku-music-btn');
+                if (forcePlay || !isMusicPlaying) {
+                    audio.play().then(() => {
+                        isMusicPlaying = true;
+                        if(btn) btn.classList.add('animate-spin');
+                    }).catch(e => console.log("Audio autoplay prevented"));
+                } else {
+                    audio.pause();
+                    isMusicPlaying = false;
+                    if(btn) btn.classList.remove('animate-spin');
+                }
+            },
+
+            startCountdown() {
+                const eventDate = new Date(weddingData.weddingDate + "T08:00:00").getTime();
+                setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = eventDate - now;
+                    if (distance < 0) return;
+
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    const dEl = document.getElementById('nikahku-cd-days');
+                    const hEl = document.getElementById('nikahku-cd-hours');
+                    const mEl = document.getElementById('nikahku-cd-mins');
+                    const sEl = document.getElementById('nikahku-cd-secs');
+
+                    if (dEl) dEl.innerText = String(days).padStart(2, '0');
+                    if (hEl) hEl.innerText = String(hours).padStart(2, '0');
+                    if (mEl) mEl.innerText = String(minutes).padStart(2, '0');
+                    if (sEl) sEl.innerText = String(seconds).padStart(2, '0');
+                }, 1000);
+            },
+
+            submitRsvp(e) {
+                e.preventDefault();
+                const name = document.getElementById('nikahku-rsvp-name').value;
+                const status = document.getElementById('nikahku-rsvp-status').value;
+                const message = document.getElementById('nikahku-rsvp-message').value;
+
+                rsvpList.unshift({ name, status, message });
+                this.renderRsvpList();
+                e.target.reset();
+                alert("Terima kasih! Konfirmasi kehadiran dan ucapan Anda berhasil terkirim.");
+            },
+
+            renderRsvpList() {
+                const container = document.getElementById('nikahku-rsvp-guest-list');
+                if (!container) return;
+                container.innerHTML = rsvpList.map(r => `
+                    <div class="bg-black/30 p-4 rounded-2xl border border-white/10 text-left">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-sm text-white">${r.name}</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${r.status === 'Hadir' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-300 border border-rose-500/30'}">${r.status}</span>
+                        </div>
+                        <p class="text-xs text-slate-300">${r.message}</p>
+                    </div>
+                `).join('');
+            },
+
+            copyAccount(acc) {
+                const dummy = document.createElement("textarea");
+                document.body.appendChild(dummy);
+                dummy.value = acc;
+                dummy.select();
+                document.execCommand("copy");
+                document.body.removeChild(dummy);
+                alert("Nomor rekening / QRIS berhasil disalin ke clipboard!");
+            },
+
+            openGlobalEditorModal() {
+                document.getElementById('nikahku-global-editor-modal').classList.remove('hidden');
+            },
+
+            closeGlobalEditorModal() {
+                document.getElementById('nikahku-global-editor-modal').classList.add('hidden');
+            },
+
+            initGlobalEditorFields() {
+                document.getElementById('nikahku-edit-groom-short').value = weddingData.groomShort;
+                document.getElementById('nikahku-edit-groom-full').value = weddingData.groomFull;
+                document.getElementById('nikahku-edit-bride-short').value = weddingData.brideShort;
+                document.getElementById('nikahku-edit-bride-full').value = weddingData.brideFull;
+                document.getElementById('nikahku-edit-wedding-date').value = weddingData.weddingDate;
+                document.getElementById('nikahku-edit-wedding-time').value = weddingData.weddingTime;
+                document.getElementById('nikahku-edit-location-name').value = weddingData.locationName;
+                document.getElementById('nikahku-edit-location-address').value = weddingData.locationAddress;
+                document.getElementById('nikahku-edit-qris-bank').value = weddingData.qrisBank;
+                document.getElementById('nikahku-edit-qris-acc').value = weddingData.qrisAcc;
+                document.getElementById('nikahku-edit-guest-name').value = weddingData.guestName;
+            },
+
+            saveGlobalEditorData() {
+                weddingData.groomShort = document.getElementById('nikahku-edit-groom-short').value;
+                weddingData.groomFull = document.getElementById('nikahku-edit-groom-full').value;
+                weddingData.brideShort = document.getElementById('nikahku-edit-bride-short').value;
+                weddingData.brideFull = document.getElementById('nikahku-edit-bride-full').value;
+                weddingData.weddingDate = document.getElementById('nikahku-edit-wedding-date').value;
+                weddingData.weddingTime = document.getElementById('nikahku-edit-wedding-time').value;
+                weddingData.locationName = document.getElementById('nikahku-edit-location-name').value;
+                weddingData.locationAddress = document.getElementById('nikahku-edit-location-address').value;
+                weddingData.qrisBank = document.getElementById('nikahku-edit-qris-bank').value;
+                weddingData.qrisAcc = document.getElementById('nikahku-edit-qris-acc').value;
+                weddingData.guestName = document.getElementById('nikahku-edit-guest-name').value;
+
+                this.closeGlobalEditorModal();
+                if (!document.getElementById('nikahku-active').classList.contains('hidden')) {
+                    this.renderActiveInvitationContent();
+                }
+                alert("Data pernikahan berhasil diperbarui secara live!");
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            nikahKuApp.init();
         });
     </script>
 </body>
