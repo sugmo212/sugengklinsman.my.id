@@ -138,7 +138,7 @@
     <!-- Modal Baca Artikel Utuh -->
     <div id="article-modal" class="fixed inset-0 z-50 hidden bg-obsidian/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative border border-gold-300">
-            <button onclick="closeArticleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-obsidian text-2xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
+            <button type="button" onclick="closeArticleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-obsidian text-2xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
             <div id="modal-article-meta" class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2"></div>
             <h2 id="modal-article-title" class="text-2xl sm:text-3xl font-bold font-serif text-obsidian mb-3"></h2>
             <div id="modal-article-seo-info" class="bg-gold-50 p-3 rounded-xl border border-gold-200 text-xs text-gray-600 mb-4 space-y-1">
@@ -149,7 +149,7 @@
             <div id="modal-article-content" class="text-gray-700 text-base leading-relaxed space-y-4 border-t border-gray-100 pt-4"></div>
             <div class="mt-8 pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
                 <span>Portal Resmi Sugeng Klinsman</span>
-                <button onclick="closeArticleModal()" class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-obsidian rounded-xl font-semibold">Tutup</button>
+                <button type="button" onclick="closeArticleModal()" class="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-obsidian rounded-xl font-semibold">Tutup</button>
             </div>
         </div>
     </div>
@@ -162,36 +162,36 @@
     <!-- Navbar Header Utama -->
     <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-gold-200 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#beranda" onclick="switchPage('beranda')" class="font-luxury font-bold text-2xl text-obsidian tracking-wide">
+            <a href="javascript:void(0)" onclick="switchPage('beranda')" class="font-luxury font-bold text-2xl text-obsidian tracking-wide">
                 Sugeng<span class="text-gold-600">Klinsman</span>
             </a>
             <nav class="hidden md:flex items-center space-x-6 font-medium text-sm">
-                <button onclick="switchPage('beranda')" class="nav-link text-gold-600 font-semibold transition hover:text-gold-600">Beranda</button>
-                <button onclick="switchPage('tentang')" class="nav-link text-slate-600 transition hover:text-gold-600">Tentang Kami</button>
-                <button onclick="switchPage('layanan')" class="nav-link text-slate-600 transition hover:text-gold-600">Layanan</button>
-                <button onclick="switchPage('harga')" class="nav-link text-slate-600 transition hover:text-gold-600">Daftar Harga</button>
-                <button onclick="switchPage('undangan')" class="nav-link text-slate-600 transition hover:text-gold-600">Undangan Online</button>
-                <button onclick="switchPage('return-policy')" class="nav-link text-slate-600 transition hover:text-gold-600">Return Policy</button>
-                <button onclick="switchPage('studio')" class="nav-link text-gold-700 font-bold transition hover:text-gold-600 flex items-center gap-1.5"><i class="fa-solid fa-pen-nib"></i> Studio Kontributor</button>
+                <button type="button" onclick="switchPage('beranda')" class="nav-link text-gold-600 font-semibold transition hover:text-gold-600">Beranda</button>
+                <button type="button" onclick="switchPage('tentang')" class="nav-link text-slate-600 transition hover:text-gold-600">Tentang Kami</button>
+                <button type="button" onclick="switchPage('layanan')" class="nav-link text-slate-600 transition hover:text-gold-600">Layanan</button>
+                <button type="button" onclick="switchPage('harga')" class="nav-link text-slate-600 transition hover:text-gold-600">Daftar Harga</button>
+                <button type="button" onclick="switchPage('undangan')" class="nav-link text-slate-600 transition hover:text-gold-600">Undangan Online</button>
+                <button type="button" onclick="switchPage('return-policy')" class="nav-link text-slate-600 transition hover:text-gold-600">Return Policy</button>
+                <button type="button" onclick="switchPage('studio')" class="nav-link text-gold-700 font-bold transition hover:text-gold-600 flex items-center gap-1.5"><i class="fa-solid fa-pen-nib"></i> Studio Kontributor</button>
             </nav>
             <div class="flex items-center space-x-4">
                 <a href="https://wa.me/6289503846562?text=Halo%20Sugeng,%20saya%20ingin%20konsultasi%20proyek." target="_blank" class="hidden sm:inline-flex bg-gold-gradient text-white px-5 py-2.5 rounded-full font-semibold text-xs shadow-gold-sm transition hover:opacity-95">
                     Konsultasi Cepat
                 </a>
-                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-obsidian focus:outline-none">
+                <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-2xl text-obsidian focus:outline-none">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gold-200 px-6 py-4 space-y-3">
-            <button onclick="switchPage('beranda'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-gold-600">Beranda</button>
-            <button onclick="switchPage('tentang'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Tentang Kami</button>
-            <button onclick="switchPage('layanan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Layanan</button>
-            <button onclick="switchPage('harga'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Daftar Harga</button>
-            <button onclick="switchPage('undangan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Undangan Online</button>
-            <button onclick="switchPage('return-policy'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Return Policy</button>
-            <button onclick="switchPage('studio'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-gold-700 font-bold">Studio Kontributor</button>
+            <button type="button" onclick="switchPage('beranda'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-gold-600">Beranda</button>
+            <button type="button" onclick="switchPage('tentang'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Tentang Kami</button>
+            <button type="button" onclick="switchPage('layanan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Layanan</button>
+            <button type="button" onclick="switchPage('harga'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Daftar Harga</button>
+            <button type="button" onclick="switchPage('undangan'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Undangan Online</button>
+            <button type="button" onclick="switchPage('return-policy'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-slate-700">Return Policy</button>
+            <button type="button" onclick="switchPage('studio'); toggleMobileMenu();" class="block w-full text-left font-medium py-1 text-gold-700 font-bold">Studio Kontributor</button>
         </div>
     </header>
 
@@ -215,7 +215,7 @@
                             </p>
                             <div class="flex flex-wrap gap-4 pt-2">
                                 <a href="#kalkulator-harga-section" class="bg-gold-gradient text-white px-7 py-3.5 rounded-full font-semibold shadow-gold-md hover:opacity-95 transition">Coba Kalkulator Harga</a>
-                                <button onclick="switchPage('studio')" class="bg-white text-gold-700 border border-gold-400 px-7 py-3.5 rounded-full font-semibold hover:bg-gold-50 transition">Kirim Konten & Karya</button>
+                                <button type="button" onclick="switchPage('studio')" class="bg-white text-gold-700 border border-gold-400 px-7 py-3.5 rounded-full font-semibold hover:bg-gold-50 transition">Kirim Konten & Karya</button>
                             </div>
                         </div>
                         <div class="lg:col-span-5">
@@ -328,7 +328,7 @@
                                 <span class="text-xs text-gray-400 block mb-1">Total Estimasi Biaya</span>
                                 <div id="total-price-display" class="text-3xl sm:text-4xl font-luxury font-bold text-gold-400">Rp 1.500.000</div>
                             </div>
-                            <button onclick="checkoutWhatsApp()" class="w-full py-4 rounded-xl bg-gold-gradient text-white font-bold shadow-gold-md hover:opacity-95 transition flex items-center justify-center gap-2 text-base">
+                            <button type="button" onclick="checkoutWhatsApp()" class="w-full py-4 rounded-xl bg-gold-gradient text-white font-bold shadow-gold-md hover:opacity-95 transition flex items-center justify-center gap-2 text-base">
                                 <i class="fa-brands fa-whatsapp text-xl"></i> Pesan via WhatsApp Sekarang
                             </button>
                         </div>
@@ -343,7 +343,7 @@
                         <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Wawasan & Publikasi</span>
                         <h2 class="text-3xl font-bold text-obsidian mt-1">Artikel Terbaru</h2>
                     </div>
-                    <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Kirim Artikel Kontributor</button>
+                    <button type="button" onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Kirim Artikel Kontributor</button>
                 </div>
                 <div id="frontpage-articles-grid" class="grid md:grid-cols-3 gap-8">
                     <!-- Artikel dipublikasikan dirender otomatis -->
@@ -510,7 +510,7 @@
                             <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">Portofolio Karya</span>
                             <h2 class="text-3xl font-bold text-obsidian mt-1">Galeri Tema Foto & Video</h2>
                         </div>
-                        <button onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Kirim Media Kontributor</button>
+                        <button type="button" onclick="switchPage('studio')" class="text-sm font-semibold text-gold-700 hover:underline">+ Kirim Media Kontributor</button>
                     </div>
                     <div id="frontpage-media-container" class="space-y-12">
                         <!-- Galeri dipublikasikan dirender otomatis -->
@@ -631,7 +631,7 @@
             </section>
         </div>
 
-        <!-- ==================== HALAMAN ADMIN EKSKLUSIF ==================== -->
+        <!-- ==================== HALAMAN ADMIN EKSKLUSIF (SUDAH DIPERBAIKI TANPA RELOAD) ==================== -->
         <div id="page-admin" class="page-section hidden">
             <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <div class="text-center max-w-xl mx-auto">
@@ -639,14 +639,16 @@
                     <h1 class="text-3xl font-bold text-obsidian mt-3">Dashboard Eksklusif Admin</h1>
                 </div>
 
-                <!-- Kotak Login PIN -->
+                <!-- Kotak Login PIN (Bebas Reload Form) -->
                 <div id="admin-login-box" class="max-w-md mx-auto gold-card rounded-3xl p-8 text-center space-y-4 shadow-xl">
                     <h3 class="font-serif text-xl font-bold text-obsidian">Autentikasi PIN Admin</h3>
                     <p class="text-xs text-gray-500">Masukkan PIN rahasia untuk mengakses antrean persetujuan & database Leads (PIN Default: <strong>1234</strong>)</p>
-                    <form onsubmit="handleAdminLogin(event)" class="space-y-3">
-                        <input type="password" id="secret-pin" required placeholder="Masukkan 4 Digit PIN" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-center tracking-widest text-lg font-bold">
-                        <button type="submit" class="w-full bg-obsidian text-white font-bold py-3 rounded-xl shadow-md hover:bg-gold-600 transition">Buka Dashboard Admin</button>
-                    </form>
+                    <div class="space-y-3">
+                        <input type="password" id="secret-pin" placeholder="Masukkan 4 Digit PIN" onkeydown="if(event.key === 'Enter'){ event.preventDefault(); handleAdminLogin(); }" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-center tracking-widest text-lg font-bold focus:outline-none focus:border-gold-500">
+                        <button type="button" onclick="handleAdminLogin()" class="w-full bg-obsidian text-white font-bold py-3 rounded-xl shadow-md hover:bg-gold-600 transition">
+                            Buka Dashboard Admin
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Panel Kontrol Admin -->
@@ -656,7 +658,7 @@
                             <h2 class="text-2xl font-bold text-obsidian font-serif">🛠️ Panel Kontrol & Persetujuan</h2>
                             <p class="text-xs text-gray-600">Setujui konten kontributor, kelola konten terbit, dan lihat database leads klien.</p>
                         </div>
-                        <button onclick="adminLogout()" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-xl shadow">Logout Admin</button>
+                        <button type="button" onclick="adminLogout()" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-xl shadow">Logout Admin</button>
                     </div>
 
                     <!-- Artikel Pending -->
@@ -679,7 +681,7 @@
                     <div class="space-y-4 pt-6 border-t border-gold-300">
                         <div class="flex justify-between items-center">
                             <h3 class="font-bold text-lg text-obsidian">📋 Database Leads / Kontributor (<span id="leads-count">0</span>)</h3>
-                            <button onclick="exportLeads()" class="px-4 py-2 bg-gold-600 text-white text-xs font-semibold rounded-xl shadow">Export / Lihat Data Leads</button>
+                            <button type="button" onclick="exportLeads()" class="px-4 py-2 bg-gold-600 text-white text-xs font-semibold rounded-xl shadow">Export / Lihat Data Leads</button>
                         </div>
                         <div id="leads-table-container" class="overflow-x-auto bg-white rounded-2xl border border-gold-200 p-4">
                             <!-- Tabel leads -->
@@ -857,10 +859,10 @@
                                 Hadir dengan 5 template eksklusif berfitur lengkap: Cover interaktif, hitung mundur, peta lokasi, buku tamu & RSVP real-time, musik romantis, hingga QRIS kado digital.
                             </p>
                             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                                <button onclick="nikahKuApp.switchView('nikahku-templates')" class="px-8 py-4 bg-rose-600 text-white font-semibold rounded-xl shadow-xl shadow-rose-600/20 hover:bg-rose-700 transition transform hover:-translate-y-0.5">
+                                <button type="button" onclick="nikahKuApp.switchView('nikahku-templates')" class="px-8 py-4 bg-rose-600 text-white font-semibold rounded-xl shadow-xl shadow-rose-600/20 hover:bg-rose-700 transition transform hover:-translate-y-0.5">
                                     <i class="fa-solid fa-eye mr-2"></i> Lihat 5 Pilihan Tema
                                 </button>
-                                <button onclick="nikahKuApp.openGlobalEditorModal()" class="px-8 py-4 bg-white text-slate-800 border border-slate-300 font-semibold rounded-xl shadow-md hover:bg-slate-50 transition">
+                                <button type="button" onclick="nikahKuApp.openGlobalEditorModal()" class="px-8 py-4 bg-white text-slate-800 border border-slate-300 font-semibold rounded-xl shadow-md hover:bg-slate-50 transition">
                                     <i class="fa-solid fa-sliders mr-2 text-rose-600"></i> Kustomisasi Data Utama
                                 </button>
                             </div>
@@ -924,14 +926,14 @@
             <div id="nikahku-templates" class="view-section hidden py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200">
                     <div>
-                        <button onclick="nikahKuApp.switchView('nikahku-landing')" class="text-sm font-semibold text-rose-600 hover:text-rose-700 mb-2 flex items-center gap-1">
+                        <button type="button" onclick="nikahKuApp.switchView('nikahku-landing')" class="text-sm font-semibold text-rose-600 hover:text-rose-700 mb-2 flex items-center gap-1">
                             <i class="fa-solid fa-arrow-left"></i> Kembali ke Katalog Utama
                         </button>
                         <h1 class="text-3xl font-cinzel font-bold text-slate-900">Katalog Template Undangan</h1>
                         <p class="text-slate-500 text-sm">Pilih salah satu tema di bawah ini untuk melihat live preview atau langsung melakukan edit data.</p>
                     </div>
                     <div class="mt-4 md:mt-0 flex gap-3">
-                        <button onclick="nikahKuApp.openGlobalEditorModal()" class="px-4 py-2 bg-rose-600 text-white rounded-lg text-sm font-semibold shadow hover:bg-rose-700 transition flex items-center gap-2">
+                        <button type="button" onclick="nikahKuApp.openGlobalEditorModal()" class="px-4 py-2 bg-rose-600 text-white rounded-lg text-sm font-semibold shadow hover:bg-rose-700 transition flex items-center gap-2">
                             <i class="fa-solid fa-sliders"></i> Edit Data Seluruh Undangan
                         </button>
                     </div>
@@ -944,15 +946,15 @@
 
             <div id="nikahku-active" class="view-section hidden relative">
                 <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-slate-900/90 backdrop-blur-md text-white px-5 py-3 rounded-full shadow-2xl border border-slate-700">
-                    <button onclick="nikahKuApp.switchView('nikahku-templates')" class="text-xs font-semibold hover:text-rose-400 transition flex items-center gap-1">
+                    <button type="button" onclick="nikahKuApp.switchView('nikahku-templates')" class="text-xs font-semibold hover:text-rose-400 transition flex items-center gap-1">
                         <i class="fa-solid fa-arrow-left"></i> Ganti Tema
                     </button>
                     <span class="text-slate-600">|</span>
-                    <button onclick="nikahKuApp.openGlobalEditorModal()" class="text-xs font-semibold text-rose-400 hover:text-rose-300 transition flex items-center gap-1">
+                    <button type="button" onclick="nikahKuApp.openGlobalEditorModal()" class="text-xs font-semibold text-rose-400 hover:text-rose-300 transition flex items-center gap-1">
                         <i class="fa-solid fa-pen-to-square"></i> Live Edit
                     </button>
                     <span class="text-slate-600">|</span>
-                    <button id="nikahku-music-btn" onclick="nikahKuApp.toggleMusic()" class="w-8 h-8 rounded-full bg-rose-600 flex items-center justify-center text-white hover:bg-rose-500 transition">
+                    <button type="button" id="nikahku-music-btn" onclick="nikahKuApp.toggleMusic()" class="w-8 h-8 rounded-full bg-rose-600 flex items-center justify-center text-white hover:bg-rose-500 transition">
                         <i class="fa-solid fa-music text-xs animate-spin"></i>
                     </button>
                 </div>
@@ -981,7 +983,7 @@
                     <i class="fa-solid fa-wand-magic-sparkles text-rose-400"></i>
                     <h3 class="font-bold text-lg font-cinzel">Live Editor Data Pernikahan</h3>
                 </div>
-                <button onclick="nikahKuApp.closeGlobalEditorModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 transition">
+                <button type="button" onclick="nikahKuApp.closeGlobalEditorModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 transition">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -1048,8 +1050,8 @@
             </div>
 
             <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end gap-3">
-                <button onclick="nikahKuApp.closeGlobalEditorModal()" class="px-4 py-2 border rounded-xl font-semibold text-slate-600 hover:bg-slate-100 transition">Batal</button>
-                <button onclick="nikahKuApp.saveGlobalEditorData()" class="px-5 py-2 bg-rose-600 text-white rounded-xl font-semibold hover:bg-rose-700 transition shadow">Simpan & Perbarui</button>
+                <button type="button" onclick="nikahKuApp.closeGlobalEditorModal()" class="px-4 py-2 border rounded-xl font-semibold text-slate-600 hover:bg-slate-100 transition">Batal</button>
+                <button type="button" onclick="nikahKuApp.saveGlobalEditorData()" class="px-5 py-2 bg-rose-600 text-white rounded-xl font-semibold hover:bg-rose-700 transition shadow">Simpan & Perbarui</button>
             </div>
         </div>
     </div>
@@ -1062,7 +1064,7 @@
     <!-- Footer -->
     <footer class="bg-obsidian text-white text-center py-8 border-t border-gold-400/20 text-sm space-y-2">
         <p>&copy; 2026 <span class="text-gold-400 font-semibold">Sugeng Klinsman</span>. All rights reserved. Hosted on Cloudflare Pages.</p>
-        <p><button onclick="switchPage('admin')" class="text-xs text-gray-400 hover:text-gold-400 transition underline">🔐 Area Khusus Admin</button></p>
+        <p><button type="button" onclick="switchPage('admin')" class="text-xs text-gray-400 hover:text-gold-400 transition underline">🔐 Area Khusus Admin</button></p>
     </footer>
 
     <!-- JavaScript Navigasi Website Utama, CMS Admin & Script NikahKu Integrated -->
@@ -1238,10 +1240,12 @@
             e.target.reset();
         }
 
+        // --- PERBAIKAN FUNGSI LOGIN ADMIN TANPA RELOAD ---
         function handleAdminLogin(e) {
-            e.preventDefault();
+            if (e) e.preventDefault();
             const pinInput = document.getElementById('secret-pin');
-            if (!pinInput) return;
+            if (!pinInput) return false;
+            
             const pin = pinInput.value.trim();
             if (pin === '1234') {
                 localStorage.setItem('sk_admin_auth', 'true');
@@ -1250,6 +1254,7 @@
             } else {
                 showToast('PIN Salah', 'Gunakan PIN: 1234');
             }
+            return false;
         }
 
         function adminLogout() {
@@ -1373,8 +1378,8 @@
                                 <p class="text-gray-500">Kontributor: <strong>${art.author}</strong> (${art.wa}) • ${art.category}</p>
                             </div>
                             <div class="flex gap-2">
-                                <button onclick="approveArticle(${idx})" class="px-3 py-1.5 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
-                                <button onclick="rejectArticle(${idx})" class="px-3 py-1.5 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
+                                <button type="button" onclick="approveArticle(${idx})" class="px-3 py-1.5 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
+                                <button type="button" onclick="rejectArticle(${idx})" class="px-3 py-1.5 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
                             </div>
                         </div>
                     `).join('');
@@ -1394,8 +1399,8 @@
                             <h4 class="font-bold text-obsidian truncate">${med.title}</h4>
                             <p class="text-[10px] text-gray-500">Oleh: ${med.author} (${med.wa}) • ${med.theme}</p>
                             <div class="flex gap-2 pt-1">
-                                <button onclick="approveMedia(${idx})" class="flex-1 py-1 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
-                                <button onclick="rejectMedia(${idx})" class="flex-1 py-1 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
+                                <button type="button" onclick="approveMedia(${idx})" class="flex-1 py-1 bg-emerald-600 text-white font-semibold rounded-lg">Setujui</button>
+                                <button type="button" onclick="rejectMedia(${idx})" class="flex-1 py-1 bg-rose-600 text-white font-semibold rounded-lg">Tolak</button>
                             </div>
                         </div>
                     `).join('');
@@ -1472,7 +1477,7 @@
                             </div>
                             <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
                                 <span class="text-xs font-bold uppercase tracking-wider text-gold-700">Oleh: ${art.author || 'Sugeng Klinsman'}</span>
-                                <button onclick="openArticleModal(${index})" class="text-xs font-bold text-gold-700 hover:underline">Selengkapnya &rarr;</button>
+                                <button type="button" onclick="openArticleModal(${index})" class="text-xs font-bold text-gold-700 hover:underline">Selengkapnya &rarr;</button>
                             </div>
                         </article>
                     `;
@@ -1640,7 +1645,7 @@
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between text-left">
                             <p class="text-slate-600 text-sm mb-6">${t.desc}</p>
-                            <button onclick="nikahKuApp.previewTemplate(${t.id})" class="w-full py-3 bg-slate-900 text-white rounded-xl font-semibold text-sm hover:bg-rose-600 transition flex items-center justify-center gap-2 shadow">
+                            <button type="button" onclick="nikahKuApp.previewTemplate(${t.id})" class="w-full py-3 bg-slate-900 text-white rounded-xl font-semibold text-sm hover:bg-rose-600 transition flex items-center justify-center gap-2 shadow">
                                 <i class="fa-solid fa-eye"></i> Buka Undangan Ini
                             </button>
                         </div>
@@ -1663,7 +1668,7 @@
                         <div class="p-6 flex flex-col flex-grow justify-between text-left">
                             <p class="text-slate-600 text-sm mb-6">${t.desc}</p>
                             <div class="flex gap-3">
-                                <button onclick="nikahKuApp.previewTemplate(${t.id})" class="flex-1 py-3 bg-rose-600 text-white rounded-xl font-semibold text-sm hover:bg-rose-700 transition text-center shadow">
+                                <button type="button" onclick="nikahKuApp.previewTemplate(${t.id})" class="flex-1 py-3 bg-rose-600 text-white rounded-xl font-semibold text-sm hover:bg-rose-700 transition text-center shadow">
                                     <i class="fa-solid fa-play mr-1"></i> Preview & Edit
                                 </button>
                             </div>
@@ -1700,7 +1705,7 @@
                                 <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 mb-8 text-amber-300 font-bold text-lg shadow-inner">
                                     ${weddingData.guestName}
                                 </div>
-                                <button onclick="nikahKuApp.openInvitation()" class="px-8 py-4 bg-amber-500 text-slate-950 font-bold rounded-full shadow-2xl hover:bg-amber-400 transition transform hover:scale-105 flex items-center justify-center gap-2 mx-auto">
+                                <button type="button" onclick="nikahKuApp.openInvitation()" class="px-8 py-4 bg-amber-500 text-slate-950 font-bold rounded-full shadow-2xl hover:bg-amber-400 transition transform hover:scale-105 flex items-center justify-center gap-2 mx-auto">
                                     <i class="fa-solid fa-envelope-open-text"></i> Buka Undangan Digital
                                 </button>
                             </div>
@@ -1802,7 +1807,7 @@
                                     <p class="text-slate-600 text-xs font-mono mt-1">${weddingData.qrisAcc}</p>
                                 </div>
                                 <div>
-                                    <button onclick="nikahKuApp.copyAccount('${weddingData.qrisAcc}')" class="px-6 py-2.5 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl shadow hover:bg-amber-400 transition">
+                                    <button type="button" onclick="nikahKuApp.copyAccount('${weddingData.qrisAcc}')" class="px-6 py-2.5 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl shadow hover:bg-amber-400 transition">
                                         <i class="fa-regular fa-copy mr-1"></i> Salin Nomor Rekening
                                     </button>
                                 </div>
